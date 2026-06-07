@@ -7,15 +7,23 @@ Static HTML/CSS/JS site. No build system. Edit files directly.
 https://fathers-for-the-fatherless.vercel.app
 
 ## Deploy After Every Round of Fixes
-After completing all requested changes, ALWAYS deploy by running:
+This repo is connected to Vercel. Pushing the `main` branch auto-deploys to
+production in ~20 seconds. After completing all requested changes, ALWAYS publish
+from the repo root:
 ```
-bash /Users/premierdetailing/fathers-for-the-fatherless/deploy.sh
+git add -A && git commit -m "<short summary of the change>" && git push
 ```
-Do not ask — just run it. Deployment is automatic and takes ~15 seconds.
-Confirm the live URL is updated before reporting back.
+Do not ask — just commit and push. Deployment is automatic. Confirm the live URL
+is updated before reporting back.
 
 ## File Structure
-- index.html — main page
-- css/styles.css — all styles
-- js/ — scripts
+- index.html — main page; about/mission/give/updates/contact + topic pages are sibling .html files
+- css/styles.css — global styles
+- css/fftf-pages.css — interior page styles
+- js/fftf.js — scripts
 - images/ — assets
+
+## Collaboration
+Source of truth is GitHub: premierdetailing/fathers-for-the-fatherless (private).
+Multiple people edit this repo. Always `git pull` before starting a round of
+changes so you are working on the latest version.
