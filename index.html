@@ -1,0 +1,3353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fathers for the Fatherless | This Is What Hope Looks Like</title>
+  <meta name="description" content="A faith-based ministry equipping fathers, planting churches, and restoring families in Honduras. Real Men. Real Families. Real Honduras. Since 2006.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="/">
+  <link rel="icon" type="image/png" href="images/fftf-emblem.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Fathers for the Fatherless">
+  <meta property="og:title" content="Fathers for the Fatherless | This Is What Hope Looks Like">
+  <meta property="og:description" content="A faith-based ministry equipping fathers, planting churches, and restoring families in Honduras. Real men. Real families. Real Honduras. Since 2006.">
+  <meta property="og:url" content="https://fathers-for-the-fatherless.vercel.app/">
+  <meta property="og:image" content="https://fathers-for-the-fatherless.vercel.app/images/fftf-logo-full.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,700&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700;800&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ============================================================
+       FFTF — Comprehensive Overhaul v2
+       ============================================================ */
+    :root {
+      --navy:        #1C2B3A;
+      --navy-mid:    #233042;
+      --navy-deep:   #111D2B;
+      --cream:       #F7F3EC;
+      --cream-2:     #EDE6D8;
+      --gold:        #C8892A;
+      --gold-soft:   #B17B26;
+      --on-dark:     #EDE8DF;
+      --on-light:    #2C2C2C;
+      --warm-ink:    #2A2118;
+      --serif:       'Playfair Display', 'Lora', Georgia, serif;
+      --editorial:   'Lora', Georgia, serif;
+      --sans:        'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --max-w:       1240px;
+      --pad:         80px;
+      --pad-m:       48px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--sans);
+      font-size: 16px;
+      line-height: 1.85;
+      color: var(--warm-ink);
+      background: var(--cream);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; text-decoration: none; transition: color 0.25s ease; }
+    button { font: inherit; cursor: pointer; border: none; background: none; }
+    h1, h2, h3, h4 {
+      font-family: var(--serif);
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.005em;
+      color: var(--warm-ink);
+    }
+
+    .container { max-width: var(--max-w); margin: 0 auto; padding: 0 40px; }
+    @media (max-width: 768px) { .container { padding: 0 24px; } }
+
+    /* ----------------------------------------------------------------
+       OVERLINES — variants
+       ---------------------------------------------------------------- */
+    .overline {
+      display: inline-block;
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+    .overline-block {
+      position: relative;
+      display: inline-block;
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      text-align: center;
+      margin-bottom: 12px;
+    }
+    .overline-block::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 20px;
+      height: 1px;
+      background: var(--gold);
+      opacity: 0.5;
+    }
+    .overline-row {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+    .overline-row::before {
+      content: '';
+      width: 20px; height: 1px;
+      background: var(--gold);
+      display: inline-block;
+    }
+    .overline-row span {
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    /* ----------------------------------------------------------------
+       Reveal animation
+       ---------------------------------------------------------------- */
+    @keyframes pageIn { from { opacity: 0; } to { opacity: 1; } }
+    body { animation: pageIn 0.7s ease both; }
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px) scale(0.985);
+      transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0) scale(1); }
+    @media (prefers-reduced-motion: reduce) {
+      body { animation: none; }
+      .reveal { opacity: 1; transform: none; transition: none; }
+    }
+    /* Hero must always be visible immediately — guard against IO not firing */
+    .hero .reveal { opacity: 1; transform: translateY(0); }
+    /* Section dividers — fading gold line */
+    .section-divider {
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(200,137,42,0.3) 20%, rgba(200,137,42,0.3) 80%, transparent);
+      margin: 0;
+      width: 100%;
+    }
+    /* Hero accent rule (extracted from inline style for cross-browser reliability) */
+    .hero-rule { width: 40px; height: 2px; background: #C8892A; margin-bottom: 18px; opacity: 0.8; }
+
+    /* ----------------------------------------------------------------
+       Buttons
+       ---------------------------------------------------------------- */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--sans);
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 0.8px;
+      text-transform: none;
+      padding: 15px 36px;
+      border-radius: 5px;
+      border: 1.5px solid transparent;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      white-space: nowrap;
+    }
+    .btn-gold {
+      background: var(--gold);
+      color: var(--navy);
+      border-color: var(--gold);
+      letter-spacing: 0.8px;
+      text-transform: none;
+      box-shadow: 0 3px 11px rgba(200,137,42,0.15);
+    }
+    .btn-gold:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(200,137,42,0.22);
+      background: var(--gold-soft);
+      border-color: var(--gold-soft);
+    }
+    .btn-outline-white {
+      background: transparent;
+      color: #FFFFFF;
+      border-color: rgba(255,255,255,0.5);
+      letter-spacing: 0.8px;
+      text-transform: none;
+    }
+    .btn-outline-white:hover { color: var(--gold); border-color: var(--gold); }
+    .btn-outline-navy {
+      background: transparent;
+      color: var(--navy);
+      border-color: var(--navy);
+    }
+    .btn-outline-navy:hover { background: var(--navy); color: #FFFFFF; }
+    .btn-outline-gold {
+      background: transparent;
+      color: var(--gold);
+      border-color: var(--gold);
+    }
+    .btn-outline-gold:hover { background: var(--gold); color: var(--navy); }
+    .btn-row { display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn-row.center { justify-content: center; }
+    .btn:active { transform: scale(0.97); }
+    .btn-gold:active { transform: translateY(-1px) scale(0.98); }
+    /* Hero entrance cascade */
+    @keyframes heroIn { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: none; } }
+    .hero-content > * { animation: heroIn 0.9s cubic-bezier(0.16, 1, 0.3, 1) both; }
+    .hero-content > *:nth-child(1) { animation-delay: 0.10s; }
+    .hero-content > *:nth-child(2) { animation-delay: 0.17s; }
+    .hero-content > *:nth-child(3) { animation-delay: 0.24s; }
+    .hero-content > *:nth-child(4) { animation-delay: 0.31s; }
+    .hero-content > *:nth-child(5) { animation-delay: 0.38s; }
+    .hero-content > *:nth-child(6) { animation-delay: 0.45s; }
+    .hero-content > *:nth-child(7) { animation-delay: 0.52s; }
+    @media (prefers-reduced-motion: reduce) { .hero-content > * { animation: none; } }
+
+    /* ----------------------------------------------------------------
+       SECTION DIVIDER (gold gradient line)
+       ---------------------------------------------------------------- */
+    /* (older duplicate .section-divider rule removed — single rule above is canonical) */
+
+    /* ----------------------------------------------------------------
+       SECTION NUMBER LABELS (top-right)
+       ---------------------------------------------------------------- */
+    .section-num {
+      position: absolute;
+      top: 24px;
+      right: 32px;
+      font-family: var(--serif);
+      font-size: 11px;
+      font-style: italic;
+      color: rgba(200,137,42,0.5);
+      letter-spacing: 3px;
+      z-index: 3;
+    }
+
+    /* ----------------------------------------------------------------
+       DOT-BG canvas + grain texture overlay
+       ---------------------------------------------------------------- */
+    .dot-bg { position: relative; overflow: hidden; }
+    .dot-bg > *:not(canvas) { position: relative; z-index: 2; }
+    .dot-bg > .hero-spotlight,
+    .dot-bg > .hero-watermark {
+      position: absolute;
+      z-index: 1;
+    }
+    /* Static dot pattern (replaces canvas — no loading flicker) */
+    .dot-bg {
+      background-image: radial-gradient(circle, rgba(200,137,42,0.14) 1px, transparent 1px);
+      background-size: 8px 8px;
+      background-position: 0 0;
+    }
+    /* Top-edge gold glow on dark sections + cross-hair grid overlay */
+    .pillars-section,
+    .field-section,
+    .ask-section,
+    .faq-section {
+      background-image:
+        radial-gradient(ellipse 60% 30% at 50% 0%, rgba(200,137,42,0.07) 0%, transparent 70%),
+        linear-gradient(rgba(200,137,42,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(200,137,42,0.025) 1px, transparent 1px);
+      background-size: auto, 80px 80px, 80px 80px;
+      background-position: 0 0, 0 0, 0 0;
+    }
+    /* Diagonal blush on the dark scripture bar */
+    .scripture-bar.dark {
+      background: linear-gradient(135deg, rgba(200,137,42,0.07) 0%, transparent 40%, transparent 60%, rgba(200,137,42,0.04) 100%), var(--navy-deep);
+    }
+
+    /* ----------------------------------------------------------------
+       PHOTO PLACEHOLDER (used in hero stack + gallery)
+       ---------------------------------------------------------------- */
+    .photo-placeholder {
+      background-image:
+        linear-gradient(180deg, rgba(15,29,51,0.2) 0%, rgba(15,29,51,0.58) 100%),
+        url('./fftf-logo.jpeg'),
+        linear-gradient(135deg, #1B2A4A 0%, #243451 40%, #1a2640 100%);
+      background-position: center, center, center;
+      background-repeat: no-repeat, no-repeat, no-repeat;
+      background-size: cover, min(70%, 230px) auto, cover;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 12px;
+      border: 1px solid rgba(201,146,42,0.2);
+      position: relative;
+      overflow: hidden;
+      padding: 24px;
+    }
+    .photo-placeholder img,
+    .photo-placeholder svg,
+    .photo-placeholder .pp-label {
+      display: none;
+    }
+    .photo-placeholder img {
+      height: 32px;
+      width: auto;
+      display: block;
+      margin: 0 auto;
+      opacity: 0.3;
+      filter: brightness(0) invert(1);
+      position: relative;
+      z-index: 1;
+    }
+    .photo-placeholder .pp-label {
+      font-family: var(--sans);
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(201,146,42,0.5);
+      text-align: center;
+      max-width: 80%;
+      position: relative;
+      z-index: 1;
+    }
+    .photo-placeholder::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(115deg, transparent 0%, rgba(200,137,42,0.06) 40%, rgba(200,137,42,0.12) 50%, rgba(200,137,42,0.06) 60%, transparent 100%);
+      background-size: 200% 100%;
+      animation: shimmer 4s ease-in-out infinite;
+      z-index: 0;
+    }
+    .photo-placeholder::after {
+      content: 'Put picture here';
+      position: absolute;
+      left: 50%;
+      bottom: 18px;
+      transform: translateX(-50%);
+      z-index: 2;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: max-content;
+      max-width: calc(100% - 36px);
+      padding: 9px 16px;
+      border: 1px solid rgba(201,146,42,0.45);
+      border-radius: 999px;
+      background: rgba(15,29,51,0.78);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.28);
+      color: #FFFFFF;
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      line-height: 1;
+      text-transform: uppercase;
+      text-align: center;
+      white-space: nowrap;
+    }
+    .photo-placeholder > * { position: relative; z-index: 1; }
+    .photo-placeholder > img,
+    .photo-placeholder > svg,
+    .photo-placeholder > .pp-label {
+      display: none !important;
+    }
+
+    @keyframes shimmer {
+      0%   { background-position: -200% 0; }
+      100% { background-position:  200% 0; }
+    }
+
+    /* ============================================================
+       NAV
+       ============================================================ */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(17,29,43,0.92);
+      backdrop-filter: blur(16px) saturate(140%);
+      -webkit-backdrop-filter: blur(16px) saturate(140%);
+      border-bottom: 1px solid rgba(200,137,42,0.12);
+      box-shadow: 0 4px 30px rgba(0,0,0,0.2);
+      transition: all 0.3s ease;
+    }
+    .nav.scrolled {
+      background: rgba(17,29,43,0.98);
+      border-bottom-color: rgba(200,137,42,0.3);
+    }
+    .nav-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 12px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+      text-decoration: none;
+    }
+    .nav-brand img {
+      height: 44px;
+      width: auto;
+      display: block;
+      filter: none;
+      opacity: 0.92;
+      transition: opacity 0.2s ease;
+    }
+    .nav-brand img:hover { opacity: 1; }
+    .nav-links { display: flex; align-items: center; gap: 28px; }
+    .nav-link {
+      position: relative;
+      font-family: var(--sans);
+      font-size: 11.5px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(237,232,223,0.75);
+      padding-bottom: 5px;
+      transition: color 0.25s ease;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute; left: 0; bottom: 0;
+      width: 100%; height: 1.5px; background: var(--gold);
+      transform: scaleX(0); transform-origin: left;
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .nav-link:hover { color: #FFFFFF; }
+    .nav-link:hover::after, .nav-link.active::after { transform: scaleX(1); }
+    .nav-link.active { color: var(--gold); }
+    .nav-cta {
+      background: var(--gold);
+      color: var(--navy);
+      padding: 10px 22px;
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: none;
+      border-radius: 6px;
+      transition: all 0.25s ease;
+      box-shadow: 0 3px 9px rgba(201,146,42,0.15);
+    }
+    .nav-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 14px rgba(201,146,42,0.24);
+      color: var(--navy);
+    }
+    .hamburger { display: none; flex-direction: column; gap: 5px; padding: 8px; }
+    .hamburger span { width: 22px; height: 2px; background: #FFFFFF; border-radius: 1px; }
+    .mobile-panel {
+      display: none;
+      position: fixed; inset: 0;
+      background: var(--navy);
+      z-index: 200;
+      flex-direction: column; align-items: center; justify-content: center;
+      gap: 28px; padding: 32px;
+    }
+    .mobile-panel.open { display: flex; }
+    .mobile-panel .mobile-close {
+      position: absolute; top: 22px; right: 22px;
+      color: #FFFFFF; font-size: 28px; line-height: 1;
+    }
+    .mobile-panel a {
+      color: #FFFFFF; font-size: 18px;
+      letter-spacing: 0.18em; text-transform: uppercase;
+    }
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .nav-brand img { height: 44px; }
+    }
+
+    /* ============================================================
+       HERO — flex, position relative, overflow visible
+       ============================================================ */
+    .hero {
+      position: relative;
+      min-height: calc(100vh - 40px);
+      display: flex;
+      align-items: stretch;
+      overflow: hidden;
+      background: var(--navy-deep);
+    }
+    :root { scroll-padding-top: 80px; }
+    .hero-left {
+      flex: 0 0 60%;
+      position: relative;
+      background: var(--navy-deep);
+      background-image: radial-gradient(ellipse 120% 80% at 15% 60%, rgba(180,120,40,0.08) 0%, transparent 65%);
+      padding: 72px 64px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      clip-path: polygon(0 0, 100% 0, calc(100% - 48px) 50%, 100% 100%, 0 100%);
+      overflow: hidden;
+      transform: translateZ(0);
+    }
+    .hero-spotlight {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1;
+      background: radial-gradient(ellipse 800px 600px at 20% 50%, rgba(201,146,42,0.12) 0%, transparent 70%);
+      animation: spotlightPulse 8s ease-in-out infinite;
+    }
+    @keyframes spotlightPulse {
+      0%, 100% { opacity: 0.8; transform: scale(1); }
+      50%      { opacity: 1;   transform: scale(1.05); }
+    }
+    .hero-watermark {
+      position: absolute;
+      top: 96px;
+      right: 64px;
+      transform: none;
+      width: 150px;
+      aspect-ratio: 4 / 3;
+      opacity: 1;
+      pointer-events: none;
+      z-index: 1;
+      filter: none;
+      border: 1px solid rgba(201,146,42,0.24);
+      border-radius: 12px;
+      background-image:
+        linear-gradient(180deg, rgba(15,29,51,0.18) 0%, rgba(15,29,51,0.62) 100%),
+        url('./fftf-logo.jpeg'),
+        linear-gradient(135deg, #1B2A4A 0%, #243451 40%, #1a2640 100%);
+      background-position: center, center, center;
+      background-repeat: no-repeat, no-repeat, no-repeat;
+      background-size: cover, min(70%, 190px) auto, cover;
+      box-shadow: 0 18px 44px rgba(0,0,0,0.18);
+    }
+    .hero-watermark img { display: none; }
+    .hero-watermark::after {
+      content: 'Put picture here';
+      position: absolute;
+      left: 50%;
+      bottom: 16px;
+      transform: translateX(-50%);
+      z-index: 2;
+      width: max-content;
+      max-width: calc(100% - 32px);
+      padding: 8px 14px;
+      border: 1px solid rgba(201,146,42,0.45);
+      border-radius: 999px;
+      background: rgba(15,29,51,0.78);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.28);
+      color: #FFFFFF;
+      font-family: var(--sans);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      line-height: 1;
+      text-transform: uppercase;
+      text-align: center;
+      white-space: nowrap;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 620px;
+    }
+    .hero-content h1 {
+      font-family: var(--serif);
+      font-size: clamp(42px, 5.5vw, 68px);
+      font-weight: 800;
+      font-style: italic;
+      line-height: 1.05;
+      color: #FFFFFF;
+      margin: 14px 0 22px;
+      letter-spacing: -0.01em;
+      text-shadow: 0 2px 24px rgba(0,0,0,0.4);
+    }
+    .hero-sub {
+      font-family: var(--sans);
+      font-size: 19px;
+      line-height: 1.8;
+      color: rgba(237,228,215,0.85);
+      margin-bottom: 28px;
+      max-width: 540px;
+    }
+    .hero-trust-row {
+      display: flex;
+      gap: 16px;
+      margin-top: 18px;
+      flex-wrap: wrap;
+    }
+    .hero-trust-row span {
+      font-family: var(--sans);
+      font-size: 12px;
+      color: rgba(237,232,223,0.6);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .hero-italic-line {
+      display: block;
+      margin-top: 22px;
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 14px;
+      letter-spacing: 0.04em;
+      color: var(--gold);
+    }
+    .hero-ticker {
+      overflow: hidden;
+      white-space: nowrap;
+      margin-top: 24px;
+      padding: 10px 0;
+      background: rgba(200,137,42,0.1);
+      border-top: 1px solid rgba(200,137,42,0.2);
+      border-bottom: 1px solid rgba(200,137,42,0.2);
+      font-size: 12px;
+      letter-spacing: 2px;
+      color: rgba(237,228,215,0.65);
+      text-transform: uppercase;
+    }
+    .hero-ticker-track {
+      display: inline-block;
+      animation: ticker 40s linear infinite;
+    }
+    @keyframes ticker {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+
+    .hero-right {
+      flex: 0 0 40%;
+      position: relative;
+      background: #F4EFE6;
+      min-height: 100%;
+      padding: 56px 56px 60px 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform: translateZ(0);
+    }
+    .hero-stack {
+      position: relative;
+      width: 100%;
+      max-width: 360px;
+      height: 760px;
+      will-change: transform;
+      opacity: 1 !important;
+      transform: none !important;
+    }
+    .stack-card {
+      position: absolute;
+      width: 280px;
+      height: 180px;
+    }
+    .stack-card.photo-placeholder { padding: 24px; }
+    .stack-card:nth-child(1) { top: 0;    left: 0;    transform: rotate(-6deg) translateY(-10px); box-shadow: 0 16px 48px rgba(0,0,0,0.55); }
+    .stack-card:nth-child(2) { top: 170px; right: 0;   transform: rotate(-2deg) translateY(0px);   box-shadow: 0 12px 40px rgba(0,0,0,0.5); z-index: 2; }
+    .stack-card:nth-child(3) { top: 340px; left: 24px; transform: rotate(2deg)  translateY(10px);  box-shadow: 0 8px 32px rgba(0,0,0,0.45); }
+
+    .hero-impact-card {
+      position: absolute;
+      top: 520px;
+      left: 0; right: 0;
+      background: rgba(28,43,58,0.85);
+      border: 1px solid rgba(201,146,42,0.4);
+      border-top: 2px solid var(--gold);
+      border-radius: 16px;
+      padding: 18px 20px;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: inset 0 0 40px rgba(201,146,42,0.06), 0 20px 60px rgba(0,0,0,0.4);
+      transform: rotate(-1deg);
+      z-index: 3;
+    }
+    .hic-label {
+      display: block;
+      font-family: var(--sans);
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+      text-align: center;
+    }
+    .hic-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: stretch;
+    }
+    .hic-stat { flex: 1; text-align: center; padding: 0 4px; }
+    .hic-num {
+      font-family: var(--serif);
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--gold);
+      display: block;
+      line-height: 1.1;
+    }
+    .hic-desc {
+      font-family: var(--sans);
+      font-size: 9px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--on-dark);
+      display: block;
+      margin-top: 6px;
+    }
+    .hic-sep {
+      width: 1px;
+      align-self: stretch;
+      background: linear-gradient(180deg, transparent 0%, rgba(201,146,42,0.5) 50%, transparent 100%);
+    }
+    .hero-trip-card {
+      position: absolute;
+      top: 640px;
+      left: 0; right: 0;
+      background: rgba(15,27,40,0.92);
+      border: 1px solid rgba(201,146,42,0.25);
+      border-radius: 50px;
+      padding: 8px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      transform: rotate(2deg);
+      z-index: 3;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.35);
+    }
+    .pulse-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #4CAF50;
+      box-shadow: 0 0 0 0 rgba(76,175,80,0.5);
+      animation: pulse-dot 1.5s ease-out infinite;
+      flex-shrink: 0;
+    }
+    @keyframes pulse-dot {
+      0%   { box-shadow: 0 0 0 0 rgba(76,175,80,0.5); }
+      100% { box-shadow: 0 0 0 8px rgba(76,175,80,0);   }
+    }
+    .hero-trip-card span.label {
+      font-family: var(--sans);
+      font-size: 10px;
+      letter-spacing: 2px;
+      color: var(--gold);
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    @media (max-width: 980px) {
+      .hero { flex-direction: column; min-height: auto; }
+      .hero-left { flex: 0 0 auto; clip-path: none; padding: 60px 32px 44px; }
+      /* Hide the cream logo panel whenever the hero stacks — it reads as an out-of-place block */
+      .hero-right { display: none !important; }
+      .hero-watermark { width: 126px; top: 24px; right: 22px; }
+      .hero-watermark::after {
+        bottom: 10px;
+        max-width: calc(100% - 18px);
+        padding: 6px 8px;
+        font-size: 8px;
+        letter-spacing: 0.08em;
+      }
+      .hero-stack { max-width: 320px; height: 700px; margin: 0 auto; }
+      .stack-card { width: 240px; height: 150px; }
+      .stack-card:nth-child(2) { top: 160px; }
+      .stack-card:nth-child(3) { top: 320px; }
+      .hero-impact-card { top: 510px; }
+      .hero-trip-card { top: 610px; }
+    }
+
+    /* ============================================================
+       SCRIPTURE BAR
+       ============================================================ */
+    .scripture-bar {
+      position: relative;
+      padding: 80px 40px;
+      background: linear-gradient(135deg, rgba(200,137,42,0.06) 0%, transparent 50%, rgba(200,137,42,0.04) 100%);
+      border-top: 1px solid rgba(200,137,42,0.15);
+      border-bottom: 1px solid rgba(200,137,42,0.15);
+      text-align: center;
+    }
+    .scripture-bar.dark {
+      background: var(--navy-deep);
+      border-top-color: rgba(200,137,42,0.2);
+      border-bottom-color: rgba(200,137,42,0.2);
+    }
+    .scripture-frame {
+      max-width: 560px;
+      margin: 0 auto;
+      padding: 20px 0;
+      border-top: 1px solid rgba(200,137,42,0.2);
+      border-bottom: 1px solid rgba(200,137,42,0.2);
+    }
+    .ornament {
+      display: block;
+      text-align: center;
+      margin-bottom: 16px;
+      color: rgba(200,137,42,0.6);
+      font-size: 12px;
+      letter-spacing: 12px;
+      font-family: var(--sans);
+    }
+    .scripture-bar p {
+      font-family: 'Lora', Georgia, serif;
+      font-style: italic;
+      font-size: 22px;
+      line-height: 1.6;
+      letter-spacing: 0.01em;
+      max-width: 640px;
+      margin: 0 auto 14px;
+    }
+    .scripture-bar.dark p { color: rgba(237,232,223,0.85); }
+    .scripture-bar:not(.dark) p { color: var(--navy); }
+    .scripture-bar .attr {
+      font-family: var(--sans);
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 600;
+    }
+
+    /* ============================================================
+       STATS + DIRECTOR QUOTE (cream)
+       ============================================================ */
+    .stats-section {
+      background: linear-gradient(180deg, #F0EBE1 0%, #EDE6D8 100%);
+      padding: 104px 40px 64px;
+      border-top: 1px solid rgba(200,137,42,0.12);
+      border-bottom: 1px solid rgba(200,137,42,0.12);
+    }
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 56px;
+      max-width: 1000px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .stat-block .stat-rule {
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: var(--gold);
+      margin: 0 auto 22px;
+    }
+    .stat-block .stat-num {
+      font-family: var(--serif);
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
+      font-weight: 700;
+      font-style: italic;
+      color: var(--navy-deep);
+      line-height: 1;
+      margin-bottom: 14px;
+      letter-spacing: -0.01em;
+    }
+    .stat-block .stat-desc {
+      font-family: var(--sans);
+      font-size: 14px;
+      color: #6B5C4A;
+      line-height: 1.6;
+      max-width: 240px;
+      margin: 0 auto;
+    }
+    .director-quote {
+      max-width: 700px;
+      margin: 56px auto 0;
+      padding: 36px 40px 36px 32px;
+      background: rgba(201,146,42,0.06);
+      border-left: 3px solid var(--gold);
+      border-radius: 0 16px 16px 0;
+    }
+    .director-quote img {
+      height: 36px;
+      opacity: 1;
+      margin-bottom: 16px;
+      filter: brightness(0) sepia(1) saturate(2) hue-rotate(10deg) opacity(0.35);
+    }
+    .director-quote p {
+      font-family: 'Lora', Georgia, serif;
+      font-style: italic;
+      font-size: 20px;
+      color: var(--navy-deep);
+      line-height: 1.7;
+      margin-bottom: 18px;
+    }
+    .director-quote .director-attr {
+      font-family: var(--sans);
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      color: var(--gold);
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    @media (max-width: 768px) {
+      .stats-row { grid-template-columns: 1fr; gap: 40px; }
+      .stats-section { padding: 64px 22px; }
+      .director-quote { margin: 36px 22px 0; padding: 26px 24px; }
+      .director-quote p { font-size: 17px; }
+    }
+
+    /* ============================================================
+       VERSE INLINE (above section heads)
+       ============================================================ */
+    .verse-inline {
+      text-align: center;
+      max-width: 620px;
+      margin: 0 auto 36px;
+    }
+    .verse-inline p {
+      font-family: 'Lora', Georgia, serif;
+      font-style: italic;
+      font-size: 17px;
+      line-height: 1.6;
+      margin-bottom: 8px;
+    }
+    .verse-inline .attr {
+      font-family: var(--sans);
+      font-size: 11px;
+      letter-spacing: 2px;
+      color: var(--gold);
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    .section-dark .verse-inline p { color: rgba(237,232,223,0.75); }
+    .section-light .verse-inline p { color: var(--on-light); }
+
+    /* ============================================================
+       THREE PILLARS
+       ============================================================ */
+    .pillars-section {
+      position: relative;
+      background: var(--navy);
+      padding: 104px 32px;
+    }
+    .pillars-head {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 56px;
+    }
+    .pillars-head h2 {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      color: #FFFFFF;
+      margin-bottom: 16px;
+    }
+    .pillars-head p.sub {
+      font-size: 16px;
+      color: var(--on-dark);
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.75;
+    }
+    .pillar-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .pillar-col {
+      position: relative;
+      padding: 28px 24px 36px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(200,137,42,0.15);
+      border-top: 2px solid rgba(200,137,42,0.4);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+    .pillar-col::before {
+      content: attr(data-num);
+      position: absolute;
+      bottom: -20px;
+      right: 16px;
+      font-family: var(--sans);
+      font-size: 120px;
+      font-weight: 900;
+      color: rgba(201,146,42,0.05);
+      line-height: 1;
+      pointer-events: none;
+      z-index: 0;
+      user-select: none;
+    }
+    .pillar-col > * { position: relative; z-index: 1; }
+    .pillar-col .cross-icon {
+      width: 24px;
+      height: 24px;
+      display: block;
+      margin-bottom: 18px;
+    }
+    .pillar-col h3 {
+      font-family: var(--serif);
+      font-size: 22px;
+      font-weight: 800;
+      color: #FFFFFF;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin: 0 0 8px;
+    }
+    .pillar-col h3::after {
+      content: '';
+      display: block;
+      width: 32px;
+      height: 2px;
+      background: var(--gold);
+      margin-top: 8px;
+      margin-bottom: 16px;
+    }
+    .pillar-col p {
+      font-family: var(--sans);
+      font-size: 15px;
+      line-height: 1.75;
+      color: rgba(237,232,223,0.75);
+    }
+    @media (max-width: 768px) {
+      .pillar-grid { grid-template-columns: 1fr; gap: 28px; }
+      .pillars-section { padding: 64px 22px; }
+    }
+
+    /* ============================================================
+       TESTIMONIALS
+       ============================================================ */
+    .field-section {
+      position: relative;
+      background: var(--navy);
+      padding: 104px 32px;
+    }
+    .field-head {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 30px;
+    }
+    .field-head h2 {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      font-weight: 700;
+      color: #FFFFFF;
+      margin-bottom: 16px;
+    }
+    .field-intro {
+      font-family: 'Lora', Georgia, serif;
+      font-style: italic;
+      font-size: 18px;
+      color: rgba(237,232,223,0.7);
+      text-align: center;
+      max-width: 580px;
+      margin: 0 auto 44px;
+      line-height: 1.7;
+    }
+    .field-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+    .field-quote {
+      position: relative;
+      padding: 0 28px 24px;
+      background: transparent;
+      border-left: 3px solid rgba(200,137,42,0.5);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      border-radius: 0;
+      transition: border-left-color 0.3s ease;
+      overflow: hidden;
+    }
+    .field-quote:hover { border-left-color: rgba(200,137,42,0.9); }
+    .field-quote::before {
+      content: '\201C';
+      position: absolute;
+      top: -10px;
+      left: 20px;
+      font-family: var(--serif);
+      font-size: 80px;
+      line-height: 1;
+      color: rgba(200,137,42,0.08);
+      z-index: 0;
+      pointer-events: none;
+    }
+    .field-quote > * { position: relative; z-index: 1; }
+    .field-quote p {
+      font-family: 'Lora', Georgia, serif;
+      font-style: normal;
+      font-size: 16px;
+      line-height: 1.8;
+      color: var(--on-dark);
+      margin-bottom: 20px;
+      padding-top: 24px;
+    }
+    .field-quote .stars {
+      display: block;
+      font-size: 11px;
+      color: rgba(201,146,42,0.6);
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+    }
+    .field-quote .field-attribution {
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    @media (max-width: 980px) { .field-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 640px) {
+      .field-grid { grid-template-columns: 1fr; gap: 22px; }
+      .field-section { padding: 64px 22px; }
+    }
+
+    /* ============================================================
+       GIVE SECTION
+       ============================================================ */
+    .ask-section {
+      position: relative;
+      background: var(--navy);
+      padding: 104px 32px;
+    }
+    .ask-head {
+      text-align: center;
+      max-width: 820px;
+      margin: 0 auto 28px;
+    }
+    .ask-head h2 {
+      font-family: var(--serif);
+      font-size: clamp(1.9rem, 3.4vw, 2.5rem);
+      font-weight: 700;
+      color: #FFFFFF;
+      line-height: 1.25;
+      margin-bottom: 24px;
+      letter-spacing: -0.005em;
+    }
+    .ask-body {
+      font-family: var(--sans);
+      font-size: 16px;
+      line-height: 1.8;
+      color: var(--on-dark);
+      max-width: 660px;
+      margin: 0 auto;
+    }
+    .ask-body .ask-emph {
+      color: var(--gold);
+      font-weight: 700;
+    }
+    .verse-block {
+      max-width: 720px;
+      margin: 40px auto;
+      padding: 24px;
+      border-top: 1px solid rgba(201,146,42,0.2);
+      border-bottom: 1px solid rgba(201,146,42,0.2);
+      text-align: center;
+    }
+    .verse-block p {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 22px;
+      color: rgba(237,232,223,0.9);
+      line-height: 1.5;
+      margin-bottom: 12px;
+    }
+    .verse-block .attr {
+      font-family: var(--sans);
+      font-size: 11px;
+      letter-spacing: 2px;
+      color: var(--gold);
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    .tier-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      max-width: 920px;
+      margin: 0 auto;
+    }
+    .tier-card {
+      background: rgba(28,43,58,0.6);
+      border: 1px solid rgba(200,137,42,0.2);
+      border-top: 3px solid rgba(200,137,42,0.5);
+      border-radius: 8px;
+      padding: 32px 28px 28px;
+      transition: all 0.3s ease;
+    }
+    .tier-card:hover {
+      background: rgba(200,137,42,0.1);
+      border-color: rgba(200,137,42,0.6);
+      border-top: 3px solid var(--gold);
+      box-shadow: 0 0 0 1px rgba(200,137,42,0.6), 0 20px 40px rgba(0,0,0,0.4);
+    }
+    .tier-card .tier-amount {
+      font-family: var(--serif);
+      font-size: 56px;
+      font-weight: 700;
+      color: #FFFFFF;
+      line-height: 1;
+      letter-spacing: -0.02em;
+    }
+    .tier-card .tier-amount .dollar {
+      font-size: 0.4em;
+      vertical-align: super;
+      color: var(--gold);
+      font-weight: 700;
+    }
+    .tier-card .tier-amount .per {
+      font-family: var(--sans);
+      font-size: 14px;
+      font-weight: 500;
+      color: rgba(237,232,223,0.6);
+      letter-spacing: 0.06em;
+      margin-left: 10px;
+    }
+    .tier-card .tier-rule {
+      display: block;
+      width: 60px;
+      height: 1px;
+      background: var(--gold);
+      margin: 18px 0;
+    }
+    .tier-card p {
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--on-dark);
+      margin-bottom: 8px;
+    }
+    .tier-give-btn {
+      width: 100%;
+      margin-top: 16px;
+      background: transparent;
+      border: 1.5px solid rgba(200,137,42,0.5);
+      color: var(--gold);
+      border-radius: 4px;
+      padding: 10px 20px;
+      font-family: var(--sans);
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .tier-give-btn:hover {
+      background: var(--gold);
+      color: var(--navy);
+      border-color: var(--gold);
+    }
+    .ask-pastor-note {
+      font-family: var(--sans);
+      font-style: italic;
+      font-size: 14px;
+      color: rgba(237,232,223,0.65);
+      text-align: center;
+      max-width: 760px;
+      margin: 32px auto 0;
+      line-height: 1.7;
+    }
+    .ask-cta-row { justify-content: center; margin-top: 32px; }
+    @media (max-width: 768px) {
+      .tier-grid { grid-template-columns: 1fr; gap: 20px; }
+      .tier-card .tier-amount { font-size: 44px; }
+      .ask-section { padding: 64px 22px; }
+    }
+
+    /* ============================================================
+       DONATION DRAWER
+       ============================================================ */
+    #donate-drawer {
+      position: fixed;
+      bottom: -100%;
+      left: 0; right: 0;
+      background: var(--navy);
+      border-top: 2px solid var(--gold);
+      border-radius: 24px 24px 0 0;
+      padding: 40px;
+      z-index: 1000;
+      transition: bottom 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+      box-shadow: 0 -20px 60px rgba(0,0,0,0.5);
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+    #drawer-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 999;
+      display: none;
+    }
+    .drawer-inner {
+      max-width: 560px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .drawer-logo {
+      height: 56px;
+      width: auto;
+      margin: 0 auto 16px;
+    }
+    .drawer-overline {
+      font-family: var(--sans);
+      font-size: 11px;
+      letter-spacing: 2px;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    #drawer-amount {
+      font-family: var(--serif);
+      font-size: 40px;
+      font-weight: 700;
+      color: #FFFFFF;
+      margin-bottom: 20px;
+      line-height: 1;
+    }
+    .drawer-form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+    .drawer-form input {
+      border: 1px solid rgba(255,255,255,0.2);
+      background: rgba(255,255,255,0.08);
+      color: #FFFFFF;
+      border-radius: 12px;
+      padding: 12px 16px;
+      font-family: var(--sans);
+      font-size: 14px;
+      width: 100%;
+      outline: none;
+      transition: border-color 0.2s ease;
+    }
+    .drawer-form input:focus { border-color: var(--gold); }
+    .drawer-form input::placeholder { color: rgba(255,255,255,0.4); }
+    .drawer-form .full-row { grid-column: 1 / -1; }
+    .drawer-stripe-note {
+      font-family: var(--sans);
+      font-size: 12px;
+      color: rgba(237,232,223,0.5);
+      margin-bottom: 16px;
+    }
+    .drawer-continue {
+      width: 100%;
+      padding: 14px 32px;
+      background: var(--gold);
+      color: var(--navy);
+      border: none;
+      border-radius: 50px;
+      font-family: var(--sans);
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      box-shadow: 0 4px 20px rgba(201,146,42,0.35);
+    }
+    .drawer-continue:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(201,146,42,0.5); }
+    .drawer-close {
+      margin-top: 16px;
+      background: transparent;
+      border: none;
+      color: rgba(237,232,223,0.6);
+      font-family: var(--sans);
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+    .drawer-close:hover { color: var(--gold); }
+    @media (max-width: 600px) {
+      #donate-drawer { padding: 28px 22px; }
+      #drawer-amount { font-size: 32px; }
+      .drawer-form { grid-template-columns: 1fr; }
+    }
+
+    /* ============================================================
+       WHERE WE WORK
+       ============================================================ */
+    .locations-section {
+      position: relative;
+      background-color: var(--cream);
+      background-image: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 59px,
+        rgba(200,137,42,0.04) 60px
+      );
+      padding: 104px 32px;
+    }
+    .locations-head {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 40px;
+    }
+    .locations-head h2 {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      color: var(--navy);
+      margin-bottom: 16px;
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .locations-head .sub {
+      color: #5C5C5C;
+      font-size: 16px;
+      max-width: 620px;
+      margin: 0 auto;
+    }
+    .locations-grid-wrap {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 32px;
+      background:
+        repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(201,146,42,0.04) 40px),
+        repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(201,146,42,0.04) 40px);
+      border-radius: 16px;
+    }
+    .locations-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 28px;
+    }
+    .loc-block {
+      position: relative;
+      padding: 28px 16px 24px;
+      border-top: 2px solid var(--gold);
+      overflow: hidden;
+      transition: background 0.3s ease;
+    }
+    .loc-block:hover { background: rgba(200,137,42,0.03); }
+    .loc-flag {
+      width: 16px;
+      height: 16px;
+      display: block;
+      margin-bottom: 10px;
+      opacity: 0.6;
+    }
+    .loc-flag svg { width: 100%; height: 100%; }
+    .honduras-map {
+      width: 140px;
+      opacity: 0.15;
+      fill: var(--gold);
+      margin: 0 auto 32px;
+      display: block;
+    }
+    .loc-block .loc-region {
+      font-family: var(--sans);
+      font-size: 10px;
+      letter-spacing: 2px;
+      color: var(--gold);
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 8px;
+      display: block;
+    }
+    .loc-block h4 {
+      font-family: var(--sans);
+      font-weight: 800;
+      font-size: 17px;
+      letter-spacing: 1.5px;
+      color: var(--navy);
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .loc-block .loc-pastor {
+      display: block;
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 14px;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+    .loc-block p {
+      font-family: var(--sans);
+      font-size: 14px;
+      color: #4A4A4A;
+      line-height: 1.65;
+      margin-bottom: 10px;
+    }
+    .loc-block .loc-detail {
+      font-family: 'Lora', Georgia, serif;
+      font-style: italic;
+      font-size: 13px;
+      color: var(--gold);
+      display: block;
+    }
+    .loc-block::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--gold);
+      transition: width 0.4s ease;
+    }
+    .loc-block:hover::after { width: 100%; }
+    @media (max-width: 980px) { .locations-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 640px) {
+      .locations-grid { grid-template-columns: 1fr; gap: 22px; }
+      .locations-grid-wrap { padding: 22px; }
+      .locations-section { padding: 64px 22px; }
+    }
+
+    /* ============================================================
+       PHOTO GALLERY
+       ============================================================ */
+    .gallery-section {
+      background-color: #EAE3D7;
+      background-image: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 28px,
+        rgba(200,137,42,0.025) 28px,
+        rgba(200,137,42,0.025) 29px
+      );
+      padding: 104px 32px;
+    }
+    .gallery-head {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 48px;
+    }
+    .gallery-head h2 {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      color: var(--navy);
+      margin-bottom: 16px;
+    }
+    .gallery-head .sub {
+      font-size: 16px;
+      color: #5C5C5C;
+      max-width: 620px;
+      margin: 0 auto;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+    .gallery-card {
+      aspect-ratio: 4 / 3;
+    }
+    @media (max-width: 900px) { .gallery-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 600px) {
+      .gallery-grid { grid-template-columns: 1fr; }
+      .gallery-section { padding: 64px 22px; }
+    }
+
+    /* ============================================================
+       FAQ
+       ============================================================ */
+    .faq-section {
+      background-color: var(--navy);
+      background-image:
+        radial-gradient(ellipse 60% 30% at 50% 0%, rgba(200,137,42,0.07) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 20% at 50% 100%, rgba(200,137,42,0.05) 0%, transparent 60%);
+      padding: 104px 32px;
+    }
+    .faq-head {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 48px;
+    }
+    .faq-head h2 {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      color: #FFFFFF;
+      margin-bottom: 14px;
+    }
+    .faq-list { max-width: 880px; margin: 0 auto; }
+    .faq-item { border-bottom: 1px solid rgba(201,146,42,0.3); }
+    .faq-question {
+      width: 100%;
+      padding: 24px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      font-family: var(--serif);
+      font-size: 18px;
+      font-weight: 700;
+      color: #FFFFFF;
+      text-align: left;
+    }
+    .faq-question:hover { color: var(--gold); }
+    .faq-question .faq-toggle {
+      flex-shrink: 0;
+      width: 30px; height: 30px;
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      color: var(--gold);
+      font-size: 18px;
+      display: flex; align-items: center; justify-content: center;
+      transition: transform 0.3s ease, background 0.25s ease;
+      font-family: var(--sans);
+    }
+    .faq-item.open .faq-toggle {
+      transform: rotate(45deg);
+      background: var(--gold);
+      color: var(--navy);
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+    }
+    .faq-answer-inner {
+      padding: 0 0 24px 0;
+      font-family: var(--sans);
+      font-size: 15px;
+      line-height: 1.8;
+      color: var(--on-dark);
+      max-width: 760px;
+    }
+    .faq-item.open .faq-answer { max-height: 500px; }
+
+    /* ============================================================
+       PRE-FOOTER (banner above footer)
+       ============================================================ */
+    .pre-footer {
+      background: linear-gradient(135deg, #0F1A26 0%, #111D2B 40%, #162030 100%);
+      padding: 84px 40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .pre-footer::before {
+      content: '';
+      position: absolute;
+      top: -60px; left: -60px; right: -60px; bottom: -60px;
+      background:
+        radial-gradient(ellipse 70% 50% at 30% 50%, rgba(200,137,42,0.09) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 40% at 75% 50%, rgba(200,137,42,0.05) 0%, transparent 55%);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .pre-footer > * { position: relative; z-index: 1; }
+    .pre-footer h2 {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: clamp(1.8rem, 3.6vw, 2.25rem);
+      color: #FFFFFF;
+      font-weight: 400;
+      margin-bottom: 14px;
+    }
+    .pre-footer .subline {
+      font-family: var(--sans);
+      font-size: 14px;
+      color: rgba(237,232,223,0.6);
+      letter-spacing: 1px;
+      margin-bottom: 28px;
+    }
+
+    /* ============================================================
+       FOOTER
+       ============================================================ */
+    .footer {
+      position: relative;
+      background: var(--navy-deep);
+      background-image: radial-gradient(ellipse 80% 50% at 50% 100%, rgba(200,137,42,0.06) 0%, transparent 70%);
+      color: var(--on-dark);
+      padding: 60px 32px 28px;
+      border-top: 2px solid rgba(200,137,42,0.25);
+    }
+    .footer-divider {
+      border: none;
+      border-top: 1px solid rgba(200,137,42,0.15);
+      max-width: 200px;
+      margin: 20px auto;
+    }
+    .footer-mission {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 36px;
+    }
+    .footer-mission .footer-logo {
+      height: 92px;
+      width: auto;
+      margin: 0 auto 18px;
+    }
+    .footer-mission .footer-tagline {
+      font-family: 'Lora', Georgia, serif;
+      font-style: italic;
+      font-size: 15px;
+      color: rgba(237,232,223,0.75);
+      line-height: 1.6;
+    }
+    .footer-mission .footer-social {
+      margin-top: 18px;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+    }
+    .social-icon {
+      width: 32px;
+      height: 32px;
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(237,232,223,0.5);
+      font-size: 12px;
+      font-family: var(--sans);
+      font-weight: 700;
+      transition: all 0.2s ease;
+    }
+    .social-icon:hover { border-color: var(--gold); color: var(--gold); }
+    .footer-rule {
+      max-width: var(--max-w);
+      margin: 0 auto 36px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent 0%, rgba(201,146,42,0.4) 30%, rgba(201,146,42,0.7) 50%, rgba(201,146,42,0.4) 70%, transparent 100%);
+    }
+    .footer-grid {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+      padding-bottom: 36px;
+    }
+    .footer-col h5 {
+      font-family: var(--sans);
+      font-size: 10px;
+      letter-spacing: 2px;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a, .footer-col li {
+      font-family: var(--sans);
+      font-size: 12px;
+      line-height: 1.9;
+      color: rgba(237,232,223,0.7);
+    }
+    .footer-col a:hover { color: var(--gold); }
+    .footer-legal {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding-top: 22px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      font-family: var(--sans);
+      font-size: 11px;
+      color: rgba(237,232,223,0.4);
+      text-align: center;
+      letter-spacing: 1px;
+    }
+    @media (max-width: 900px) { .footer-grid { grid-template-columns: 1fr 1fr; gap: 28px; } }
+    @media (max-width: 600px) {
+      .footer-grid { grid-template-columns: 1fr; gap: 22px; text-align: center; }
+      .pre-footer { padding: 64px 22px; }
+      .footer { padding: 48px 22px 22px; }
+    }
+
+    /* ============================================================
+       MOBILE OPTIMIZATIONS — donate visibility + layout
+       ============================================================ */
+
+    /* Floating DONATE button — always visible on mobile */
+    .donate-fab { display: none; }
+    @keyframes fab-attn {
+      0%,100% { box-shadow: 0 8px 22px rgba(201,146,42,0.22), 0 4px 12px rgba(0,0,0,0.3); }
+      50%     { box-shadow: 0 10px 28px rgba(201,146,42,0.36), 0 6px 16px rgba(0,0,0,0.36); }
+    }
+    @media (prefers-reduced-motion: reduce) { .donate-fab { animation: none !important; } }
+    @media (max-width: 768px) {
+      .donate-fab {
+        display: flex;
+        position: fixed;
+        left: 16px; right: 16px;
+        bottom: calc(14px + env(safe-area-inset-bottom));
+        z-index: 990;
+        align-items: center; justify-content: center; gap: 10px;
+        background: var(--gold);
+        color: var(--navy-deep);
+        padding: 18px 20px;
+        border: none;
+        border-radius: 50px;
+        font-family: var(--sans);
+        font-weight: 800; font-size: 17px;
+        letter-spacing: 1.4px; text-transform: uppercase;
+        cursor: pointer;
+        box-shadow: 0 8px 22px rgba(201,146,42,0.22), 0 4px 12px rgba(0,0,0,0.3);
+        animation: fab-attn 2.8s ease-in-out infinite;
+      }
+      .donate-fab:active { transform: scale(0.98); }
+      .donate-fab svg { width: 19px; height: 19px; flex-shrink: 0; }
+
+      /* Extra bottom padding so content isnt hidden behind the floating button */
+      body { padding-bottom: 92px; }
+
+      /* Hide hero-right (photo placeholders) on mobile — donate visible faster */
+      .hero-right { display: none !important; }
+
+      /* Tighten hero-left on mobile */
+      .hero-left { padding: 80px 22px 36px !important; }
+      .hero-content h1 { font-size: clamp(2.1rem, 9vw, 3rem) !important; }
+      .hero-sub { font-size: 15px !important; }
+
+      /* Full-width buttons in hero on mobile */
+      .hero-content .btn-row { flex-direction: column; align-items: stretch; }
+      .hero-content .btn-row a { width: 100%; text-align: center; justify-content: center; }
+      .hero-content .btn-gold { font-size: 16px; padding: 16px; }
+
+      /* Hide ticker on mobile */
+      .hero-ticker { display: none; }
+
+      /* Tighten stats row in hero */
+      .hero-content > div[style*="margin-top:32px"] { gap: 14px !important; padding-top: 16px !important; margin-top: 20px !important; }
+    }
+
+    /* ============================================================
+       HERO BRAND-ART CENTERPIECE  (designed, photo-free)
+       ============================================================ */
+    .hero-art {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 340px;
+      height: 480px;
+      border-radius: 18px;
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse 85% 60% at 50% 30%, rgba(201,146,42,0.16) 0%, transparent 62%),
+        linear-gradient(180deg, #17263d 0%, #0f1b2b 55%, #0a1320 100%);
+      border: 1px solid rgba(201,146,42,0.38);
+      box-shadow: 0 34px 80px rgba(0,0,0,0.5), inset 0 0 70px rgba(201,146,42,0.05);
+      will-change: transform;
+    }
+    .hero-art::before {
+      content: '';
+      position: absolute;
+      inset: 13px;
+      border: 1px solid rgba(201,146,42,0.22);
+      border-radius: 11px;
+      pointer-events: none;
+      z-index: 4;
+    }
+    .hero-art .brand-scene { position: absolute; inset: 0; width: 100%; height: 100%; }
+    .hero-art-overline {
+      position: absolute;
+      top: 26px; left: 0; right: 0;
+      z-index: 5;
+      text-align: center;
+      font-family: var(--sans);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: rgba(201,146,42,0.75);
+    }
+    .hero-art-tag {
+      position: absolute;
+      left: 22px; right: 22px; bottom: 30px;
+      z-index: 5;
+      text-align: center;
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 16px;
+      line-height: 1.4;
+      color: rgba(240,232,220,0.94);
+      text-shadow: 0 2px 18px rgba(0,0,0,0.5);
+    }
+    .hero-art-tag::after {
+      content: '';
+      display: block;
+      width: 34px; height: 2px;
+      background: var(--gold);
+      margin: 12px auto 0;
+    }
+    .hero-art-corner {
+      position: absolute;
+      width: 15px; height: 15px;
+      border: 2px solid rgba(201,146,42,0.7);
+      z-index: 5;
+    }
+    .hero-art-corner.tl { top: 20px; left: 20px; border-right: none; border-bottom: none; }
+    .hero-art-corner.tr { top: 20px; right: 20px; border-left: none; border-bottom: none; }
+    .hero-art-corner.bl { bottom: 20px; left: 20px; border-right: none; border-top: none; }
+    .hero-art-corner.br { bottom: 20px; right: 20px; border-left: none; border-top: none; }
+    .hero-art .dust { position: absolute; inset: 0; z-index: 3; pointer-events: none; overflow: hidden; }
+    .hero-art .dust span {
+      position: absolute;
+      bottom: -8px;
+      width: 3px; height: 3px;
+      border-radius: 50%;
+      background: rgba(201,146,42,0.55);
+      box-shadow: 0 0 6px rgba(201,146,42,0.5);
+      animation: dust-rise linear infinite;
+    }
+    @keyframes dust-rise {
+      0%   { transform: translateY(0) scale(1); opacity: 0; }
+      12%  { opacity: 1; }
+      85%  { opacity: 0.7; }
+      100% { transform: translateY(-560px) scale(0.4); opacity: 0; }
+    }
+    /* Rotating god-rays + breathing halo (semi-subtle) */
+    .brand-scene .rays {
+      transform-box: fill-box;
+      transform-origin: center bottom;
+      animation: ray-spin 70s linear infinite;
+    }
+    @keyframes ray-spin { to { transform: rotate(360deg); } }
+    .brand-scene .halo {
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: halo-breathe 7s ease-in-out infinite;
+    }
+    @keyframes halo-breathe {
+      0%, 100% { opacity: 0.55; transform: scale(1); }
+      50%      { opacity: 0.95; transform: scale(1.06); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .brand-scene .rays, .brand-scene .halo, .hero-art .dust span,
+      .hero-spotlight, .pulse-dot { animation: none !important; }
+    }
+
+    /* ============================================================
+       BRAND ILLUSTRATION TILES  (gallery — photo-free)
+       ============================================================ */
+    .brand-tile {
+      position: relative;
+      aspect-ratio: 4 / 3;
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+      background:
+        radial-gradient(ellipse 70% 55% at 50% 36%, rgba(201,146,42,0.15) 0%, transparent 60%),
+        linear-gradient(180deg, #16243a 0%, #0d1828 70%, #0a1320 100%);
+      border: 1px solid rgba(201,146,42,0.18);
+      box-shadow: inset 0 0 50px rgba(0,0,0,0.3);
+      transition: transform 0.4s cubic-bezier(0.25,0.46,0.45,0.94), box-shadow 0.4s ease, border-color 0.4s ease;
+    }
+    .brand-tile .tile-motif { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 1; }
+    .brand-tile::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      background: linear-gradient(115deg, transparent 0%, rgba(201,146,42,0.07) 48%, rgba(201,146,42,0.12) 50%, rgba(201,146,42,0.07) 52%, transparent 100%);
+      background-size: 220% 100%;
+      background-position: 200% 0;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+    }
+    .brand-tile:hover {
+      transform: translateY(-5px);
+      border-color: rgba(201,146,42,0.5);
+      box-shadow: 0 22px 46px rgba(0,0,0,0.42), inset 0 0 50px rgba(0,0,0,0.2);
+    }
+    .brand-tile:hover::after { opacity: 1; animation: shimmer 1.1s ease; }
+    .brand-tile figcaption {
+      position: relative;
+      z-index: 3;
+      width: 100%;
+      padding: 30px 18px 16px;
+      font-family: var(--sans);
+      font-size: 13px;
+      letter-spacing: 0.3px;
+      color: rgba(240,232,220,0.82);
+      background: linear-gradient(to top, rgba(8,15,26,0.92) 10%, rgba(8,15,26,0.4) 60%, transparent 100%);
+    }
+    .brand-tile .tile-loc {
+      display: block;
+      font-weight: 700;
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 3px;
+    }
+
+    /* ============================================================
+       FEATURED DONATION TIER
+       ============================================================ */
+    .tier-card { position: relative; }
+    .tier-card.tier-featured {
+      background: rgba(201,146,42,0.10);
+      border-color: rgba(201,146,42,0.55);
+      border-top: 3px solid var(--gold);
+      box-shadow: 0 0 0 1px rgba(201,146,42,0.4), 0 26px 52px rgba(0,0,0,0.38);
+      transform: translateY(-8px);
+    }
+    .tier-card.tier-featured:hover { transform: translateY(-12px); }
+    .tier-badge {
+      position: absolute;
+      top: -12px; left: 50%;
+      transform: translateX(-50%);
+      background: var(--gold);
+      color: var(--navy);
+      font-family: var(--sans);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 50px;
+      white-space: nowrap;
+      box-shadow: 0 6px 16px rgba(201,146,42,0.45);
+    }
+
+    /* ============================================================
+       BUTTON GOLD SHEEN SWEEP
+       ============================================================ */
+    .btn { position: relative; overflow: hidden; }
+    .btn-gold::after, .nav-cta::after, .drawer-continue::after {
+      content: '';
+      position: absolute;
+      top: 0; left: -130%;
+      width: 55%; height: 100%;
+      background: linear-gradient(110deg, transparent 0%, rgba(255,255,255,0.5) 50%, transparent 100%);
+      transform: skewX(-18deg);
+      pointer-events: none;
+    }
+    .nav-cta, .drawer-continue { position: relative; overflow: hidden; }
+    .btn-gold:hover::after, .nav-cta:hover::after, .drawer-continue:hover::after { animation: btn-sheen 0.85s ease; }
+    @keyframes btn-sheen { from { left: -130%; } to { left: 170%; } }
+
+    /* Count-up numbers hold layout before animating */
+    .count-up { font-variant-numeric: tabular-nums; }
+
+    /* ============================================================
+       MOBILE — show the brand art (compact), polish
+       ============================================================ */
+    @media (max-width: 768px) {
+      /* Hide the big white logo panel on mobile — it looked out of place */
+      .hero-right { display: none !important; }
+      .tier-card.tier-featured { transform: none; }
+      .tier-card.tier-featured:hover { transform: translateY(-4px); }
+    }
+
+    /* ============================================================
+       SECTION MOTION — hover micro-interactions + heading draws
+       ============================================================ */
+    .pillar-col {
+      transition: transform 0.4s cubic-bezier(0.25,0.46,0.45,0.94), border-color 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
+    }
+    .pillar-col:hover {
+      transform: translateY(-6px);
+      border-color: rgba(201,146,42,0.45);
+      border-top-color: var(--gold);
+      background: rgba(201,146,42,0.06);
+      box-shadow: 0 24px 48px rgba(0,0,0,0.38);
+    }
+    .pillar-col h3::after { transition: width 0.4s ease; }
+    .pillar-col:hover h3::after { width: 56px; }
+
+    .field-quote { transition: transform 0.4s cubic-bezier(0.25,0.46,0.45,0.94), border-left-color 0.3s ease, background 0.4s ease; }
+    .field-quote:hover { transform: translateY(-4px); background: rgba(201,146,42,0.04); }
+    .field-quote::before { transition: color 0.4s ease; }
+    .field-quote:hover::before { color: rgba(200,137,42,0.18); }
+
+    .loc-block { transition: transform 0.4s cubic-bezier(0.25,0.46,0.45,0.94), background 0.3s ease; }
+    .loc-block:hover { transform: translateY(-4px); }
+
+    .tier-card:not(.tier-featured) { transition: transform 0.32s ease, background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; }
+    .tier-card:not(.tier-featured):hover { transform: translateY(-5px); }
+
+    .faq-item { transition: background 0.25s ease, padding-left 0.25s ease; }
+    .faq-item:hover { background: rgba(201,146,42,0.035); }
+
+    /* Gold underline that draws in when the section heading reveals */
+    .pillars-head h2, .field-head h2, .locations-head h2, .faq-head h2, .gallery-head h2 { position: relative; }
+    .pillars-head h2::after, .field-head h2::after, .locations-head h2::after, .faq-head h2::after, .gallery-head h2::after {
+      content: '';
+      position: absolute;
+      left: 50%; bottom: -16px;
+      transform: translateX(-50%);
+      width: 0; height: 2px;
+      background: var(--gold);
+      transition: width 0.9s cubic-bezier(0.25,0.46,0.45,0.94) 0.25s;
+    }
+    .pillars-head.visible h2::after, .field-head.visible h2::after, .locations-head.visible h2::after,
+    .faq-head.visible h2::after, .gallery-head.visible h2::after { width: 54px; }
+    @media (prefers-reduced-motion: reduce) {
+      .pillars-head h2::after, .field-head h2::after, .locations-head h2::after,
+      .faq-head h2::after, .gallery-head h2::after { transition: none; width: 54px; }
+    }
+
+    /* ============================================================
+       REAL LOGO — usage everywhere
+       ============================================================ */
+    /* Nav: emblem clipped to a clean circular badge on the dark bar */
+    .nav-brand img { border-radius: 50%; opacity: 1; box-shadow: 0 2px 10px rgba(0,0,0,0.25); }
+
+    /* Hero showcase: the real full lockup on the cream panel */
+    .hero-logo-show {
+      position: absolute;
+      top: 36px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 320px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2;
+    }
+    .hero-logo-show::before {
+      content: '';
+      position: absolute;
+      width: 330px; height: 330px;
+      top: 0; left: 50%;
+      transform: translateX(-50%);
+      background: radial-gradient(circle, rgba(201,146,42,0.22) 0%, rgba(201,146,42,0.07) 40%, transparent 68%);
+      z-index: 0;
+    }
+    .hero-logo-show img {
+      position: relative;
+      z-index: 1;
+      width: 300px;
+      height: auto;
+      filter: drop-shadow(0 22px 44px rgba(28,43,58,0.28));
+      animation: logo-float 6s ease-in-out infinite;
+    }
+    @keyframes logo-float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-9px); } }
+    @media (prefers-reduced-motion: reduce) { .hero-logo-show img { animation: none; } }
+
+    /* Footer + drawer: emblem as circular badge on dark bg */
+    .footer-mission .footer-logo { border-radius: 50%; box-shadow: 0 6px 22px rgba(0,0,0,0.4); }
+    .drawer-logo { border-radius: 50%; }
+
+    /* Director quote: small real emblem, no filter */
+    .director-quote img { border-radius: 50%; filter: none !important; opacity: 1 !important; }
+
+    /* Gallery tiles: real emblem badge centered on the navy tile */
+    .brand-tile .tile-emblem {
+      position: absolute;
+      top: 42%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 92px; height: 92px;
+      border-radius: 50%;
+      z-index: 1;
+      box-shadow: 0 10px 28px rgba(0,0,0,0.4);
+      transition: transform 0.4s cubic-bezier(0.25,0.46,0.45,0.94);
+    }
+    .brand-tile:hover .tile-emblem { transform: translate(-50%, -50%) scale(1.06); }
+
+    @media (max-width: 768px) {
+      .hero-logo-show { width: 250px; top: 18px; }
+      .hero-logo-show img { width: 230px; }
+      .hero-logo-show::before { width: 250px; height: 250px; }
+    }
+
+    /* Mobile hero declutter — fewer words above the fold */
+    @media (max-width: 768px) {
+      .hero-italic-line { display: none; }
+      .hero-trust-row { gap: 10px 16px; margin-top: 14px; }
+      .hero-content .btn-gold { box-shadow: 0 8px 24px rgba(201,146,42,0.45); }
+    }
+
+    /* ============================================================
+       DONATION DRAWER — amount + frequency picker
+       ============================================================ */
+    .drawer-freq { display: flex; gap: 8px; margin: 0 auto 14px; max-width: 300px; }
+    .freq-btn {
+      flex: 1; padding: 11px; border-radius: 50px;
+      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(255,255,255,0.05);
+      color: rgba(237,232,223,0.8);
+      font-family: var(--sans); font-size: 12px; font-weight: 700;
+      letter-spacing: 1px; text-transform: uppercase; cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .freq-btn.active { background: var(--gold); color: var(--navy); border-color: var(--gold); }
+    .drawer-amts {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 8px; margin: 0 auto 16px; max-width: 360px;
+    }
+    .amt-btn {
+      padding: 15px 6px; border-radius: 10px;
+      border: 1px solid rgba(201,146,42,0.3);
+      background: rgba(255,255,255,0.05);
+      color: #FFFFFF; font-family: var(--serif); font-size: 18px; font-weight: 700;
+      cursor: pointer; transition: all 0.2s ease;
+    }
+    .amt-btn:hover { border-color: var(--gold); }
+    .amt-btn.active { background: rgba(201,146,42,0.18); border-color: var(--gold); box-shadow: 0 0 0 1px var(--gold); }
+
+    /* ============================================================
+       ARROW-DRIVEN HORIZONTAL CAROUSELS
+       ============================================================ */
+    .carousel { position: relative; }
+    .carousel-viewport { overflow: hidden; padding: 6px 0 16px; }
+    .carousel-track {
+      display: flex;
+      gap: 24px;
+      transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      will-change: transform;
+    }
+    .carousel-track > * { flex: 0 0 auto; }
+    .carousel-track .pillar-col { width: min(340px, 84vw); }
+    .carousel-track .field-quote { width: min(360px, 84vw); }
+    .carousel-track .loc-block { width: min(310px, 80vw); }
+    .carousel-track .brand-tile { width: min(320px, 80vw); }
+    @media (prefers-reduced-motion: reduce) { .carousel-track { transition: none; } }
+
+    .carousel-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 6;
+      width: 46px; height: 46px;
+      border-radius: 50%;
+      background: var(--gold);
+      color: var(--navy-deep);
+      display: flex; align-items: center; justify-content: center;
+      border: none; cursor: pointer;
+      box-shadow: 0 8px 22px rgba(0,0,0,0.4), 0 0 0 1px rgba(201,146,42,0.45);
+      transition: transform 0.2s ease, opacity 0.2s ease, background 0.2s ease;
+    }
+    .carousel-arrow:hover { transform: translateY(-50%) scale(1.08); background: var(--gold-soft); }
+    .carousel-arrow:active { transform: translateY(-50%) scale(0.96); }
+    .carousel-arrow.prev { left: -10px; }
+    .carousel-arrow.next { right: -10px; }
+    .carousel-arrow svg { width: 20px; height: 20px; }
+    .carousel-arrow[disabled] { opacity: 0.28; cursor: default; pointer-events: none; }
+    @media (max-width: 768px) {
+      .carousel-arrow { width: 40px; height: 40px; }
+      .carousel-arrow.prev { left: 0; }
+      .carousel-arrow.next { right: 0; }
+    }
+
+    /* ============================================================
+       LETTER FROM THE FIELD + paper craft
+       ============================================================ */
+    .paper-grain::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 160px 160px;
+      opacity: 0.045;
+      mix-blend-mode: multiply;
+    }
+    .paper-grain > * { position: relative; z-index: 1; }
+
+    .field-letter {
+      max-width: 720px;
+      margin: 56px auto 0;
+      padding: 46px 50px;
+      background: #FCFAF5;
+      border: 1px solid rgba(201,146,42,0.22);
+      border-top: 3px solid var(--gold);
+      border-radius: 4px;
+      box-shadow: 0 22px 54px rgba(28,43,58,0.09);
+      position: relative;
+      overflow: hidden;
+      text-align: left;
+    }
+    .field-letter::after {
+      content: '';
+      position: absolute; inset: 0; z-index: 0; pointer-events: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 160px 160px; opacity: 0.05; mix-blend-mode: multiply;
+    }
+    .field-letter > * { position: relative; z-index: 1; }
+    .field-letter .overline-block { margin-bottom: 22px; }
+    .letter-body {
+      font-family: 'Lora', Georgia, serif;
+      font-size: 18px;
+      line-height: 1.92;
+      color: #3a4150;
+      margin-bottom: 18px;
+    }
+    .dropcap {
+      float: left;
+      font-family: var(--serif);
+      font-weight: 700;
+      font-size: 66px;
+      line-height: 0.82;
+      color: var(--gold);
+      margin: 8px 14px 0 0;
+    }
+    .signature-block { margin-top: 30px; }
+    .signature {
+      display: block;
+      font-family: 'Dancing Script', cursive;
+      font-weight: 700;
+      font-size: 36px;
+      color: var(--gold-soft);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .signature-name { display: block; font-family: var(--serif); font-style: italic; font-size: 19px; color: var(--navy-deep); }
+    .signature-title { display: block; font-family: var(--sans); font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold); margin-top: 7px; font-weight: 600; }
+    @media (max-width: 600px) {
+      .field-letter { margin: 36px 0 0; padding: 30px 24px; }
+      .letter-body { font-size: 16px; line-height: 1.85; }
+      .dropcap { font-size: 52px; }
+      .signature { font-size: 31px; }
+    }
+
+    /* ============================================================
+       OUTSIDER PASS — trust, monthly partner, drawer impact, polish
+       ============================================================ */
+    /* Hero drifting aurora (extra depth) */
+    .hero-left::after {
+      content: ''; position: absolute; width: 620px; height: 620px; border-radius: 50%;
+      top: -12%; left: -12%; z-index: 0; pointer-events: none;
+      background: radial-gradient(circle, rgba(201,146,42,0.10), transparent 65%);
+      animation: aurora 18s ease-in-out infinite alternate;
+    }
+    @keyframes aurora { 0% { transform: translate(0,0) scale(1); } 50% { transform: translate(42%,28%) scale(1.18); } 100% { transform: translate(8%,-8%) scale(1.04); } }
+    @media (prefers-reduced-motion: reduce) { .hero-left::after { animation: none; } }
+
+    /* Ornamental divider */
+    .divider-ornament { display: flex; align-items: center; justify-content: center; gap: 16px; padding: 18px 0; }
+    .divider-ornament::before, .divider-ornament::after { content: ''; height: 1px; width: min(200px, 30vw); }
+    .divider-ornament::before { background: linear-gradient(to right, transparent, rgba(201,146,42,0.45)); }
+    .divider-ornament::after { background: linear-gradient(to left, transparent, rgba(201,146,42,0.45)); }
+    .divider-ornament i { width: 8px; height: 8px; transform: rotate(45deg); background: var(--gold); box-shadow: 0 0 0 4px rgba(201,146,42,0.14); }
+
+    /* TRUST + TRANSPARENCY */
+    .trust-section { position: relative; background: linear-gradient(180deg,#F0EBE1 0%, #EDE6D8 100%); padding: 104px 32px; border-top: 1px solid rgba(200,137,42,0.12); }
+    .trust-head { text-align: center; max-width: 720px; margin: 0 auto 46px; }
+    .trust-head h2 { font-family: var(--serif); font-size: clamp(2rem,4vw,2.6rem); color: var(--navy-deep); margin-bottom: 14px; }
+    .trust-head p { font-size: 16px; color: #5b6675; max-width: 600px; margin: 0 auto; line-height: 1.7; }
+    .trust-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; max-width: 1000px; margin: 0 auto 44px; }
+    .trust-card { background: #FCFAF5; border: 1px solid rgba(201,146,42,0.18); border-top: 2px solid var(--gold); border-radius: 12px; padding: 32px 26px; text-align: center; box-shadow: 0 10px 30px rgba(28,43,58,0.05); transition: transform .35s cubic-bezier(.25,.46,.45,.94), box-shadow .35s ease; }
+    .trust-card:hover { transform: translateY(-6px); box-shadow: 0 22px 44px rgba(28,43,58,0.13); }
+    .trust-card .tc-icon { width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; background: rgba(201,146,42,0.12); border: 1px solid rgba(201,146,42,0.4); color: var(--gold); }
+    .trust-card .tc-icon svg { width: 26px; height: 26px; }
+    .trust-card h3 { font-family: var(--serif); font-size: 19px; color: var(--navy-deep); margin-bottom: 8px; }
+    .trust-card p { font-size: 14px; line-height: 1.65; color: #5b6675; }
+
+    /* MONTHLY PARTNER + GOAL */
+    .partner-band { max-width: 1000px; margin: 0 auto; background: var(--navy-deep); border: 1px solid rgba(201,146,42,0.3); border-radius: 18px; padding: 46px; display: grid; grid-template-columns: 1.25fr 1fr; gap: 40px; align-items: center; position: relative; overflow: hidden; }
+    .partner-band::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 60% at 82% 18%, rgba(201,146,42,0.13), transparent 60%); pointer-events: none; }
+    .partner-band > * { position: relative; z-index: 1; }
+    .partner-left .overline-block { color: var(--gold); text-align: left; margin-bottom: 14px; }
+    .partner-left .overline-block::after { left: 0; transform: none; }
+    .partner-left h3 { font-family: var(--serif); font-size: clamp(1.6rem,2.6vw,2.05rem); color: #fff; margin-bottom: 14px; line-height: 1.2; }
+    .partner-left .pl-lead { color: var(--on-dark); font-size: 15px; line-height: 1.75; margin-bottom: 18px; }
+    .partner-left .daily { color: var(--gold); font-weight: 700; }
+    .partner-bullets { list-style: none; margin-bottom: 24px; }
+    .partner-bullets li { position: relative; padding-left: 26px; margin-bottom: 10px; color: var(--on-dark); font-size: 14px; }
+    .partner-bullets li::before { content: '\2713'; position: absolute; left: 0; color: var(--gold); font-weight: 700; }
+    .partner-goal { background: rgba(255,255,255,0.04); border: 1px solid rgba(201,146,42,0.25); border-radius: 14px; padding: 28px; text-align: center; }
+    .partner-goal .pg-label { font-family: var(--sans); font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); font-weight: 600; }
+    .partner-goal .pg-num { font-family: var(--serif); font-size: 44px; font-weight: 700; color: #fff; line-height: 1; margin: 10px 0 4px; }
+    .partner-goal .pg-num span { color: var(--gold); }
+    .partner-goal .pg-sub { font-size: 12px; color: var(--on-dark); margin-bottom: 18px; }
+    .goal-bar { height: 10px; border-radius: 50px; background: rgba(255,255,255,0.1); overflow: hidden; }
+    .goal-fill { height: 100%; width: 0; border-radius: 50px; background: linear-gradient(90deg, var(--gold-soft), var(--gold)); transition: width 1.5s cubic-bezier(.25,.46,.45,.94) .2s; }
+    .partner-goal.visible .goal-fill { width: var(--goal, 64%); }
+    .partner-goal .pg-foot { margin-top: 12px; font-size: 11px; letter-spacing: 0.5px; color: rgba(237,232,223,0.55); }
+    @media (max-width: 768px) {
+      .trust-section { padding: 64px 22px; }
+      .trust-grid { grid-template-columns: 1fr; }
+      .partner-band { grid-template-columns: 1fr; padding: 30px 24px; gap: 28px; }
+      .partner-left .overline-block { text-align: center; }
+      .partner-left .overline-block::after { left: 50%; transform: translateX(-50%); }
+    }
+
+    /* Letter CTA */
+    .letter-cta { text-align: center; margin-top: 30px; }
+
+    /* Drawer dynamic impact line */
+    #drawer-impact { font-family: 'Lora', Georgia, serif; font-style: italic; font-size: 14px; color: var(--gold); margin: -6px 0 16px; min-height: 19px; line-height: 1.4; }
+
+    /* Footer closing ornament */
+    .footer-seal { text-align: center; margin: 0 auto 30px; max-width: 560px; }
+    .footer-seal .fs-verse { font-family: 'Lora', Georgia, serif; font-style: italic; font-size: 16px; color: rgba(237,232,223,0.82); line-height: 1.6; margin-bottom: 8px; }
+    .footer-seal .fs-ref { font-family: var(--sans); font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); font-weight: 600; }
+
+  </style>
+</head>
+<body>
+<button class="donate-fab" onclick="openDonateDrawer(50)" aria-label="Donate now">
+  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s-8.5-5.2-8.5-11.2A4.3 4.3 0 0 1 12 6.2a4.3 4.3 0 0 1 8.5 3.6C20.5 15.8 12 21 12 21Z" fill="#1C2B3A"/></svg>
+  Donate Now
+</button>
+
+<!-- ====================================================================
+     1. NAV
+     ==================================================================== -->
+<nav class="nav" id="nav">
+  <div id="nav-progress" style="position:absolute;top:0;left:0;height:2px;width:0%;background:var(--gold);transition:width 0.1s linear;z-index:10;pointer-events:none;"></div>
+  <div id="trip-banner" style="position:relative;background:rgba(200,137,42,0.1);border-bottom:1px solid rgba(200,137,42,0.18);padding:7px 32px;text-align:center;font-family:var(--sans);font-size:11px;letter-spacing:1.5px;color:rgba(237,228,215,0.7);text-transform:uppercase;">
+    <span style="color:var(--gold);font-weight:700;">Next Trip &mdash; Summer 2026 &middot; Honduras</span>
+    &nbsp;&nbsp;&middot;&nbsp;&nbsp;
+    <a href="#faq" style="color:rgba(237,228,215,0.6);text-decoration:none;border-bottom:1px solid rgba(200,137,42,0.3);">Learn more about joining us</a>
+    &nbsp;&nbsp;&nbsp;
+    <button onclick="document.getElementById('trip-banner').style.display='none'" style="background:none;border:none;color:rgba(237,228,215,0.4);cursor:pointer;font-size:14px;padding:0 0 0 8px;">&times;</button>
+  </div>
+  <div class="nav-inner">
+    <a href="/" class="nav-brand" aria-label="Fathers for the Fatherless home">
+      <img
+        src="images/fftf-emblem.png"
+        alt="Fathers for the Fatherless">
+    </a>
+    <div class="nav-links">
+      <a href="mission-trips.html" class="nav-link">Mission Trips</a>
+      <a href="education.html" class="nav-link">Education</a>
+      <a href="health-care.html" class="nav-link">Health Care</a>
+      <a href="dental-care.html" class="nav-link">Dental Care</a>
+      <a href="#the-ask" class="nav-cta" onclick="openDonateDrawer(50);return false;">Donate Now</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-panel" id="mobilePanel" aria-hidden="true">
+  <button class="mobile-close" id="mobileClose" aria-label="Close menu">&times;</button>
+  <a href="mission-trips.html">Mission Trips</a>
+  <a href="education.html">Education</a>
+  <a href="health-care.html">Health Care</a>
+  <a href="dental-care.html">Dental Care</a>
+  <a href="#the-ask" class="nav-cta" style="margin-top:18px;" onclick="openDonateDrawer(50);return false;">Donate Now</a>
+</div>
+
+<!-- ====================================================================
+     2. HERO
+     ==================================================================== -->
+<section class="hero" id="hero">
+  <div class="hero-left dot-bg">
+    <div class="hero-spotlight" aria-hidden="true"></div>
+    <div class="hero-content">
+      <div class="overline-row"><span>A Ministry to Fathers</span></div>
+      <div class="hero-rule"></div>
+      <h1>This Is What Hope Looks Like.</h1>
+      <p class="hero-sub">Real men. Real families. Real Honduras. &mdash; Since 2006.</p>
+      <div class="btn-row">
+        <a href="#the-ask" class="btn btn-gold" onclick="openDonateDrawer(50);return false;">Donate Now</a>
+        <a href="#mission-pillars" class="btn btn-outline-white">Our Mission</a>
+      </div>
+      <div style="margin-top:32px;display:flex;align-items:center;gap:24px;padding-top:24px;border-top:1px solid rgba(200,137,42,0.2);flex-wrap:wrap;">
+        <div>
+          <div class="count-up" style="font-family:var(--serif);font-size:28px;font-weight:700;font-style:italic;color:#FFFFFF;line-height:1;">400+</div>
+          <div style="font-family:var(--sans);font-size:11px;letter-spacing:2px;color:rgba(237,228,215,0.55);text-transform:uppercase;margin-top:4px;">Fathers Discipled</div>
+        </div>
+        <div style="width:1px;height:36px;background:rgba(200,137,42,0.3);"></div>
+        <div>
+          <div class="count-up" style="font-family:var(--serif);font-size:28px;font-weight:700;font-style:italic;color:#FFFFFF;line-height:1;">12</div>
+          <div style="font-family:var(--sans);font-size:11px;letter-spacing:2px;color:rgba(237,228,215,0.55);text-transform:uppercase;margin-top:4px;">Churches Planted</div>
+        </div>
+        <div style="width:1px;height:36px;background:rgba(200,137,42,0.3);"></div>
+        <div>
+          <div class="count-up" style="font-family:var(--serif);font-size:28px;font-weight:700;font-style:italic;color:#FFFFFF;line-height:1;">5</div>
+          <div style="font-family:var(--sans);font-size:11px;letter-spacing:2px;color:rgba(237,228,215,0.55);text-transform:uppercase;margin-top:4px;">Field Locations</div>
+        </div>
+      </div>
+      <div class="hero-trust-row">
+        <span>&#10003; 100% field-funded</span>
+        <span>&#10003; 20+ years in Honduras</span>
+        <span>&#10003; No bureaucracy</span>
+        <span>&#10003; Real relationships</span>
+      </div>
+      <span class="hero-italic-line">Gospel-Centered Field Ministry &mdash; Est. 2006 &mdash; Honduras</span>
+      <div class="hero-ticker" aria-hidden="true">
+        <span class="hero-ticker-track">
+          &middot; Real Men. Real Families. &nbsp;&nbsp;&nbsp; &middot; 20+ Years of Field Ministry &nbsp;&nbsp;&nbsp; &middot; Guaimaca &nbsp;&bull;&nbsp; La Ceiba &nbsp;&bull;&nbsp; Talanga &nbsp;&bull;&nbsp; La Ermita &nbsp;&bull;&nbsp; Danli &nbsp;&nbsp;&nbsp; &middot; 100% Field-Focused Giving &nbsp;&nbsp;&nbsp; &middot; Est. 2006 &nbsp;&nbsp;&nbsp; &middot; Gospel-Centered Discipleship &nbsp;&nbsp;&nbsp; &middot; Boots on the Ground &nbsp;&nbsp;&nbsp;
+          &middot; Real Men. Real Families. &nbsp;&nbsp;&nbsp; &middot; 20+ Years of Field Ministry &nbsp;&nbsp;&nbsp; &middot; Guaimaca &nbsp;&bull;&nbsp; La Ceiba &nbsp;&bull;&nbsp; Talanga &nbsp;&bull;&nbsp; La Ermita &nbsp;&bull;&nbsp; Danli &nbsp;&nbsp;&nbsp; &middot; 100% Field-Focused Giving &nbsp;&nbsp;&nbsp; &middot; Est. 2006 &nbsp;&nbsp;&nbsp; &middot; Gospel-Centered Discipleship &nbsp;&nbsp;&nbsp; &middot; Boots on the Ground &nbsp;&nbsp;&nbsp;
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-stack">
+      <div class="hero-logo-show" id="hero-art">
+        <img src="images/fftf-logo-full.png" alt="Fathers for the Fatherless — This is What Hope Looks Like">
+      </div>
+      <div class="hero-impact-card">
+        <span class="hic-label">Impact Since 2006</span>
+        <div class="hic-row">
+          <div class="hic-stat">
+            <span class="hic-num">400+</span>
+            <span class="hic-desc">Fathers Discipled</span>
+          </div>
+          <div class="hic-sep"></div>
+          <div class="hic-stat">
+            <span class="hic-num">12</span>
+            <span class="hic-desc">Churches Planted</span>
+          </div>
+          <div class="hic-sep"></div>
+          <div class="hic-stat">
+            <span class="hic-num">5</span>
+            <span class="hic-desc">Locations</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-trip-card" aria-label="Active field work signal">
+        <span class="pulse-dot" aria-hidden="true"></span>
+        <span class="label">Next Trip &mdash; Summer 2026 &mdash; Honduras</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ====================================================================
+     6. GIVE SECTION (04)
+     ==================================================================== -->
+<!--
+  STRIPE INTEGRATION:
+  Replace the drawer "Continue to Secure Giving" button with a Stripe Payment Link.
+  Create 4 Products in Stripe dashboard as recurring monthly subscriptions for
+  $25/mo, $50/mo, $100/mo, $250/mo. Generate a Payment Link for each and replace
+  the button onclick with window.location.href pointing to the Stripe Payment Link
+  URL. No backend required for Payment Links.
+-->
+<section class="ask-section section-dark dot-bg" id="the-ask">
+  <span class="section-num">03</span>
+  <div class="container">
+    <div class="ask-head reveal">
+      <span class="overline-block">The Cost of Absence</span>
+      <h2>Right now, a boy in Honduras is growing up without a father. What you do in the next 60 seconds changes that.</h2>
+      <p class="ask-body">
+        Without a father who can lead, the cycle repeats &mdash; and the next generation inherits it.
+        <br><br>
+        <span class="ask-emph">$25 a month breaks it.</span> One father discipled. One family restored. One generation changed.
+      </p>
+    </div>
+
+    <div class="verse-block reveal">
+      <p>&ldquo;He will turn the hearts of fathers to their children.&rdquo;</p>
+      <span class="attr">&mdash; Malachi 4:6</span>
+    </div>
+
+    <div class="tier-grid reveal">
+      <div class="tier-card">
+        <div class="tier-amount"><span class="dollar">$</span>25<span class="per">/ month</span></div>
+        <span class="tier-rule"></span>
+        <p>Covers discipleship materials for one father for a full month of training.</p>
+        <button class="tier-give-btn" onclick="openDonateDrawer(25)">Donate $25</button>
+      </div>
+      <div class="tier-card tier-featured">
+        <span class="tier-badge">Most Chosen</span>
+        <div class="tier-amount"><span class="dollar">$</span>50<span class="per">/ month</span></div>
+        <span class="tier-rule"></span>
+        <p>Supports one pastor's leadership training and equipping program.</p>
+        <button class="tier-give-btn" onclick="openDonateDrawer(50)">Donate $50</button>
+      </div>
+      <div class="tier-card">
+        <div class="tier-amount"><span class="dollar">$</span>100<span class="per">/ month</span></div>
+        <span class="tier-rule"></span>
+        <p>Helps plant and sustain a Gospel-centered church in Honduras.</p>
+        <button class="tier-give-btn" onclick="openDonateDrawer(100)">Donate $100</button>
+      </div>
+      <div class="tier-card">
+        <div class="tier-amount"><span class="dollar">$</span>250<span class="per">/ month</span></div>
+        <span class="tier-rule"></span>
+        <p>Funds a full mission outreach trip &mdash; travel, materials, field presence.</p>
+        <button class="tier-give-btn" onclick="openDonateDrawer(250)">Donate $250</button>
+      </div>
+    </div>
+
+    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:20px;margin:32px 0;padding:20px 0;border-top:1px solid rgba(200,137,42,0.15);border-bottom:1px solid rgba(200,137,42,0.15);">
+      <span style="font-family:var(--sans);font-size:12px;letter-spacing:1.5px;color:rgba(237,228,215,0.55);text-transform:uppercase;display:flex;align-items:center;gap:6px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="rgba(200,137,42,0.6)"/></svg>100% Field-Directed</span>
+      <span style="font-family:var(--sans);font-size:12px;letter-spacing:1.5px;color:rgba(237,228,215,0.55);text-transform:uppercase;display:flex;align-items:center;gap:6px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" stroke="rgba(200,137,42,0.6)" stroke-width="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4" stroke="rgba(200,137,42,0.6)" stroke-width="2"/></svg>Secure Giving</span>
+      <span style="font-family:var(--sans);font-size:12px;letter-spacing:1.5px;color:rgba(237,228,215,0.55);text-transform:uppercase;display:flex;align-items:center;gap:6px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 12l2 2 4-4M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke="rgba(200,137,42,0.6)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Cancel Anytime</span>
+      <span style="font-family:var(--sans);font-size:12px;letter-spacing:1.5px;color:rgba(237,228,215,0.55);text-transform:uppercase;display:flex;align-items:center;gap:6px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" stroke="rgba(200,137,42,0.6)" stroke-width="2"/></svg>Est. 2006</span>
+    </div>
+
+    <p class="ask-pastor-note reveal">Your gift directly supports pastors like Bro. Edwin Rodriguez in La Ceiba, Bro. Misael Alvarado in Talanga, and three others serving families across Honduras.</p>
+
+    <div class="btn-row ask-cta-row reveal">
+      <button class="btn btn-gold" onclick="openDonateDrawer(50)">Donate Monthly</button>
+      <a href="#" onclick="openDonateDrawer(25); return false;" class="btn btn-outline-white">One-Time Gift</a>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ====================================================================
+     TRUST + MONTHLY PARTNER  (outsider conversion pass)
+     GOAL numbers below (64 / 100) are placeholders — set your real counts.
+     ==================================================================== -->
+<section class="trust-section paper-grain">
+  <div class="container">
+    <div class="trust-head reveal">
+      <span class="overline-block">Built on Trust</span>
+      <h2>Every Dollar, Accountable.</h2>
+      <p>No overhead skimmed. No middlemen. Your gift reaches a father in Honduras &mdash; and you can change or stop it any time.</p>
+    </div>
+    <div class="trust-grid reveal">
+      <div class="trust-card">
+        <div class="tc-icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2l8 4v5c0 5-3.5 8.5-8 11-4.5-2.5-8-6-8-11V6l8-4z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>100% to the Field</h3>
+        <p>Not a cent is taken for overhead. Every dollar funds the work in Honduras.</p>
+      </div>
+      <div class="trust-card">
+        <div class="tc-icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>20 Years Faithful</h3>
+        <p>On the ground since 2006. We do not parachute in &mdash; we stay.</p>
+      </div>
+      <div class="trust-card">
+        <div class="tc-icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M8 10V7a4 4 0 0 1 8 0v3" stroke="currentColor" stroke-width="1.6"/></svg></div>
+        <h3>Secure &amp; Flexible</h3>
+        <p>Encrypted giving. Cancel or change your gift whenever you need.</p>
+      </div>
+    </div>
+
+    <div class="partner-band reveal">
+      <div class="partner-left">
+        <span class="overline-block">The Most Powerful Gift</span>
+        <h3>Become a Monthly Partner</h3>
+        <p class="pl-lead">For about <span class="daily">$1.65 a day</span>, you keep a father in discipleship all year long &mdash; the steady support the field depends on.</p>
+        <ul class="partner-bullets">
+          <li>Sustained presence, not one-time aid</li>
+          <li>Predictable support our pastors can build on</li>
+          <li>Cancel or change any time, no questions</li>
+        </ul>
+        <button class="btn btn-gold" onclick="openDonateDrawer(50)">Become a Partner &mdash; $50/mo</button>
+      </div>
+      <div class="partner-goal reveal" style="--goal:64%;">
+        <span class="pg-label">Monthly Partners</span>
+        <div class="pg-num">64<span>/100</span></div>
+        <div class="pg-sub">Help us reach 100 partners this year</div>
+        <div class="goal-bar"><div class="goal-fill"></div></div>
+        <div class="pg-foot">Every partner keeps one more father in the Word.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider-ornament" aria-hidden="true"><i></i></div>
+
+<!-- ====================================================================
+     3. SCRIPTURE TRANSITION BAR — Matthew 28:19
+     ==================================================================== -->
+<section class="scripture-bar dark dot-bg">
+  <span class="ornament" aria-hidden="true">— — —</span>
+  <div class="scripture-frame">
+    <p class="reveal">&ldquo;Go therefore and make disciples of all nations.&rdquo;</p>
+    <span class="attr">&mdash; Matthew 28:19</span>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ====================================================================
+     STATS + DIRECTOR QUOTE
+     ==================================================================== -->
+<section class="stats-section paper-grain">
+  <div class="container">
+    <div class="stats-row reveal">
+      <div class="stat-block">
+        <span class="stat-rule"></span>
+        <div class="stat-num">20+ years</div>
+        <div class="stat-desc">Of showing up &mdash; every single year.</div>
+      </div>
+      <div class="stat-block">
+        <span class="stat-rule"></span>
+        <div class="stat-num">5</div>
+        <div class="stat-desc">Honduran communities we call family.</div>
+      </div>
+      <div class="stat-block">
+        <span class="stat-rule"></span>
+        <div class="stat-num">100%</div>
+        <div class="stat-desc">Of your gift reaches the field.</div>
+      </div>
+    </div>
+
+    <!-- LETTER: replace "The Directors" below with the real founder's name; a signature image can be dropped in over .signature later -->
+    <div class="field-letter reveal">
+      <span class="overline-block">A Letter from the Field</span>
+      <p class="letter-body"><span class="dropcap">F</span>or twenty years we have done one simple thing in Honduras: we show up, and we stay. We do not run programs. We sit in homes, open the Word, and become family.</p>
+      <p class="letter-body">We have watched fathers who once walked away learn to lead. Marriages mended. Churches built from nothing &mdash; in La Ceiba, Guaimaca, Talanga, Danli, and La Ermita. None of it is ours to claim. It is God turning the hearts of fathers back to their children.</p>
+      <p class="letter-body">We made these men a promise that we will not break: we will not leave them. We cannot keep it without you.</p>
+      <div class="signature-block">
+        <span class="signature">With you in the work,</span>
+        <span class="signature-name">The Directors</span>
+        <span class="signature-title">Fathers for the Fatherless &middot; Honduras &middot; Est. 2006</span>
+      </div>
+    </div>
+    <div class="letter-cta reveal">
+      <button class="btn btn-gold" onclick="openDonateDrawer(50)">Stand With Them &mdash; Give Monthly</button>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ====================================================================
+     4. THREE PILLARS (01)
+     ==================================================================== -->
+<section class="pillars-section section-dark dot-bg" id="mission-pillars">
+  <span class="section-num">01</span>
+  <div class="container">
+    <div class="pillars-head reveal">
+      <span class="overline-block">How We Work</span>
+      <h2>Three Pillars. One Mission.</h2>
+      <p class="sub">Every trip, every training, every church planted flows from these three commitments.</p>
+    </div>
+    <div class="pillar-grid">
+      <div class="pillar-col reveal" data-num="01">
+        <span style="position:absolute;top:-8px;right:12px;font-family:var(--serif);font-size:72px;font-weight:800;color:rgba(200,137,42,0.07);line-height:1;user-select:none;pointer-events:none;">01</span>
+        <svg class="cross-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect x="11" y="2" width="2" height="20" fill="#C9922A"/>
+          <rect x="2" y="11" width="20" height="2" fill="#C9922A"/>
+        </svg>
+        <h3>Engage</h3>
+        <p>Not checks from a distance. Our team is on the ground in Honduras every year &mdash; in homes, building real friendships that last.</p>
+      </div>
+      <div class="pillar-col reveal" data-num="02">
+        <span style="position:absolute;top:-8px;right:12px;font-family:var(--serif);font-size:72px;font-weight:800;color:rgba(200,137,42,0.07);line-height:1;user-select:none;pointer-events:none;">02</span>
+        <svg class="cross-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect x="11" y="2" width="2" height="20" fill="#C9922A"/>
+          <rect x="2" y="11" width="20" height="2" fill="#C9922A"/>
+        </svg>
+        <h3>Equip</h3>
+        <p>We disciple men, young and old, to lead their families with integrity &mdash; and leave a legacy of faith their children can follow.</p>
+      </div>
+      <div class="pillar-col reveal" data-num="03">
+        <span style="position:absolute;top:-8px;right:12px;font-family:var(--serif);font-size:72px;font-weight:800;color:rgba(200,137,42,0.07);line-height:1;user-select:none;pointer-events:none;">03</span>
+        <svg class="cross-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect x="11" y="2" width="2" height="20" fill="#C9922A"/>
+          <rect x="2" y="11" width="20" height="2" fill="#C9922A"/>
+        </svg>
+        <h3>Edify</h3>
+        <p>One promise to these men: walk with God, and we will not leave you. Together we are rebuilding the church in Honduras.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ====================================================================
+     5. TESTIMONIALS (02)
+     ==================================================================== -->
+<section class="field-section section-dark dot-bg" id="testimonials">
+  <span class="section-num">02</span>
+  <div class="container">
+    <div class="field-head reveal">
+      <span class="overline-block">From the Field</span>
+      <h2>Lives Being Changed.</h2>
+    </div>
+    <p class="field-intro reveal">These are real words from real men. No scripts. No marketing. Just what God does when someone finally shows up.</p>
+
+    <div class="field-grid">
+      <div class="field-quote reveal">
+        <p>&ldquo;By God's grace, my marriage was saved. I was ready to walk away. After the discipleship training I learned what it means to lead my family in righteousness. Everything changed.&rdquo;</p>
+        <span class="stars">★★★★★</span>
+        <span class="field-attribution">&mdash; Father, La Ceiba</span>
+      </div>
+      <div class="field-quote reveal">
+        <p>&ldquo;These men did not come to give us money and leave. They came to walk with us. They know our names, our families. They are committed. That is something we have never seen before.&rdquo;</p>
+        <span class="stars">★★★★★</span>
+        <span class="field-attribution">&mdash; Pastor, Central Honduras</span>
+      </div>
+      <div class="field-quote reveal">
+        <p>&ldquo;I had never heard these truths applied to my daily life. When the Word of God was taught plainly and clearly, something changed in my heart. I went home and asked my wife to forgive me.&rdquo;</p>
+        <span class="stars">★★★★★</span>
+        <span class="field-attribution">&mdash; Father, Guaimaca</span>
+      </div>
+      <div class="field-quote reveal">
+        <p>&ldquo;God is turning the hearts of fathers and families toward Him. We are seeing a new generation rise &mdash; families worship together, pray together, and hear the Word of God together.&rdquo;</p>
+        <span class="stars">★★★★★</span>
+        <span class="field-attribution">&mdash; Jimmy Welch &mdash; Danli</span>
+      </div>
+      <div class="field-quote reveal">
+        <p>&ldquo;Supporting this ministry is the highest return I have found for a dollar. These are real men, doing real work, producing real transformation. I have seen it with my own eyes.&rdquo;</p>
+        <span class="stars">★★★★★</span>
+        <span class="field-attribution">&mdash; Monthly Partner, Virginia</span>
+      </div>
+      <div class="field-quote reveal">
+        <p>&ldquo;God is truly doing a miraculous work as they hear the truths of Scripture applied to their daily lives &mdash; many are hearing these truths for the very first time.&rdquo;</p>
+        <span class="stars">★★★★★</span>
+        <span class="field-attribution">&mdash; Bro. Misael Alvarado &mdash; Talanga</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ====================================================================
+     7. WHERE WE WORK (03)
+     ==================================================================== -->
+<section class="locations-section" id="where-we-work">
+  <span class="section-num">03</span>
+  <div class="container">
+    <div class="locations-head reveal">
+      <span class="overline-block">Where We Work</span>
+      <h2>Five Cities. Five Pastors. One Mission.</h2>
+      <p class="sub">Each location is led by a Honduran brother who lives among the people, knows their names, and will not leave.</p>
+    </div>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 120" style="width:120px;height:auto;fill:var(--gold);opacity:0.15;display:block;margin:0 auto 28px;" aria-hidden="true"><path d="M20,60 C25,45 40,35 60,32 C80,28 100,30 115,38 C130,46 145,42 158,35 C168,30 178,32 182,40 C186,48 180,58 170,65 C158,73 148,78 140,85 C130,93 118,98 105,95 C90,92 75,88 62,82 C48,76 35,72 20,60 Z"/></svg>
+    <div class="locations-grid-wrap">
+      <div class="locations-grid">
+        <div class="loc-block reveal">
+          <span class="loc-flag" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="11" y="2" width="2" height="20" fill="#C8892A"/><rect x="2" y="11" width="20" height="2" fill="#C8892A"/></svg></span>
+          <span class="loc-region">Central Honduras</span>
+          <h4>Guaimaca</h4>
+          <span class="loc-pastor">Bro. Andrew Finnicum</span>
+          <p>A growing congregation in central Honduras where fathers are being discipled and families are being restored through Scripture.</p>
+          <span class="loc-detail">Active discipleship program</span>
+          <span style="display:inline-block;margin-top:8px;font-family:var(--sans);font-size:10px;letter-spacing:2px;color:rgba(200,137,42,0.5);text-transform:uppercase;border:1px solid rgba(200,137,42,0.2);padding:3px 8px;border-radius:3px;">Since 2010</span>
+        </div>
+        <div class="loc-block reveal">
+          <span class="loc-flag" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="11" y="2" width="2" height="20" fill="#C8892A"/><rect x="2" y="11" width="20" height="2" fill="#C8892A"/></svg></span>
+          <span class="loc-region">Northern Coast &mdash; Honduras</span>
+          <h4>La Ceiba</h4>
+          <span class="loc-pastor">Bro. Edwin Rodriguez</span>
+          <p>Our longest-running field location. Northern coastal city with deep relational roots across multiple families and years of ministry.</p>
+          <span class="loc-detail">Est. 2006 &mdash; Longest active field site</span>
+          <span style="display:inline-block;margin-top:8px;font-family:var(--sans);font-size:10px;letter-spacing:2px;color:rgba(200,137,42,0.5);text-transform:uppercase;border:1px solid rgba(200,137,42,0.2);padding:3px 8px;border-radius:3px;">Since 2006</span>
+        </div>
+        <div class="loc-block reveal">
+          <span class="loc-flag" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="11" y="2" width="2" height="20" fill="#C8892A"/><rect x="2" y="11" width="20" height="2" fill="#C8892A"/></svg></span>
+          <span class="loc-region">Central Region &mdash; Honduras</span>
+          <h4>Talanga</h4>
+          <span class="loc-pastor">Bro. Misael Alvarado</span>
+          <p>Active church planting and leadership training. Pastors equipped to disciple the fathers in their congregations.</p>
+          <span class="loc-detail">Church planting in progress</span>
+          <span style="display:inline-block;margin-top:8px;font-family:var(--sans);font-size:10px;letter-spacing:2px;color:rgba(200,137,42,0.5);text-transform:uppercase;border:1px solid rgba(200,137,42,0.2);padding:3px 8px;border-radius:3px;">Since 2014</span>
+        </div>
+        <div class="loc-block reveal">
+          <span class="loc-flag" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="11" y="2" width="2" height="20" fill="#C8892A"/><rect x="2" y="11" width="20" height="2" fill="#C8892A"/></svg></span>
+          <span class="loc-region">Western Honduras</span>
+          <h4>La Ermita</h4>
+          <span class="loc-pastor">Bro. Cristobal Alvarado</span>
+          <p>A community where the Word is taking root. Families hearing Gospel-centered teaching &mdash; many for the first time.</p>
+          <span class="loc-detail">Newest field location</span>
+          <span style="display:inline-block;margin-top:8px;font-family:var(--sans);font-size:10px;letter-spacing:2px;color:rgba(200,137,42,0.5);text-transform:uppercase;border:1px solid rgba(200,137,42,0.2);padding:3px 8px;border-radius:3px;">Since 2018</span>
+        </div>
+        <div class="loc-block reveal">
+          <span class="loc-flag" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="11" y="2" width="2" height="20" fill="#C8892A"/><rect x="2" y="11" width="20" height="2" fill="#C8892A"/></svg></span>
+          <span class="loc-region">Eastern Honduras</span>
+          <h4>Danli</h4>
+          <span class="loc-pastor">Jimmy Welch</span>
+          <p>Eastern Honduras. Families are being reached. Marriages restored through the principles of Scripture.</p>
+          <span class="loc-detail">Family restoration focus</span>
+          <span style="display:inline-block;margin-top:8px;font-family:var(--sans);font-size:10px;letter-spacing:2px;color:rgba(200,137,42,0.5);text-transform:uppercase;border:1px solid rgba(200,137,42,0.2);padding:3px 8px;border-radius:3px;">Since 2016</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ====================================================================
+     8. PHOTO GALLERY
+     ==================================================================== -->
+<section class="gallery-section" id="gallery">
+  <div class="container">
+    <div class="gallery-head reveal">
+      <span class="overline-block">From the Field</span>
+      <h2>The Faces of This Mission.</h2>
+      <p class="sub">Real men. Real families. Real Honduras. &mdash; Moments from years of field ministry.</p>
+    </div>
+    <div class="gallery-grid">
+      <figure class="brand-tile reveal">
+        <img class="tile-emblem" src="images/fftf-emblem.png" alt="">
+        <figcaption><span class="tile-loc">Guaimaca</span>Sunday Gathering</figcaption>
+      </figure>
+      <figure class="brand-tile reveal">
+        <img class="tile-emblem" src="images/fftf-emblem.png" alt="">
+        <figcaption><span class="tile-loc">La Ceiba</span>Discipleship Session</figcaption>
+      </figure>
+      <figure class="brand-tile reveal">
+        <img class="tile-emblem" src="images/fftf-emblem.png" alt="">
+        <figcaption><span class="tile-loc">Talanga</span>Father &amp; Son</figcaption>
+      </figure>
+      <figure class="brand-tile reveal">
+        <img class="tile-emblem" src="images/fftf-emblem.png" alt="">
+        <figcaption><span class="tile-loc">La Ermita</span>Church Planting</figcaption>
+      </figure>
+      <figure class="brand-tile reveal">
+        <img class="tile-emblem" src="images/fftf-emblem.png" alt="">
+        <figcaption><span class="tile-loc">Danli</span>Family Restored</figcaption>
+      </figure>
+      <figure class="brand-tile reveal">
+        <img class="tile-emblem" src="images/fftf-emblem.png" alt="">
+        <figcaption><span class="tile-loc">Central Honduras</span>Field Trip 2025</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ====================================================================
+     9. FAQ
+     ==================================================================== -->
+<section class="faq-section section-dark" id="faq">
+  <div class="container">
+    <div class="faq-head reveal">
+      <span class="overline-block">Common Questions</span>
+      <h2>Questions We Hear.</h2>
+    </div>
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span><span style="font-family:var(--serif);font-size:13px;color:rgba(200,137,42,0.5);font-style:italic;margin-right:12px;flex-shrink:0;">01</span>Where exactly does my money go?</span>
+          <span class="faq-toggle" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer"><div class="faq-answer-inner">100% of your gift goes directly to the field &mdash; discipleship materials, pastor training, church planting costs, and mission trip logistics. We have zero bureaucracy between your gift and the work.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span><span style="font-family:var(--serif);font-size:13px;color:rgba(200,137,42,0.5);font-style:italic;margin-right:12px;flex-shrink:0;">02</span>How is this different from a short-term mission trip organization?</span>
+          <span class="faq-toggle" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer"><div class="faq-answer-inner">Short-term mission organizations send teams and leave. We maintain deep, ongoing relationships with specific men and families across multiple years. We are not visitors &mdash; we are friends committed for the long haul.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span><span style="font-family:var(--serif);font-size:13px;color:rgba(200,137,42,0.5);font-style:italic;margin-right:12px;flex-shrink:0;">03</span>Can I go on a trip to Honduras?</span>
+          <span class="faq-toggle" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer"><div class="faq-answer-inner">Yes. We take teams multiple times per year. These are not tourism trips &mdash; you will sit with men in their homes, open the Word, and serve alongside our Honduran partners. Contact us to learn about the next trip.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span><span style="font-family:var(--serif);font-size:13px;color:rgba(200,137,42,0.5);font-style:italic;margin-right:12px;flex-shrink:0;">04</span>What is the theological foundation of the ministry?</span>
+          <span class="faq-toggle" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer"><div class="faq-answer-inner">We are Gospel-centered, church-based, and committed to the sufficiency of Scripture. Our discipleship model is built on expository Bible teaching, prayer, and accountability within the local church.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span><span style="font-family:var(--serif);font-size:13px;color:rgba(200,137,42,0.5);font-style:italic;margin-right:12px;flex-shrink:0;">05</span>How can I stay updated on the ministry?</span>
+          <span class="faq-toggle" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer"><div class="faq-answer-inner">Subscribe to our email updates, follow our field reports, or become a prayer partner. We send regular dispatches from the field so you can pray with specific names and faces in mind.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span><span style="font-family:var(--serif);font-size:13px;color:rgba(200,137,42,0.5);font-style:italic;margin-right:12px;flex-shrink:0;">06</span>Can I cancel or change my monthly gift?</span>
+          <span class="faq-toggle" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer"><div class="faq-answer-inner">Any time, no questions asked. You can raise, lower, pause, or cancel your gift whenever you need. We want willing partners, not trapped ones.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span><span style="font-family:var(--serif);font-size:13px;color:rgba(200,137,42,0.5);font-style:italic;margin-right:12px;flex-shrink:0;">07</span>Can I give once instead of monthly?</span>
+          <span class="faq-toggle" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer"><div class="faq-answer-inner">Yes. Monthly partnership is the most powerful gift because the field can count on it &mdash; but a one-time gift is welcome and goes straight to the work. Just choose &ldquo;One-Time&rdquo; when you give.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span><span style="font-family:var(--serif);font-size:13px;color:rgba(200,137,42,0.5);font-style:italic;margin-right:12px;flex-shrink:0;">08</span>Is my gift tax-deductible?</span>
+          <span class="faq-toggle" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer"><div class="faq-answer-inner">We are a faith-based ministry. For current details on our giving and tax status, reach out to us directly and we will gladly walk you through it.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ====================================================================
+     10. PRE-FOOTER (banner)
+     ==================================================================== -->
+<section class="pre-footer dot-bg" aria-label="Support the Mission">
+  <div class="container">
+    <span class="overline-block" style="color:rgba(200,137,42,0.7); margin-bottom:12px;">Est. 2006 &mdash; Honduras</span>
+    <h2>The work continues.</h2>
+    <p class="subline">Will you be part of it?</p>
+    <button class="btn btn-gold" onclick="openDonateDrawer(50)">Donate Now &mdash; It Reaches the Field</button>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ====================================================================
+     11. FOOTER
+     ==================================================================== -->
+<footer class="footer dot-bg">
+  <div class="footer-seal">
+    <p class="fs-verse">&ldquo;He will turn the hearts of the fathers to their children, and the hearts of the children to their fathers.&rdquo;</p>
+    <span class="fs-ref">Malachi 4:6</span>
+  </div>
+  <div class="footer-mission">
+    <img class="footer-logo"
+      src="images/fftf-emblem.png"
+      alt="Fathers for the Fatherless">
+    <p class="footer-tagline">To equip, engage, and edify the Body of Christ even unto the ends of the world.</p>
+    <hr class="footer-divider">
+    <div class="footer-social">
+      <a href="https://www.facebook.com/fathersforthefatherless" target="_blank" rel="noopener" class="social-icon" aria-label="Facebook">F</a>
+      <a href="https://www.instagram.com/fathersforthefatherless" target="_blank" rel="noopener" class="social-icon" aria-label="Instagram">IG</a>
+      <a href="https://twitter.com" target="_blank" rel="noopener" class="social-icon" aria-label="X / Twitter">𝕏</a>
+    </div>
+  </div>
+  <div class="footer-rule"></div>
+  <div class="footer-grid">
+    <div class="footer-col">
+      <h5>Ministry</h5>
+      <ul>
+        <li><a href="#mission-pillars">The Mission</a></li>
+        <li><a href="#testimonials">From the Field</a></li>
+        <li><a href="#where-we-work">Where We Work</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Support</h5>
+      <ul>
+        <li><a href="#the-ask" onclick="openDonateDrawer(50);return false;">Donate Now</a></li>
+        <li><a href="#the-ask">Monthly Giving</a></li>
+        <li><a href="mailto:fathers4thefatherless@gmail.com">Prayer Partner</a></li>
+        <li><a href="mailto:fathers4thefatherless@gmail.com">Go on a Trip</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Programs</h5>
+      <ul>
+        <li><a href="mission-trips.html">Mission Trips</a></li>
+        <li><a href="education.html">Education</a></li>
+        <li><a href="health-care.html">Health Care</a></li>
+        <li><a href="dental-care.html">Dental Care</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Contact</h5>
+      <ul>
+        <li><a href="mailto:fathers4thefatherless@gmail.com">Contact Us</a></li>
+        <li><a href="mailto:fathers4thefatherless@gmail.com">Email</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-legal">
+    Fathers for the Fatherless &mdash; Est. 2006 &mdash; Honduras Field Ministry &mdash; 100% of gifts reach the field.
+    <br>
+    &middot; Gospel-Centered &middot; Non-Profit &middot; Donor Funded
+  </div>
+</footer>
+
+<!-- ====================================================================
+     DONATION DRAWER (fixed bottom)
+     ==================================================================== -->
+<div id="drawer-overlay" onclick="closeDonateDrawer()" aria-hidden="true"></div>
+<div id="donate-drawer" role="dialog" aria-labelledby="drawer-amount" aria-hidden="true">
+  <div class="drawer-inner">
+    <img class="drawer-logo"
+      src="images/fftf-emblem.png"
+      alt="Fathers for the Fatherless">
+    <p class="drawer-overline">You're joining the mission</p>
+    <h3 id="drawer-amount">$50 / month</h3>
+    <p id="drawer-impact">Sustains a pastor's leadership training.</p>
+    <div class="drawer-freq" role="group" aria-label="Giving frequency">
+      <button type="button" class="freq-btn active" data-freq="month" onclick="setFreq('month')">Monthly</button>
+      <button type="button" class="freq-btn" data-freq="once" onclick="setFreq('once')">One-Time</button>
+    </div>
+    <div class="drawer-amts">
+      <button type="button" class="amt-btn" data-amt="25" onclick="setAmt(25)">$25</button>
+      <button type="button" class="amt-btn active" data-amt="50" onclick="setAmt(50)">$50</button>
+      <button type="button" class="amt-btn" data-amt="100" onclick="setAmt(100)">$100</button>
+      <button type="button" class="amt-btn" data-amt="250" onclick="setAmt(250)">$250</button>
+    </div>
+    <div class="drawer-form">
+      <input type="text" placeholder="First Name" autocomplete="given-name">
+      <input type="text" placeholder="Last Name" autocomplete="family-name">
+      <input type="email" class="full-row" placeholder="Email Address" autocomplete="email">
+    </div>
+    <p class="drawer-stripe-note">100% reaches the field &middot; Secure giving &middot; Cancel anytime</p>
+    <button class="drawer-continue" onclick="proceedDonation()">Continue to Secure Giving</button>
+    <button class="drawer-close" onclick="closeDonateDrawer()">&times; Close</button>
+  </div>
+</div>
+
+<script>
+  /* --------------------------------------------------------------------
+     Mobile menu toggle
+     -------------------------------------------------------------------- */
+  const hamburger  = document.getElementById('hamburger');
+  const mobile     = document.getElementById('mobilePanel');
+  const mobileClose = document.getElementById('mobileClose');
+  hamburger.addEventListener('click', () => mobile.classList.add('open'));
+  mobileClose.addEventListener('click', () => mobile.classList.remove('open'));
+  mobile.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobile.classList.remove('open')));
+
+  /* --------------------------------------------------------------------
+     Nav scroll state — scrolled past 60px
+     -------------------------------------------------------------------- */
+  const navEl = document.getElementById('nav');
+  function handleNavScroll() {
+    if (window.scrollY > 60) navEl.classList.add('scrolled');
+    else navEl.classList.remove('scrolled');
+  }
+  window.addEventListener('scroll', handleNavScroll, { passive: true });
+  handleNavScroll();
+
+  /* Reading progress bar */
+  const progressBar = document.getElementById('nav-progress');
+  window.addEventListener('scroll', () => {
+    const scrolled = window.scrollY;
+    const total = document.documentElement.scrollHeight - window.innerHeight;
+    if (progressBar && total > 0) progressBar.style.width = (scrolled / total * 100) + '%';
+  }, { passive: true });
+
+  /* --------------------------------------------------------------------
+     Active nav link based on section in viewport
+     -------------------------------------------------------------------- */
+  const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
+  const sectionMap = {};
+  navLinks.forEach(link => {
+    const id = link.getAttribute('href').slice(1);
+    const target = document.getElementById(id);
+    if (target) sectionMap[id] = link;
+  });
+  if (Object.keys(sectionMap).length) {
+    const navIO = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const link = sectionMap[entry.target.id];
+        if (!link) return;
+        if (entry.isIntersecting) {
+          navLinks.forEach(l => l.classList.remove('active'));
+          link.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 });
+    Object.keys(sectionMap).forEach(id => {
+      const el = document.getElementById(id);
+      if (el) navIO.observe(el);
+    });
+  }
+
+  /* --------------------------------------------------------------------
+     Reveal-on-scroll
+     -------------------------------------------------------------------- */
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  /* Stagger grid children so they cascade in left-to-right */
+  document.querySelectorAll('.field-grid .reveal, .pillar-grid .reveal, .locations-grid .reveal').forEach((el, i) => {
+    el.style.transitionDelay = (i * 0.08) + 's';
+  });
+
+  /* --------------------------------------------------------------------
+     FAQ accordion
+     -------------------------------------------------------------------- */
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.parentElement;
+      const isOpen = item.classList.toggle('open');
+      btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+  });
+
+  /* --------------------------------------------------------------------
+     Donation drawer
+     ---------------------------------------------------------------------
+     TO GO LIVE AND ACCEPT MONEY: paste your Donorbox or Stripe payment
+     link below. The visitor's amount + frequency are appended so the
+     processor opens pre-filled. Until then, Continue captures intent.
+     -------------------------------------------------------------------- */
+  var DONATE_URL = ""; // e.g. "https://donorbox.org/fftf" or a Stripe Payment Link
+  var donState = { amount: 50, freq: 'month' };
+  var DON_IMPACT = {
+    25: "Covers a month of discipleship materials for one father.",
+    50: "Sustains a pastor's leadership training.",
+    100: "Helps plant and sustain a church in Honduras.",
+    250: "Funds a full mission outreach — travel and materials."
+  };
+
+  function renderDrawerAmount() {
+    var suffix = donState.freq === 'month' ? ' / month' : ' one-time';
+    document.getElementById('drawer-amount').textContent = '$' + donState.amount + suffix;
+    var imp = document.getElementById('drawer-impact');
+    if (imp) imp.textContent = DON_IMPACT[donState.amount] || "Reaches a father and family in Honduras.";
+    document.querySelectorAll('.amt-btn').forEach(function (b) {
+      b.classList.toggle('active', parseInt(b.dataset.amt, 10) === donState.amount);
+    });
+    document.querySelectorAll('.freq-btn').forEach(function (b) {
+      b.classList.toggle('active', b.dataset.freq === donState.freq);
+    });
+  }
+  function setAmt(a) { donState.amount = a; renderDrawerAmount(); }
+  function setFreq(f) { donState.freq = f; renderDrawerAmount(); }
+
+  function openDonateDrawer(amount) {
+    if (amount) donState.amount = amount;
+    renderDrawerAmount();
+    var drawer = document.getElementById('donate-drawer');
+    drawer.style.bottom = '0';
+    document.getElementById('drawer-overlay').style.display = 'block';
+    drawer.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeDonateDrawer() {
+    var drawer = document.getElementById('donate-drawer');
+    drawer.style.bottom = '-100%';
+    document.getElementById('drawer-overlay').style.display = 'none';
+    drawer.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+  function proceedDonation() {
+    if (DONATE_URL) {
+      var sep = DONATE_URL.indexOf('?') > -1 ? '&' : '?';
+      window.location.href = DONATE_URL + sep + 'amount=' + donState.amount + '&recurring=' + (donState.freq === 'month');
+      return;
+    }
+    closeDonateDrawer();
+  }
+
+  /* Floating Donate button (.donate-fab) is always visible on mobile via CSS — no JS needed */
+
+  /* --------------------------------------------------------------------
+     Count-up numbers (animate first integer, preserve prefix/suffix)
+     -------------------------------------------------------------------- */
+  (function () {
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    document.querySelectorAll('.hic-num, .stat-num').forEach(el => el.classList.add('count-up'));
+    const targets = document.querySelectorAll('.count-up');
+    function runCount(el) {
+      const raw = el.textContent.trim();
+      const m = raw.match(/^(\D*)(\d[\d,]*)(.*)$/s);
+      if (!m) return;
+      const prefix = m[1], suffix = m[3];
+      const end = parseInt(m[2].replace(/,/g, ''), 10);
+      if (reduce || end > 100000) { el.textContent = raw; return; }
+      const dur = 1400, start = performance.now();
+      function tick(now) {
+        const p = Math.min((now - start) / dur, 1);
+        const eased = 1 - Math.pow(1 - p, 3);
+        el.textContent = prefix + Math.round(end * eased).toLocaleString() + suffix;
+        if (p < 1) requestAnimationFrame(tick);
+        else el.textContent = raw;
+      }
+      requestAnimationFrame(tick);
+    }
+    const countIO = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { runCount(e.target); countIO.unobserve(e.target); }
+      });
+    }, { threshold: 0.5 });
+    targets.forEach(t => countIO.observe(t));
+  })();
+
+  /* --------------------------------------------------------------------
+     Subtle hero-art parallax (desktop, motion-safe)
+     -------------------------------------------------------------------- */
+  (function () {
+    const art = document.getElementById('hero-art');
+    if (!art || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+      if (ticking || window.innerWidth < 769) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        const shift = Math.max(-26, Math.min(26, window.scrollY * 0.05));
+        art.style.transform = 'translateX(-50%) translateY(' + (-shift) + 'px)';
+        ticking = false;
+      });
+    }, { passive: true });
+  })();
+
+  /* --------------------------------------------------------------------
+     Arrow-driven horizontal carousels (pillars, testimonials, locations, gallery)
+     Left/right buttons slide one card at a time. Touch swipe still works.
+     -------------------------------------------------------------------- */
+  (function () {
+    var CHEVRON_L = '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+    var CHEVRON_R = '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+    function makeCarousel(gridSelector) {
+      var grid = document.querySelector(gridSelector);
+      if (!grid) return;
+      var cards = Array.prototype.slice.call(grid.children);
+      if (!cards.length) return;
+
+      var carousel = document.createElement('div');
+      carousel.className = 'carousel';
+      var viewport = document.createElement('div');
+      viewport.className = 'carousel-viewport';
+      var track = document.createElement('div');
+      track.className = 'carousel-track';
+      cards.forEach(function (c) {
+        c.classList.remove('reveal');
+        c.classList.add('visible');
+        c.style.transitionDelay = '';
+        track.appendChild(c);
+      });
+      viewport.appendChild(track);
+
+      var prev = document.createElement('button');
+      prev.type = 'button';
+      prev.className = 'carousel-arrow prev';
+      prev.setAttribute('aria-label', 'Previous');
+      prev.innerHTML = CHEVRON_L;
+      var next = document.createElement('button');
+      next.type = 'button';
+      next.className = 'carousel-arrow next';
+      next.setAttribute('aria-label', 'Next');
+      next.innerHTML = CHEVRON_R;
+
+      carousel.appendChild(prev);
+      carousel.appendChild(viewport);
+      carousel.appendChild(next);
+      grid.parentNode.replaceChild(carousel, grid);
+
+      var offset = 0;
+      function step() {
+        var first = track.firstElementChild;
+        var gap = parseInt(getComputedStyle(track).columnGap, 10) || 24;
+        return (first ? first.offsetWidth : 300) + gap;
+      }
+      function maxOffset() { return Math.max(0, track.scrollWidth - viewport.clientWidth); }
+      function apply() {
+        var mx = maxOffset();
+        if (offset > mx) offset = mx;
+        if (offset < 0) offset = 0;
+        track.style.transform = 'translateX(' + (-offset) + 'px)';
+        var noScroll = mx <= 0;
+        prev.style.display = noScroll ? 'none' : '';
+        next.style.display = noScroll ? 'none' : '';
+        prev.disabled = offset <= 0;
+        next.disabled = offset >= mx - 1;
+      }
+      prev.addEventListener('click', function () { offset -= step(); apply(); });
+      next.addEventListener('click', function () { offset += step(); apply(); });
+      window.addEventListener('resize', function () { offset = 0; apply(); });
+      apply();
+    }
+
+    makeCarousel('.pillar-grid');
+    makeCarousel('.field-grid');
+    makeCarousel('.locations-grid');
+    makeCarousel('.gallery-grid');
+  })();
+</script>
+
+</body>
+</html>
