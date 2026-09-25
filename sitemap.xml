@@ -1,74 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-  <url>
-    <loc>https://fathers-for-the-fatherless.vercel.app/</loc>
-    <lastmod>2026-09-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-
-  <url>
-    <loc>https://fathers-for-the-fatherless.vercel.app/mission.html</loc>
-    <lastmod>2026-06-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://fathers-for-the-fatherless.vercel.app/about.html</loc>
-    <lastmod>2026-06-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://fathers-for-the-fatherless.vercel.app/give.html</loc>
-    <lastmod>2026-09-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://fathers-for-the-fatherless.vercel.app/mission-trips.html</loc>
-    <lastmod>2026-06-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://fathers-for-the-fatherless.vercel.app/education.html</loc>
-    <lastmod>2026-06-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://fathers-for-the-fatherless.vercel.app/health-care.html</loc>
-    <lastmod>2026-06-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://fathers-for-the-fatherless.vercel.app/dental-care.html</loc>
-    <lastmod>2026-06-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://fathers-for-the-fatherless.vercel.app/updates.html</loc>
-    <lastmod>2026-05-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://fathers-for-the-fatherless.vercel.app/contact.html</loc>
-    <lastmod>2026-05-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
+  <url><loc>https://fathersforthefatherless.org/</loc><lastmod>2026-09-25</lastmod><priority>1.0</priority></url>
+  <url><loc>https://fathersforthefatherless.org/mission.html</loc><lastmod>2026-09-25</lastmod><priority>0.8</priority></url>
+  <url><loc>https://fathersforthefatherless.org/education.html</loc><lastmod>2026-09-25</lastmod><priority>0.8</priority></url>
+  <url><loc>https://fathersforthefatherless.org/health-care.html</loc><lastmod>2026-09-25</lastmod><priority>0.8</priority></url>
+  <url><loc>https://fathersforthefatherless.org/dental-care.html</loc><lastmod>2026-09-25</lastmod><priority>0.8</priority></url>
+  <url><loc>https://fathersforthefatherless.org/mission-trips.html</loc><lastmod>2026-09-25</lastmod><priority>0.8</priority></url>
+  <url><loc>https://fathersforthefatherless.org/give.html</loc><lastmod>2026-09-25</lastmod><priority>0.8</priority></url>
+  <url><loc>https://fathersforthefatherless.org/updates.html</loc><lastmod>2026-09-25</lastmod><priority>0.8</priority></url>
+  <url><loc>https://fathersforthefatherless.org/about.html</loc><lastmod>2026-09-25</lastmod><priority>0.8</priority></url>
+  <url><loc>https://fathersforthefatherless.org/contact.html</loc><lastmod>2026-09-25</lastmod><priority>0.8</priority></url>
 </urlset>

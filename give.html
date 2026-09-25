@@ -1,205 +1,84 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<script>if(!sessionStorage.getItem("splashPlayed"))document.documentElement.classList.add("splash-active");</script>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Give | Fathers for the Fatherless</title>
-  <meta name="description" content="Support the mission. Your monthly gift equips fathers, plants churches, and restores families in Honduras. Give to Fathers for the Fatherless today.">
-  <link rel="canonical" href="/give">
-  <meta property="og:title" content="Give | Fathers for the Fatherless">
-  <meta property="og:image" content="/images/logo-dark.png">
-  <meta name="robots" content="index, follow">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/styles.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Give | Fathers for the Fatherless</title>
+<meta name="description" content="Support the work of equipping fathers and planting churches in Honduras.">
+<meta name="theme-color" content="#0E2243">
+<link rel="canonical" href="https://fathersforthefatherless.org/give.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Give | Fathers for the Fatherless">
+<meta property="og:description" content="Support the work of equipping fathers and planting churches in Honduras.">
+<meta property="og:image" content="https://fathersforthefatherless.org/images/logo-navy.png">
+<link rel="icon" href="images/mark-navy.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap">
+<link rel="stylesheet" href="css/paloma.css">
 </head>
 <body>
-<div id="splash-screen"></div>
-
-<nav class="navbar scrolled" id="navbar">
-  <a href="/" class="nav-logo"><img src="/images/logo-dark.png" alt="Fathers for the Fatherless"><span class="nav-wordmark">Fathers for the Fatherless</span></a>
-  <div class="nav-links">
-    <a href="/about" class="nav-link">About</a>
-    <a href="/mission" class="nav-link">Mission</a>
-    <a href="/updates" class="nav-link">Updates</a>
-    <a href="/contact" class="nav-link">Contact</a>
-    <a href="/give" class="nav-donate">Give Now</a>
-  </div>
-  <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
-</nav>
-
-<div class="mobile-menu" id="mobileMenu">
-  <button class="mobile-menu-close" id="mobileMenuClose">&times;</button>
-  <a href="/about" class="nav-link" onclick="closeMobileMenu()">About</a>
-  <a href="/mission" class="nav-link" onclick="closeMobileMenu()">Mission</a>
-  <a href="/updates" class="nav-link" onclick="closeMobileMenu()">Updates</a>
-  <a href="/contact" class="nav-link" onclick="closeMobileMenu()">Contact</a>
-  <a href="/give" class="btn btn-gold" onclick="closeMobileMenu()">Give Now</a>
+<a class="skip" href="#main">Skip to content</a>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
+<symbol id="i-tree" viewBox="0 0 64 80"><g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M32 74V42"/><path d="M32 74c-5-4-10-6-15-7"/><path d="M32 74c5-4 10-6 15-7"/><path d="M8 38C16 22 48 22 56 38"/><path d="M15 45c6-11 28-11 34 0"/><path d="M32 46l-8-8M32 46l9-9"/></g></symbol>
+<symbol id="i-house" viewBox="0 0 64 72"><g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M6 32 32 10l26 22"/><path d="M13 32v30h38V32"/><path d="M26 62V46h12v16"/></g></symbol>
+<symbol id="i-dove" viewBox="0 0 64 56"><g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 40c8-17 26-22 41-15 4 2 9 0 12-5 0 13-8 20-19 22-13 2-26 2-34-2Z"/><path d="M20 33c6-6 15-7 22-3"/></g></symbol>
+<symbol id="i-book" viewBox="0 0 64 60"><g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M32 16c-6-5-16-6-25-4v34c9-2 19-1 25 4"/><path d="M32 16c6-5 16-6 25-4v34c-9-2-19-1-25 4"/><path d="M32 16v34"/></g></symbol>
+</defs></svg>
+<div class="w">
+  <header class="top">
+    <a class="mk" href="index.html"><img src="images/mark-navy.png" alt="" width="40" height="40">Fathers for the Fatherless</a>
+    <nav aria-label="Main"><a href="index.html">Home</a><a href="mission.html">The mission</a><a href="mission-trips.html">Go</a><a href="give.html" aria-current="page">Give</a><a href="updates.html">Updates</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav>
+  </header>
 </div>
-
-<!-- PAGE HERO — dark -->
-<div class="page-hero section-dark">
-  <div class="hero-watermark" aria-hidden="true"></div>
-  <span class="section-label">Support the Mission</span>
-  <h1>A Father Equipped. A Church Planted. A Family Restored.</h1>
-  <p>Your gift does all three. Monthly giving is the engine of this mission — it lets us plan, commit, and go.</p>
+<main id="main">
+<div class="w"><div class="hero-plain">
+  <p class="kick">Give</p>
+  <h1>A father equipped. A church planted. A family restored.</h1>
+  <p class="lede">For the cost of a few coffee shop visits a month, you can make a difference.</p>
+</div></div>
+<section class="sec-tight"><div class="w">
+  <h2>What a monthly gift does.</h2>
+  <div class="tiers"><div class="tier"><div class="amt">$25</div><div class="per">per month</div><h4>Discipleship materials</h4><p>Covers discipleship materials for one father for a full month of training.</p></div><div class="tier"><div class="amt">$50</div><div class="per">per month</div><h4>Pastoral training</h4><p>Supports one pastor&#x27;s leadership training and equipping programme.</p></div><div class="tier"><div class="amt">$100</div><div class="per">per month</div><h4>Church planting</h4><p>Helps plant and sustain a Gospel-centred church in Honduras.</p></div><div class="tier"><div class="amt">$250</div><div class="per">per month</div><h4>Mission outreach trip</h4><p>Funds a full mission outreach trip: travel, materials, field presence.</p></div></div>
+  <p class="lede" style="max-width:60ch;margin-top:26px">Custom amounts are welcome, and one-time gifts are put to immediate use.</p>
+  <div class="form">
+    <h3 style="margin:0 0 8px">How to give today</h3>
+    <p class="note">Write to the ministry and someone will tell you how to send a gift.
+    <!-- BUILD NOTE: replace this block with the real Donorbox (or equivalent) embed the day the
+         ministry supplies a campaign URL. Never describe a checkout that does not exist. --></p>
+    <a class="btn" href="mailto:fathers4thefatherless@gmail.com?subject=I%20want%20to%20give%20to%20Fathers%20for%20the%20Fatherless">Email the ministry to give</a>
+  </div>
+</div></section>
+<section class="arc arc-flat"><div class="w">
+  <p class="kick" style="text-align:left">Three ways in</p>
+  <div class="three">
+    <div><div class="disc d1"><svg width="46" height="42" aria-hidden="true"><use href="#i-book"/></svg></div><h3>Pray</h3><p>For the men being discipled, and for the families being put back together.</p></div>
+    <div><div class="disc d2"><svg width="46" height="42" aria-hidden="true"><use href="#i-dove"/></svg></div><h3>Give</h3><p>Monthly or once. Both reach the same work.</p></div>
+    <div><div class="disc d3"><svg width="46" height="42" aria-hidden="true"><use href="#i-house"/></svg></div><h3>Go</h3><p>Teams travel every year. There is a place for you.</p></div>
+  </div>
+</div></section>
+<section class="sec"><div class="w"><div class="ask"><p>The work will not stop. Will you be part of it?</p>
+<a class="btn" href="give.html">Email the ministry</a></div></div></section>
+</main>
+<div class="w">
+  <footer class="ft">
+    <div>
+      <h5>Fathers for the Fatherless</h5>
+      <p>Equipping fathers, planting churches and restoring families in Honduras since 2006.</p>
+    </div>
+    <div><h5>The work</h5><ul>
+      <li><a href="mission.html">The mission</a></li>
+      <li><a href="education.html">Education</a></li>
+      <li><a href="health-care.html">Health care</a></li>
+      <li><a href="dental-care.html">Dental care</a></li>
+      <li><a href="mission-trips.html">Mission trips</a></li>
+    </ul></div>
+    <div><h5>Write to us</h5><ul>
+      <li><a href="mailto:fathers4thefatherless@gmail.com">fathers4thefatherless@gmail.com</a></li>
+      <li><a href="give.html">Give to the work</a></li>
+      <li><a href="contact.html">Contact the ministry</a></li>
+      <li><a href="about.html">About us</a></li>
+    </ul></div>
+    <p class="fine">&copy; 2026 Fathers for the Fatherless. A non-profit organisation.</p>
+  </footer>
 </div>
-
-<!-- GIVING TIERS — off-white -->
-<section class="section-light section-pad">
-  <div class="container">
-    <div class="problem-section reveal">
-
-      <!-- LEFT: Tier breakdown -->
-      <div class="problem-text">
-        <span class="section-label">Monthly Impact</span>
-        <h2>What Your Gift Does.</h2>
-        <span class="gold-bar"></span>
-        <p>Every dollar given to Fathers for the Fatherless goes directly to field ministry in Honduras. No overhead bureaucracy. Real men on the ground, doing the work, accountable to the community they serve.</p>
-
-        <div class="give-tiers">
-          <div class="give-tier reveal">
-            <div class="tier-amount">$25<span style="font-size:1rem;font-weight:400">/mo</span></div>
-            <div class="tier-impact"><strong style="display:block;color:var(--text-dark);margin-bottom:0.2rem;">Discipleship Materials</strong>Covers discipleship materials for one father for a full month of training.</div>
-          </div>
-          <div class="give-tier reveal" style="border-top: 3px solid var(--gold);">
-            <div class="tier-amount">$50<span style="font-size:1rem;font-weight:400">/mo</span></div>
-            <div class="tier-impact"><strong style="display:block;color:var(--text-dark);margin-bottom:0.2rem;">Pastoral Training</strong>Supports one pastor's leadership training and equipping program.</div>
-          </div>
-          <div class="give-tier reveal">
-            <div class="tier-amount">$100<span style="font-size:1rem;font-weight:400">/mo</span></div>
-            <div class="tier-impact"><strong style="display:block;color:var(--text-dark);margin-bottom:0.2rem;">Church Planting</strong>Helps plant and sustain a Gospel-centered church in Honduras.</div>
-          </div>
-          <div class="give-tier reveal">
-            <div class="tier-amount">$250<span style="font-size:1rem;font-weight:400">/mo</span></div>
-            <div class="tier-impact"><strong style="display:block;color:var(--text-dark);margin-bottom:0.2rem;">Mission Outreach Trip</strong>Funds a full mission outreach trip — travel, materials, field presence.</div>
-          </div>
-        </div>
-
-        <p style="margin-top: 1.5rem; font-size: 0.9rem; color: var(--text-muted);">Custom amounts welcome. One-time gifts are also accepted and put to immediate use.</p>
-      </div>
-
-      <!-- RIGHT: Donorbox embed -->
-      <div class="problem-visual" style="align-items: stretch;">
-        <div class="card reveal" style="text-align: center; padding: 2.5rem;">
-          <span class="section-label">Donate Securely</span>
-          <h3 style="margin-bottom: 1rem; margin-top: 0.5rem;">Give to the Mission</h3>
-          <span class="gold-bar gold-bar-center"></span>
-
-          <!-- DONORBOX EMBED — paste your iframe here once the campaign is live.
-               Until then, this donor-facing block invites gifts by email so the
-               page never shows a broken or developer-facing placeholder. -->
-          <div style="padding: 2.5rem 1.5rem; border: 1px solid rgba(232,160,32,0.35); background: rgba(232,160,32,0.06); border-radius: 8px; margin-top: 1.5rem;">
-            <p style="color: var(--navy); font-size: 1rem; font-weight: 600; margin-bottom: 0.75rem;">Our secure online giving portal is launching shortly.</p>
-            <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.5rem;">To give today and partner with the mission, reach out and we will personally help you set up your gift.</p>
-            <a href="mailto:fathers4thefatherless@gmail.com?subject=I%20want%20to%20give%20to%20Fathers%20for%20the%20Fatherless" class="btn btn-gold">Email Us to Give</a>
-          </div>
-
-          <p style="margin-top: 1.5rem; font-size: 0.8rem; color: var(--text-muted);">Secure giving. 100% reaches the field. Cancel anytime.</p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- THREE WAYS TO PARTNER — mid -->
-<section class="section-mid section-pad">
-  <div class="container">
-    <div class="section-header reveal">
-      <span class="section-label">More Ways to Partner</span>
-      <h2>Pray. Give. Go.</h2>
-      <p>There is a role in this mission for everyone God is calling. Wherever you are, you can be part of what He is doing in Honduras.</p>
-    </div>
-    <div class="grid-3">
-      <div class="card reveal">
-        <h3>Pray</h3>
-        <span class="gold-bar"></span>
-        <p>The most powerful thing you can do for this mission costs nothing. Sign up as a prayer partner and receive regular field updates — real, specific prayer requests from the work on the ground.</p>
-        <div class="mt-2">
-          <a href="/contact" class="btn btn-outline-navy">Become a Prayer Partner</a>
-        </div>
-      </div>
-      <div class="card reveal" style="border-top: 3px solid var(--gold);">
-        <h3>Give</h3>
-        <span class="gold-bar"></span>
-        <p>Monthly giving is the engine of this mission. A consistent gift — even $25 a month — allows us to plan, commit, and be present in Honduras year after year. Consistency matters more than size.</p>
-        <div class="mt-2">
-          <a href="mailto:fathers4thefatherless@gmail.com?subject=I%20want%20to%20give%20monthly%20to%20Fathers%20for%20the%20Fatherless" class="btn btn-gold">Give Monthly</a>
-        </div>
-      </div>
-      <div class="card reveal">
-        <h3>Go</h3>
-        <span class="gold-bar"></span>
-        <p>Trip opportunities are available for individuals and churches. Come to Honduras. Meet the men and families. See the work firsthand. Every person who goes comes back changed — without exception.</p>
-        <div class="mt-2">
-          <a href="/contact" class="btn btn-outline-navy">Ask About Trips</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- TRUST QUOTE — dark -->
-<section class="section-dark section-pad-sm">
-  <div class="container">
-    <div class="impact-quote reveal">
-      <div class="section-label" style="display:block; text-align:center; margin-bottom: 2rem;">Where the Money Goes</div>
-      <blockquote>"Every dollar given goes to the work on the ground — to the men we disciple, the churches we plant, and the families being restored. We go ourselves. We do not fund from a distance."</blockquote>
-      <cite>Fathers for the Fatherless — Field Commitment</cite>
-    </div>
-  </div>
-</section>
-
-<!-- CTA — off-white -->
-<section class="section-light section-pad">
-  <div class="container">
-    <div class="partner-cta reveal">
-      <span class="section-label">The Need Is Ongoing</span>
-      <h2>The Work Will Not Stop. Will You Be Part of It?</h2>
-      <span class="gold-bar gold-bar-center"></span>
-      <p>Church planting, leadership training, family restoration — this work is ongoing, year after year, because God keeps opening the door. Your gift is the reason we can walk through it.</p>
-      <div class="btn-group btn-group-center">
-        <a href="mailto:fathers4thefatherless@gmail.com?subject=I%20want%20to%20give%20monthly%20to%20Fathers%20for%20the%20Fatherless" class="btn btn-gold">Give Monthly</a>
-        <a href="/mission" class="btn btn-outline-navy">See the Mission</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer class="footer">
-  <div class="footer-mission-block">
-    <img class="footer-mission-logo" src="/images/logo-dark.png" alt="Fathers for the Fatherless">
-    <p class="footer-mission-tagline">To equip, engage, and edify the Body of Christ even unto the ends of the world.</p>
-  </div>
-  <div class="footer-grid">
-    <div class="footer-brand">
-      <img src="/images/logo-dark.png" alt="Fathers for the Fatherless">
-      <p>A faith-based ministry equipping fathers, planting churches, and restoring families in Honduras and beyond. Est. 2006.</p>
-      <div class="footer-social"><a href="#" aria-label="Facebook">f</a><a href="#" aria-label="Instagram">in</a></div>
-    </div>
-    <div class="footer-col"><h5>Ministry</h5><ul><li><a href="/about">About Us</a></li><li><a href="/mission">The Mission</a></li><li><a href="/updates">Updates</a></li><li><a href="/#where-we-work">Where We Work</a></li></ul></div>
-    <div class="footer-col"><h5>Support</h5><ul><li><a href="/give">Give Now</a></li><li><a href="/give">Monthly Giving</a></li><li><a href="/contact">Prayer Partner</a></li><li><a href="/contact">Go on a Trip</a></li></ul></div>
-    <div class="footer-col"><h5>Contact</h5><ul><li><a href="/contact">Contact Us</a></li><li><a href="mailto:fathers4thefatherless@gmail.com">Email</a></li><li><a href="/#faq">FAQ</a></li></ul></div>
-  </div>
-  <div class="footer-legal">&copy; 2026 Fathers for the Fatherless. Roanoke, Virginia. All rights reserved.</div>
-</footer>
-
-<a href="/give" class="sticky-donate">Give Now &rarr;</a>
-
-<script>
-  const hamburger = document.getElementById('hamburger');
-  const mobileMenu = document.getElementById('mobileMenu');
-  document.getElementById('mobileMenuClose').addEventListener('click', () => mobileMenu.classList.remove('open'));
-  hamburger.addEventListener('click', () => mobileMenu.classList.add('open'));
-  function closeMobileMenu() { mobileMenu.classList.remove('open'); }
-  const observer = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('active'); observer.unobserve(e.target); } }), { threshold: 0.1 });
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-</script>
-<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-<script src="/js/splash.js" defer></script>
 </body>
 </html>
