@@ -305,10 +305,13 @@ PAGES["index.html"] = ("Fathers for the Fatherless",
   {kid_row(6)}
 </div></section>
 
-<section class="sec-loose"><div class="w narrow">
-  <h2>Five churches, five men who stay.</h2>
-  <ul class="churches">{"".join('<li><b>%s</b><span>%s, since %s</span></li>' % (html.escape(c['city']), html.escape(c['who']), html.escape(c['since'])) for c in CITIES)}</ul>
-</div></section>
+<section class="sec-loose"><div class="w"><div class="split split-r">
+  <div>
+    <h2>Five churches, five men who stay.</h2>
+    <ul class="churches">{"".join('<li><b>%s</b><span>%s, since %s</span></li>' % (html.escape(c['city']), html.escape(c['who']), html.escape(c['since'])) for c in CITIES)}</ul>
+  </div>
+  <figure class="tall">{pic("images/field/outside", (560, 1000), "(max-width:820px) 100vw, 400px", "Children outside the church in Talanga", 1000, 1289)}<figcaption>Talanga.</figcaption></figure>
+</div></div></section>
 
 <section class="sec-loose"><div class="w"><div class="split">
   {church_video()}
@@ -357,6 +360,7 @@ PAGES["education.html"] = ("Education | Fathers for the Fatherless",
     <li><b>Schooling.</b> Taught alongside the mission workers, starting with the most important Book of all.</li>
     <li><b>At home.</b> {C("Teaching fathers to lead prayer and the Word inside their own homes.")}</li>
   </ul>
+  <figure class="wide">{pic("images/field/classroom", (720, 1320), "(max-width:1050px) 100vw, 1000px", "Students working at their desks in a classroom", 1320, 964)}<figcaption>In class.</figcaption></figure>
   {school_grid()}
 </div></section>""")
 
@@ -459,6 +463,7 @@ PAGES["about.html"] = ("About | Fathers for the Fatherless",
   <p class="lede">There are no officers and no directors. There is Howard Finnicum, who leads the whole of the work, one pastor in each church, and men who help because they want to.</p>
 </div></div>
 <section class="sec-tight"><div class="w narrow">
+  <figure class="couple">{pic("images/field/couple", (400, 800), "(max-width:820px) 100vw, 360px", "Howard and Patricia Finnicum", 800, 788)}<figcaption>Bro. and Sis. Finnicum, Howard and Patricia.</figcaption></figure>
   <div class="letter" style="display:block">
     <h4>Howard Finnicum</h4><div class="role">Leads the work</div>
     <p>{HOWARD_SHORT} {C("He has three grown children and 16 grandchildren, and he serves God faithfully with his wife of over thirty years.")}</p>

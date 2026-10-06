@@ -258,3 +258,7 @@ picture{display:block}
 .plain li{margin:0 0 10px;padding-left:4px}
 .plain b{color:var(--navy)}
 @media(max-width:820px){.kids-row{grid-template-columns:repeat(3,1fr)}}
+.split-r{grid-template-columns:1fr minmax(0,400px)}
+.tall img,.couple img{display:block;width:100%;height:auto;border-radius:26px}
+.couple{max-width:360px;margin:0 0 8px}
+@media(max-width:820px){.split-r{grid-template-columns:1fr}.tall{max-width:420px}}
