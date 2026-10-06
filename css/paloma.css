@@ -154,6 +154,9 @@ p:last-child{margin-bottom:0}
   display:grid;place-items:center;font:800 17px/1 var(--sans);margin:0 0 12px}
 .step h3{font-size:20px;margin:0 0 6px}
 .step p{margin:0;font-size:16.5px;color:var(--body)}
+/* steps on the navy band: without these, the numbers and text are navy on navy */
+.arc .step .n{background:var(--gold);color:var(--navy)}
+.arc .step p{color:#D3DCE8}
 
 /* ---------- the ask ---------- */
 .ask{margin:48px 0 0;background:var(--gold);color:var(--navy);border-radius:34px;padding:40px 34px;
