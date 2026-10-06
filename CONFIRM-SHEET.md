@@ -1,6 +1,6 @@
 # Confirm sheet - Fathers for the Fatherless
 
-**Generated 2026-10-06 by `_build/site.py`. 29 items.**
+**Generated 2026-10-06 by `_build/site.py`. 31 items.**
 
 Each line below is on the new site and **has not been confirmed in writing by anyone
 at the ministry.** Tick it or cross it out, one line at a time.
@@ -29,6 +29,7 @@ the ministry does its own teaching; the four giving amounts and their labels.
 | [ ] | Jimmy Welch |  |
 | [ ] | 2016 |  |
 | [ ] | Families are being reached. Marriages restored through the principles of Scripture. |  |
+| [ ] | A service in one of the churches | which church? (video sent by Joe 6 Oct) |
 | [ ] | Has been training believers for parts of five decades. After laboring faithfully in a local church for most of that time, he now splits his time be... |  |
 | [ ] | Concise, practical and Gospel-centered teaching, built for real life in the home and the church. |  |
 | [ ] | Verse-by-verse teaching that turns Scripture into daily obedience and lasting change. |  |
@@ -40,6 +41,7 @@ the ministry does its own teaching; the four giving amounts and their labels.
 | [ ] | Guaimaca and La Ceiba, Talanga, La Ermita or Danlí. |  |
 | [ ] | Dates are approximate and fill quickly, so reach out early. |  |
 | [ ] | Mornings in the Word. Afternoons in the work. |  |
+| [ ] | a gift marked for it goes to the building | restricted-gift promise: confirm the ministry tracks gifts marked for the tabernacle |
 | [ ] | spring 2026 |  |
 | [ ] | He has three grown children and 16 grandchildren, and he serves God faithfully with his wife of over thirty years. |  |
 

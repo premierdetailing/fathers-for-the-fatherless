@@ -41,10 +41,12 @@ GIVE = {
 # has sent it in writing. Empty renders nothing anywhere.
 TAX_STATUS = ""
 
-def give_href(amount=None, monthly=True):
+def give_href(amount=None, monthly=True, purpose=None):
     """Every give control on every page routes through here."""
     if not GIVE["url"]:
-        if amount:
+        if purpose:
+            subj = "I want to give toward %s" % purpose
+        elif amount:
             subj = "I want to give $%s %s to Fathers for the Fatherless" % (
                 amount, "a month" if monthly else "once")
         else:
@@ -60,8 +62,8 @@ def give_href(amount=None, monthly=True):
             q.append("%s=%s" % (GIVE["freq_param"], val))
     return base + (("&" if "?" in base else "?") + "&".join(q) if q else "")
 
-def give_attrs(amount=None, monthly=True):
-    h = html.escape(give_href(amount, monthly))
+def give_attrs(amount=None, monthly=True, purpose=None):
+    h = html.escape(give_href(amount, monthly, purpose))
     return 'href="%s"%s' % (h, ' target="_blank" rel="noopener"' if GIVE["url"] else "")
 
 CLAIMS = []
@@ -71,6 +73,27 @@ def C(text, note=""):
 
 def photo(what):
     return '<div class="ph"><i>Photo needed: %s</i></div>' % html.escape(what)
+
+# ---- real media, sent by Joe 6 Oct 2026. All metadata stripped (no GPS, no device).
+# The children are never named on the site, and no picture is tied to a name.
+SCHOOL = ["images/field/school-%02d.jpg" % i for i in range(1, 11)]
+
+def school_grid():
+    imgs = "".join('<img src="%s" alt="A student at the school in La Ceiba" width="320" height="500" '
+                   'loading="lazy" decoding="async">' % s for s in SCHOOL)
+    return ('<figure class="kids">%s<figcaption>Students at the school in La Ceiba.</figcaption></figure>'
+            % imgs)
+
+def church_video():
+    return ('<figure class="vid"><video controls playsinline preload="none" '
+            'poster="images/field/church-service-poster.jpg" width="540" height="960">'
+            '<source src="images/field/church-service.mp4" type="video/mp4"></video>'
+            '<figcaption>The children singing during a service, July 2026.</figcaption></figure>')
+
+def tabernacle_img():
+    return ('<figure class="wide"><img src="images/field/tabernacle.jpg" alt="The tabernacle under '
+            'construction: block walls up, no roof yet" width="1320" height="714" loading="lazy">'
+            '<figcaption>The tabernacle as it stands. The walls are up. The roof is not.</figcaption></figure>')
 
 NAV = [("index.html", "Home"), ("mission.html", "The mission"),
        ("mission-trips.html", "Go"), ("give.html", "Give"),
@@ -270,8 +293,16 @@ PAGES["index.html"] = ("Fathers for the Fatherless",
 <section class="sec-loose"><div class="w">
   <h2>What the giving pays for.</h2>
   <div class="four">{cards(PROGRAMS, link=True)}</div>
-  {photo("a wide shot of the work on the ground")}
 </div></section>
+
+<section class="sec-loose"><div class="w"><div class="split">
+  {church_video()}
+  <div>
+    <h2>This is what it sounds like.</h2>
+    <p class="lede">{C("A service in one of the churches", "which church? (video sent by Joe 6 Oct)")}, with the children up front leading the singing.</p>
+    <p class="lede">The students at the school in La Ceiba are on the <a href="education.html">education page</a>.</p>
+  </div>
+</div></div></section>
 
 <section class="sec"><div class="w">
   <div class="letter">
@@ -328,7 +359,8 @@ PAGES["education.html"] = ("Education | Fathers for the Fatherless",
      ("house", "Leadership training", C("Equipping men to lead their families and churches with integrity and courage.")),
      ("tree", "Schooling", "Taught alongside the mission workers, starting with the most important Book of all."),
      ("dove", "Family discipleship", C("Teaching fathers to lead prayer and the Word inside their own homes."))])}</div>
-  {photo("a teaching session, men with Bibles open")}
+  <h2 style="margin-top:52px">The school in La Ceiba.</h2>
+  {school_grid()}
 </div></section>
 <section class="arc arc-flat" style="margin-top:52px"><div class="w">
   <p class="kick" style="text-align:left">How a father is taught</p>
@@ -442,6 +474,12 @@ PAGES["give.html"] = ("Give | Fathers for the Fatherless",
     <a class="btn" {give_attrs(None, False)}>Make a one-time gift</a>
   </div>
 </div></section>
+<section class="sec-loose" id="tabernacle"><div class="w">
+  <h2>The tabernacle still needs a roof.</h2>
+  {tabernacle_img()}
+  <p class="lede" style="max-width:60ch;margin-top:22px">A tabernacle is going up for the church to meet in. The block walls are standing. Finishing it takes money the church does not have, and {C("a gift marked for it goes to the building", "restricted-gift promise: confirm the ministry tracks gifts marked for the tabernacle")}.</p>
+  <div class="acts"><a class="btn-o" {give_attrs(None, False, "the tabernacle")}>Give toward the tabernacle</a></div>
+</div></section>
 <section class="sec"><div class="w">
   <p class="lede" style="max-width:60ch">Not everyone can give every month. Pray for the men being discipled and the families being put back together, and if you can come to Honduras yourself, <a href="mission-trips.html">come</a>.</p>
 </div></section>""")
@@ -454,6 +492,12 @@ PAGES["updates.html"] = ("Updates from the field | Fathers for the Fatherless",
   <p class="lede">Reports from the work, written when there is something to report.</p>
 </div></div>
 <section class="sec-tight"><div class="w">
+  <article class="letter" style="display:block;margin-top:0">
+    <p class="role">October 2026</p>
+    <h4 style="margin-bottom:12px">The tabernacle</h4>
+    <p>The walls of the tabernacle are up, and it still needs a roof and the rest of the work to finish it. A gift can be marked for it. <a href="give.html#tabernacle">Give toward the tabernacle.</a></p>
+  </article>
+  {tabernacle_img()}
   <article class="letter" style="display:block">
     <p class="role">Reported {C("spring 2026")} &middot; La Ceiba</p>
     <h4 style="margin-bottom:12px">The La Ceiba mission house</h4>
