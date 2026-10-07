@@ -262,3 +262,18 @@ picture{display:block}
 .tall img,.couple img{display:block;width:100%;height:auto;border-radius:26px}
 .couple{max-width:360px;margin:0 0 8px}
 @media(max-width:820px){.split-r{grid-template-columns:1fr}.tall{max-width:420px}}
+
+/* ---------- home opening options (6 Oct, third pass) ---------- */
+.hero-img img{display:block;width:100%;height:auto;border-radius:26px}
+.hero-img figcaption{margin-top:10px}
+.hero-v{justify-self:center;width:100%;max-width:300px}
+.cap-v{font:600 13px/1.4 var(--sans);color:var(--faint);margin:10px 0 0}
+.kids-low{max-width:820px}
+.candid{display:grid;grid-template-columns:1.37fr .78fr 1.85fr;gap:12px;align-items:start}
+.candid img{display:block;width:100%;height:auto;border-radius:18px}
+.candid figcaption{margin-top:8px}
+@media(max-width:820px){
+  .hero-v{max-width:260px;justify-self:start}
+  .candid{grid-template-columns:1fr;gap:22px}
+  .candid>div:nth-child(2){max-width:72%}
+}

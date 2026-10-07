@@ -290,14 +290,108 @@ PAGES = {}
 
 # ---------------------------------------------------------------- HOME
 # 6 Oct, Joe: kids on the front page, fewer headings, fewer words, keep it simple.
-PAGES["index.html"] = ("Fathers for the Fatherless",
-  "Equipping fathers and planting churches in Honduras since 2006.",
-  f"""<div class="w"><div class="hero">
-  <div>
+# Then: "the pictures of the kids at the top is a little awkwardly placed" -> three options for the
+# top of the page only, the rest of the site unchanged. FFTF_HOME picks one: a / b / c.
+# "now" (the default) is the version Joe called great, so nothing changes until he picks.
+HOME = os.environ.get("FFTF_HOME", "now")
+
+_HERO_TEXT = """<div>
     <h1>Fathers who will <span class="hl">stand in the gap</span> for their own homes.</h1>
     <p class="lede">Since 2006 we have been teaching the men of five Honduran churches to lead their families from the Word.</p>
     <div class="acts"><a class="btn" href="give.html">Give to the work</a><a class="btn-o" href="mission-trips.html">Come on a trip</a></div>
+  </div>"""
+
+_CHURCH_LIST = '<ul class="churches">%s</ul>' % "".join(
+    '<li><b>%s</b><span>%s, since %s</span></li>' % (html.escape(c['city']), html.escape(c['who']), html.escape(c['since']))
+    for c in CITIES)
+
+def _talanga_fig():
+    return ('<figure class="tall">%s<figcaption>Talanga.</figcaption></figure>'
+            % pic("images/field/outside", (560, 1000), "(max-width:820px) 100vw, 400px",
+                  "Children outside the church in Talanga", 1000, 1289))
+
+def _classroom_pic(sizes):
+    return pic("images/field/classroom", (720, 1320), sizes, "Students working at their desks in a classroom", 1320, 964)
+
+def _kids_lower(n=6):
+    imgs = "".join(pic(s_, (320, 560), "(max-width:820px) 33vw, 130px", KID_ALT, 320, 500) for s_ in SCHOOL[:n])
+    return ('<section class="sec-loose"><div class="w"><figure class="kids kids-row kids-low">%s'
+            '<figcaption><a href="education.html">Some of the students at the school in La Ceiba.</a></figcaption>'
+            '</figure></div></section>' % imgs)
+
+_CHURCHES_WITH_TALANGA = f"""<section class="sec-loose"><div class="w"><div class="split split-r">
+  <div>
+    <h2>Five churches, five men who stay.</h2>
+    {_CHURCH_LIST}
   </div>
+  {_talanga_fig()}
+</div></div></section>"""
+
+_VIDEO_SECTION = f"""<section class="sec-loose"><div class="w"><div class="split">
+  {church_video()}
+  <div>
+    <p class="lede">The children leading the singing at a service.</p>
+    <p class="lede">Giving pays for the teaching, and for doctor and dentist visits that families there cannot afford. <a href="mission.html">Read the mission.</a></p>
+  </div>
+</div></div></section>"""
+
+_TABERNACLE_SECTION = f"""<section class="sec-loose"><div class="w">
+  {tabernacle_img()}
+  <p class="lede" style="margin-top:18px">The tabernacle walls are up. It still needs a roof. <a href="give.html#tabernacle">Help finish it.</a></p>
+</div></section>"""
+
+_ASK = '<section class="sec">%s</section>' % ask(
+    "For the cost of a few coffee shop visits a month, you can make a difference.", "Give to the work", 'href="give.html"')
+
+if HOME == "a":
+    # A. The classroom photo takes the logo's place in the opening. Headshots move below the churches, smaller.
+    _home = f"""<div class="w"><div class="hero hero-photo">
+  {_HERO_TEXT}
+  <figure class="hero-img">{_classroom_pic("(max-width:820px) 100vw, 480px")}<figcaption>In class.</figcaption></figure>
+</div></div>
+{_CHURCHES_WITH_TALANGA}
+{_kids_lower(6)}
+{_VIDEO_SECTION}
+{_TABERNACLE_SECTION}
+{_ASK}"""
+elif HOME == "b":
+    # B. The children singing take the logo's place in the opening. Tap to hear them. Headshots lower.
+    _home = f"""<div class="w"><div class="hero hero-vid">
+  {_HERO_TEXT}
+  <div class="hero-v">{church_video()}<p class="cap-v">The children leading the singing at a service.</p></div>
+</div></div>
+{_CHURCHES_WITH_TALANGA}
+{_kids_lower(6)}
+<section class="sec-loose"><div class="w">
+  <figure class="wide">{_classroom_pic("(max-width:1050px) 100vw, 1000px")}<figcaption>In class.</figcaption></figure>
+</div></section>
+{_TABERNACLE_SECTION}
+{_ASK}"""
+elif HOME == "c":
+    # C. The opening stays as it is (logo). Under it, three real scenes at their own shapes.
+    # The headshots live on the Education page only.
+    _strip = (
+        '<figure class="candid">'
+        f'<div>{_classroom_pic("(max-width:820px) 100vw, 360px")}<figcaption>In class.</figcaption></div>'
+        f'<div>{pic("images/field/outside", (560, 1000), "(max-width:820px) 100vw, 210px", "Children outside the church in Talanga", 1000, 1289)}<figcaption>Talanga.</figcaption></div>'
+        f'<div>{pic("images/field/tabernacle", (720, 1320), "(max-width:820px) 100vw, 480px", "The tabernacle under construction: block walls up, no roof yet", 1320, 714)}'
+        '<figcaption>The tabernacle. It still needs a roof. <a href="give.html#tabernacle">Help finish it.</a></figcaption></div>'
+        '</figure>')
+    _home = f"""<div class="w"><div class="hero">
+  {_HERO_TEXT}
+  <div class="lg">{logo_pic()}</div>
+</div></div>
+<section class="sec-tight"><div class="w">{_strip}</div></section>
+<section class="sec-loose"><div class="w narrow">
+  <h2>Five churches, five men who stay.</h2>
+  {_CHURCH_LIST}
+  <p class="lede" style="margin-top:22px">The students at the school in La Ceiba are on the <a href="education.html">education page</a>.</p>
+</div></section>
+{_VIDEO_SECTION}
+{_ASK}"""
+else:
+    _home = f"""<div class="w"><div class="hero">
+  {_HERO_TEXT}
   <div class="lg">{logo_pic()}</div>
 </div></div>
 
@@ -305,28 +399,13 @@ PAGES["index.html"] = ("Fathers for the Fatherless",
   {kid_row(6)}
 </div></section>
 
-<section class="sec-loose"><div class="w"><div class="split split-r">
-  <div>
-    <h2>Five churches, five men who stay.</h2>
-    <ul class="churches">{"".join('<li><b>%s</b><span>%s, since %s</span></li>' % (html.escape(c['city']), html.escape(c['who']), html.escape(c['since'])) for c in CITIES)}</ul>
-  </div>
-  <figure class="tall">{pic("images/field/outside", (560, 1000), "(max-width:820px) 100vw, 400px", "Children outside the church in Talanga", 1000, 1289)}<figcaption>Talanga.</figcaption></figure>
-</div></div></section>
+{_CHURCHES_WITH_TALANGA}
+{_VIDEO_SECTION}
+{_TABERNACLE_SECTION}
+{_ASK}"""
 
-<section class="sec-loose"><div class="w"><div class="split">
-  {church_video()}
-  <div>
-    <p class="lede">The children leading the singing at a service.</p>
-    <p class="lede">Giving pays for the teaching, and for doctor and dentist visits that families there cannot afford. <a href="mission.html">Read the mission.</a></p>
-  </div>
-</div></div></section>
-
-<section class="sec-loose"><div class="w">
-  {tabernacle_img()}
-  <p class="lede" style="margin-top:18px">The tabernacle walls are up. It still needs a roof. <a href="give.html#tabernacle">Help finish it.</a></p>
-</div></section>
-
-<section class="sec">{ask("For the cost of a few coffee shop visits a month, you can make a difference.", "Give to the work", 'href="give.html"')}</section>""")
+PAGES["index.html"] = ("Fathers for the Fatherless",
+  "Equipping fathers and planting churches in Honduras since 2006.", _home)
 
 # ---------------------------------------------------------------- MISSION
 PAGES["mission.html"] = ("The mission | Fathers for the Fatherless",
