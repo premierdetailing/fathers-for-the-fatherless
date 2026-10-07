@@ -100,7 +100,7 @@ def school_grid():
 
 def logo_pic():
     return ('<img src="images/logo-navy-268.png" srcset="images/logo-navy-268.png 1x, images/logo-navy-520.png 2x" '
-            'alt="Fathers for the Fatherless. This is What Hope Looks Like." width="268" height="365" fetchpriority="high">')
+            'alt="Fathers for the Fatherless. This is What Hope Looks Like." width="268" height="295" fetchpriority="high">')
 
 def church_video():
     return ('<figure class="vid"><video controls playsinline preload="none" '
@@ -466,7 +466,7 @@ PAGES["about.html"] = ("About | Fathers for the Fatherless",
   <figure class="couple">{pic("images/field/couple", (400, 800), "(max-width:820px) 100vw, 360px", "Howard and Patricia Finnicum", 800, 788)}<figcaption>Bro. and Sis. Finnicum, Howard and Patricia.</figcaption></figure>
   <div class="letter" style="display:block">
     <h4>Howard Finnicum</h4><div class="role">Leads the work</div>
-    <p>{HOWARD_SHORT} {C("He has three grown children and 16 grandchildren, and he serves God faithfully with his wife of over thirty years.")}</p>
+    <p>{HOWARD_SHORT} {C("He has three grown children and 16 grandchildren, and he serves God faithfully with his wife Patricia of over thirty years.")}</p>
   </div>
   <p class="lede" style="margin-top:28px">Each of the five churches has its own pastor, living in that community and known to the families there. They are the work. We go back every year.</p>
 </div></section>""")
