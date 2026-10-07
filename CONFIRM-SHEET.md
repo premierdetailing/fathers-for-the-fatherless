@@ -37,7 +37,7 @@ the ministry does its own teaching; the four giving amounts and their labels.
 | [ ] | Dates are approximate and fill quickly. |  |
 | [ ] | a gift marked for it goes to the building | restricted-gift promise: confirm the ministry tracks gifts marked for the tabernacle |
 | [ ] | Spring 2026 |  |
-| [ ] | He has three grown children and 16 grandchildren, and he serves God faithfully with his wife Patricia of over thirty years. |  |
+| [ ] | He has three grown children and 16 grandchildren, and he serves God faithfully with Patricia, his wife of over thirty years. |  |
 
 ## Deliberately NOT on the new site
 
