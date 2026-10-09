@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-
-Sitemap: https://fathersforthefatherless.org/sitemap.xml
+Sitemap: https://www.fathersforthefatherless.org/sitemap.xml

@@ -1,0 +1,5 @@
+CLAUDE.md
+CONFIRM-SHEET.md
+_build
+*.py
+*.patch

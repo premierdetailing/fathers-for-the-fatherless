@@ -1,0 +1,174 @@
+{
+ "redirects": [
+  {
+   "source": "/about-us.html",
+   "destination": "/#about",
+   "permanent": true
+  },
+  {
+   "source": "/outreach.html",
+   "destination": "/#mission",
+   "permanent": true
+  },
+  {
+   "source": "/missions-outreach.html",
+   "destination": "/#mission",
+   "permanent": true
+  },
+  {
+   "source": "/la-ceiba.html",
+   "destination": "/#churches",
+   "permanent": true
+  },
+  {
+   "source": "/central-honduras.html",
+   "destination": "/#churches",
+   "permanent": true
+  },
+  {
+   "source": "/danli.html",
+   "destination": "/#churches",
+   "permanent": true
+  },
+  {
+   "source": "/how-you-can-help.html",
+   "destination": "/#give1",
+   "permanent": true
+  },
+  {
+   "source": "/home.html",
+   "destination": "/",
+   "permanent": true
+  },
+  {
+   "source": "/new-page.html",
+   "destination": "/",
+   "permanent": true
+  },
+  {
+   "source": "/fathersforthefatherlessblogwordpresscom.html",
+   "destination": "/",
+   "permanent": true
+  },
+  {
+   "source": "/fathersforthefatherlessblogwordpresscom/:path*",
+   "destination": "/",
+   "permanent": true
+  },
+  {
+   "source": "/store/:path*",
+   "destination": "/#give1",
+   "permanent": true
+  },
+  {
+   "source": "/about",
+   "destination": "/#about",
+   "permanent": true
+  },
+  {
+   "source": "/about.html",
+   "destination": "/#about",
+   "permanent": true
+  },
+  {
+   "source": "/mission",
+   "destination": "/#mission",
+   "permanent": true
+  },
+  {
+   "source": "/mission.html",
+   "destination": "/#mission",
+   "permanent": true
+  },
+  {
+   "source": "/give",
+   "destination": "/#give1",
+   "permanent": true
+  },
+  {
+   "source": "/give.html",
+   "destination": "/#give1",
+   "permanent": true
+  },
+  {
+   "source": "/contact",
+   "destination": "/",
+   "permanent": true
+  },
+  {
+   "source": "/contact.html",
+   "destination": "/",
+   "permanent": true
+  },
+  {
+   "source": "/health-care",
+   "destination": "/#mission",
+   "permanent": true
+  },
+  {
+   "source": "/health-care.html",
+   "destination": "/#mission",
+   "permanent": true
+  },
+  {
+   "source": "/dental-care",
+   "destination": "/#mission",
+   "permanent": true
+  },
+  {
+   "source": "/dental-care.html",
+   "destination": "/#mission",
+   "permanent": true
+  },
+  {
+   "source": "/education",
+   "destination": "/#mission",
+   "permanent": true
+  },
+  {
+   "source": "/education.html",
+   "destination": "/#mission",
+   "permanent": true
+  },
+  {
+   "source": "/mission-trips",
+   "destination": "/",
+   "permanent": true
+  },
+  {
+   "source": "/mission-trips.html",
+   "destination": "/",
+   "permanent": true
+  },
+  {
+   "source": "/updates",
+   "destination": "/",
+   "permanent": true
+  },
+  {
+   "source": "/updates.html",
+   "destination": "/",
+   "permanent": true
+  }
+ ],
+ "headers": [
+  {
+   "source": "/images/(.*)",
+   "headers": [
+    {
+     "key": "Cache-Control",
+     "value": "public, max-age=2592000, stale-while-revalidate=86400"
+    }
+   ]
+  },
+  {
+   "source": "/fonts/(.*)",
+   "headers": [
+    {
+     "key": "Cache-Control",
+     "value": "public, max-age=31536000, immutable"
+    }
+   ]
+  }
+ ]
+}
