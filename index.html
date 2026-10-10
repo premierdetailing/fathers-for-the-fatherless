@@ -310,6 +310,9 @@ footer nav a:hover{text-decoration:underline;text-underline-offset:4px}
 .t1 .verse span{display:block;font:600 .8rem/1.6 'Figtree',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--ink2);font-style:normal}
 @media (max-width:860px){.t1 .mission-in,.t1 .found-in{grid-template-columns:1fr;gap:32px}.t1 .cls{max-width:380px}}
 @media (max-width:760px){.tpl .top{flex-wrap:wrap}.tpl .top.open .tnav{display:flex;flex-direction:column;gap:2px;width:100%;order:3;padding:6px 0 8px}.tpl .top.open .tnav a{padding:11px 4px;font-size:1.05rem;border-bottom:1px solid rgba(243,238,226,.12)}}
+/* ---------- v4: soft gradient light per section, a touch stronger (Joe 9 Oct: "missing a soft subtle gradient background") ---------- */
+.t1 .lit.light:not(.glow)::before{background:radial-gradient(75% 65% at 10% -5%,rgba(232,163,59,.16),rgba(232,163,59,.055) 45%,transparent 72%),radial-gradient(60% 55% at 100% 106%,rgba(14,34,67,.06),transparent 70%)}
+.t1 .lit.dark:not(.glow)::before{background:radial-gradient(85% 70% at 12% -8%,rgba(70,118,200,.28),rgba(70,118,200,.09) 42%,transparent 70%),radial-gradient(55% 50% at 96% 106%,rgba(232,163,59,.09),transparent 72%)}
 /* ---------- reduced motion: everything rests ---------- */
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important}
