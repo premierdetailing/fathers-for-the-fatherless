@@ -117,4 +117,16 @@
     function set(o){t.classList.toggle('open',o);b.setAttribute('aria-expanded',String(o));b.textContent=o?'Close':'Menu'}
     b.addEventListener('click',function(){set(!t.classList.contains('open'))});
     t.querySelectorAll('.tnav a').forEach(function(a){a.addEventListener('click',function(){set(false)})})});
+  /* header bar: sticks once you scroll, shows how far down the page you are, marks the section you're in */
+  (function(){var top=document.querySelector('.t1 .top');if(!top)return;var wrap=top.parentElement,pr=document.createElement('i');pr.className='prog';pr.setAttribute('aria-hidden','true');top.appendChild(pr);
+    var home=top.querySelector('.tnav a[href="#"]'),on=false,limit=0;
+    function measure(){if(!on)limit=top.offsetTop+top.offsetHeight+60}
+    function upd(){var y=scrollY,s=y>limit;if(s!==on){on=s;if(s){wrap.style.paddingTop=(parseFloat(getComputedStyle(wrap).paddingTop)||0)+top.offsetHeight+'px';top.classList.add('stuck')}else{top.classList.remove('stuck');wrap.style.paddingTop=''}}
+      var h=document.documentElement.scrollHeight-innerHeight;top.style.setProperty('--sp',h>0?Math.min(1,y/h).toFixed(4):0)}
+    measure();addEventListener('resize',measure);var tk=false;addEventListener('scroll',function(){if(tk)return;tk=true;requestAnimationFrame(function(){tk=false;upd()})},{passive:true});upd();
+    var links=[].slice.call(top.querySelectorAll('.tnav a[href^="#"]')).filter(function(a){var h=a.getAttribute('href');return h.length>1&&document.querySelector(h)});
+    if(links.length&&'IntersectionObserver' in window){var seen=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;links.forEach(function(a){if(a.getAttribute('href')==='#'+e.target.id)a.setAttribute('aria-current','true');else a.removeAttribute('aria-current')});if(home)home.removeAttribute('aria-current')})},{rootMargin:'-45% 0px -50% 0px'});
+      links.forEach(function(a){seen.observe(document.querySelector(a.getAttribute('href')))});
+      addEventListener('scroll',function(){if(scrollY<limit&&home){home.setAttribute('aria-current','page');links.forEach(function(a){a.removeAttribute('aria-current')})}},{passive:true})}
+  })();
 })();

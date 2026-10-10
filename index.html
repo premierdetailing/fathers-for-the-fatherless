@@ -313,6 +313,58 @@ footer nav a:hover{text-decoration:underline;text-underline-offset:4px}
 /* ---------- v4: soft gradient light per section, a touch stronger (Joe 9 Oct: "missing a soft subtle gradient background") ---------- */
 .t1 .lit.light:not(.glow)::before{background:radial-gradient(75% 65% at 10% -5%,rgba(232,163,59,.16),rgba(232,163,59,.055) 45%,transparent 72%),radial-gradient(60% 55% at 100% 106%,rgba(14,34,67,.06),transparent 70%)}
 .t1 .lit.dark:not(.glow)::before{background:radial-gradient(85% 70% at 12% -8%,rgba(70,118,200,.28),rgba(70,118,200,.09) 42%,transparent 70%),radial-gradient(55% 50% at 96% 106%,rgba(232,163,59,.09),transparent 72%)}
+/* ---------- v5: more light, grain, header bar, finishing details (Joe 9 Oct: "a bit more throughout… the hotbar needs more detail… the whole thing needs more subtle detail") ---------- */
+::selection{background:rgba(232,163,59,.32)}
+.t1 .lit.light:not(.glow)::before{background:radial-gradient(75% 65% at 10% -5%,rgba(232,163,59,.18),rgba(232,163,59,.06) 45%,transparent 72%),radial-gradient(48% 42% at 94% 42%,rgba(232,163,59,.075),transparent 70%),radial-gradient(60% 55% at 100% 106%,rgba(14,34,67,.065),transparent 70%)}
+.t1 .lit.dark:not(.glow)::before{background:radial-gradient(85% 70% at 12% -8%,rgba(70,118,200,.30),rgba(70,118,200,.10) 42%,transparent 70%),radial-gradient(46% 40% at 92% 38%,rgba(70,118,200,.11),transparent 70%),radial-gradient(55% 50% at 96% 106%,rgba(232,163,59,.10),transparent 72%)}
+/* paper grain: felt, not seen */
+.t1 .lit::after{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:180px;opacity:.16;mix-blend-mode:soft-light}
+.t1 #hero1{z-index:5}
+.t1 #hero1>.wrap{position:relative;z-index:1}
+/* seams between sections: a hairline of light, never a hard cut */
+.t1 .run>section+section{box-shadow:inset 0 1px 0 rgba(232,163,59,.13)}
+.t1 .run>section.lit.dark+section,.t1 .run>section+section.lit.dark{box-shadow:inset 0 1px 0 rgba(243,238,226,.07)}
+.t1 footer{border-top:0;position:relative}
+.t1 footer::before{content:"";position:absolute;left:0;right:0;top:0;height:1px;background:linear-gradient(90deg,transparent,rgba(232,163,59,.35),transparent)}
+/* header bar */
+.t1 .top{position:relative;border-bottom:1px solid transparent;border-image:linear-gradient(90deg,transparent,rgba(232,163,59,.28) 30%,rgba(232,163,59,.28) 70%,transparent) 1}
+.t1 .mk span{display:grid;gap:4px}
+.t1 .mk small{font:600 .66rem/1 'Figtree',system-ui,sans-serif;letter-spacing:.17em;text-transform:uppercase;color:var(--goldS);opacity:.85}
+.t1 .mk i{box-shadow:0 0 0 1px rgba(232,163,59,.45),0 0 0 5px rgba(232,163,59,.08),0 10px 24px -12px rgba(0,0,0,.6);transition:transform .6s var(--ease)}
+.t1 .mk:hover i{transform:rotate(-8deg) scale(1.04)}
+.t1 .tnav{align-items:center}
+.t1 .tnav a{letter-spacing:.01em}
+.t1 .hgive{display:inline-flex;align-items:center;gap:8px;font:600 .92rem/1 'Figtree',system-ui,sans-serif;text-decoration:none;padding:12px 18px;border-radius:18px 5px 18px 5px;background:var(--gold);color:var(--navy2);box-shadow:inset 0 1px 0 rgba(255,255,255,.4),0 10px 22px -14px rgba(232,163,59,.8);transition:transform .35s var(--ease),border-radius .45s var(--ease)}
+.t1 .hgive::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--navy2);opacity:.55}
+.t1 .hgive:hover{transform:translateY(-1px);border-radius:5px 18px 5px 18px}
+.t1 .top .prog{position:absolute;left:0;right:0;bottom:-1px;height:2px;transform-origin:left;transform:scaleX(var(--sp,0));background:linear-gradient(90deg,var(--gold),var(--goldS));opacity:0;transition:opacity .3s}
+.t1 .top.stuck{position:fixed;top:0;left:0;right:0;z-index:85;padding-block:10px;padding-inline:max(clamp(16px,4vw,40px),calc((100vw - 1160px)/2));background:var(--navy2);border-image:none;border-bottom:1px solid rgba(232,163,59,.16);box-shadow:0 14px 34px -22px rgba(0,0,0,.75);animation:hdrop .45s var(--ease)}
+.t1 .top.stuck .prog{opacity:1}
+.t1 .top.stuck .mk i{width:42px;height:42px}
+.t1 .top.stuck .mk img{width:30px}
+.t1 .top.stuck .mk small{display:none}
+@keyframes hdrop{from{transform:translateY(-100%)}to{transform:none}}
+@media (max-width:480px){.t1 .hgive{display:none}.t1 .mk small{display:none}}
+/* small type details */
+.t1 .kick{display:block}
+.t1 .kick::before{content:"";display:inline-block;width:22px;height:1px;margin-right:10px;vertical-align:.3em;background:currentColor;opacity:.7}
+.t1 .kids .kick,.t1 .song .kick,.t1 .give .kick{color:var(--goldS)}
+.t1 .kids-in p .kick{font-size:.8rem;margin-bottom:12px}
+.t1 .give-txt p.kick,.t1 .song-in p.kick,.t1 .shop p.kick{font:600 .8rem/1.2 'Figtree',system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;max-width:none;margin:0 0 4px}
+.t1 .give-txt p.kick,.t1 .song-in p.kick{color:var(--goldS)}
+.t1 .shop p.kick{color:var(--goldT);margin-bottom:10px}
+.t1 .tab .row .kick{font-size:.8rem;margin-bottom:10px}
+.t1 .facts>div+div{padding-left:36px;border-left:1px solid rgba(243,238,226,.14)}
+.t1 .btn{box-shadow:inset 0 1px 0 rgba(255,255,255,.38),0 12px 26px -16px rgba(232,163,59,.75)}
+.t1 .btn-n{box-shadow:inset 0 1px 0 rgba(255,255,255,.12),0 12px 26px -16px rgba(14,34,67,.6)}
+.t1 .tab .frame{box-shadow:0 34px 64px -38px rgba(14,34,67,.5)}
+.t1 .cl li{transition:background .3s,padding .4s var(--ease)}
+.t1 .cl li:hover{padding-left:18px}
+.t1 .three li{position:relative;overflow:hidden}
+.t1 .three li::after{content:"";position:absolute;left:24px;right:24px;top:0;height:1px;background:linear-gradient(90deg,transparent,rgba(232,163,59,.5),transparent);opacity:.6}
+.t1 footer .fine em{font:italic 500 1rem/1.4 'Fraunces',Georgia,serif;color:var(--goldS);display:block;margin-bottom:4px}
+@media (min-width:481px){.t1 .fgive{display:none}}
+@media (prefers-reduced-motion:reduce){.t1 .top.stuck{animation:none}}
 /* ---------- reduced motion: everything rests ---------- */
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important}
@@ -330,8 +382,8 @@ footer nav a:hover{text-decoration:underline;text-underline-offset:4px}
   <div class="lit dark glow follow" id="hero1">
     <div class="wrap">
       <header class="top">
-        <a class="mk" href="#"><i><img src="/images/logo/emblem.svg" alt="" width="356" height="369"></i>Fathers for the Fatherless</a>
-        <nav class="tnav" aria-label="Main"><a href="#" aria-current="page">Home</a><a href="#mission">The mission</a><a href="#about">About</a><a href="#churches">Churches</a><a href="#give1">Give</a><a href="#shop">Shop</a><a href="mailto:fathers4thefatherless@gmail.com">Contact</a></nav>
+        <a class="mk" href="#"><i><img src="/images/logo/emblem.svg" alt="" width="356" height="369"></i><span>Fathers for the Fatherless<small>Honduras · since 2006</small></span></a>
+        <nav class="tnav" aria-label="Main"><a href="#" aria-current="page">Home</a><a href="#mission">The mission</a><a href="#about">About</a><a href="#churches">Churches</a><a href="#give1">Give</a><a href="#shop">Shop</a><a href="mailto:fathers4thefatherless@gmail.com">Contact</a></nav><a class="hgive" href="#give1">Give monthly</a>
         <button class="menu-btn" type="button">Menu</button>
       </header>
       <section class="hero">
@@ -351,7 +403,7 @@ footer nav a:hover{text-decoration:underline;text-underline-offset:4px}
   <div class="run" id="run1">
   <svg class="thread" aria-hidden="true"><path class="base" d=""/><path class="fill" d=""/><g class="nodes"></g></svg>
   <section class="kids lit dark"><div class="wrap kids-in">
-    <p>Students at the school in La Ceiba.<small>Taught alongside the mission workers. La Ceiba is one of Honduras' most beautiful port cities.</small></p>
+    <p><span class="kick">La Ceiba</span>Students at the school in La Ceiba.<small>Taught alongside the mission workers. La Ceiba is one of Honduras' most beautiful port cities.</small></p>
     <div class="ovals"><span class="ov" style="--d:0.7s"><picture><source type="image/avif" srcset="/images/f/school-01-240.avif"><img src="/images/f/school-01-240.webp" alt="A student at the school in La Ceiba" width="240" height="375" loading="lazy" decoding="async" style="background:#d8d2c4 url(data:image/webp;base64,UklGRnwAAABXRUJQVlA4IHAAAAAQBACdASoQABkAPu1iqk4ppaQiMAgBMB2JZwAAXdPlgi7c8L3RSjC8AAD+rxoWStXvFvLXWZtNXrcKaQkZ/hfU6UcPb/SIFCGhylQgOUq2R08T3TnE/DmG0xfLGYbth2BPFxTYDcrVnt5/ttbKhAAA) center/cover"></picture></span><span class="ov" style="--d:1.4s"><picture><source type="image/avif" srcset="/images/f/school-02-240.avif"><img src="/images/f/school-02-240.webp" alt="A student at the school in La Ceiba" width="240" height="375" loading="lazy" decoding="async" style="background:#d8d2c4 url(data:image/webp;base64,UklGRpgAAABXRUJQVlA4IIwAAAAwBACdASoQABkAPu1Ct1apoqakGAEwHYllAMDcG6UXxxedUA1wXGdFjYAA/q+OK2iscxd69nb8cZQ5IVPfuDk8EOxshDK8gli+HARcasVHnlm9GNnDG6rp5reVHQShqhUEJL4YZgqdsZN2NMnrbMyYqEZdQjKCMEHIPTdlYhWG8B74IdNYQnQcoqAAAA==) center/cover"></picture></span><span class="ov" style="--d:2.1s"><picture><source type="image/avif" srcset="/images/f/school-03-240.avif"><img src="/images/f/school-03-240.webp" alt="A student at the school in La Ceiba" width="240" height="375" loading="lazy" decoding="async" style="background:#d8d2c4 url(data:image/webp;base64,UklGRowAAABXRUJQVlA4IIAAAAAQBACdASoQABkAPu1kqk4ppaQiMAgBMB2JZQAAVRWpiVqUNu5txf0WAAD+5z9pa2+a51JCeOBPzthoxcdezFVlu4aTth15KB17EIKWIARIlTDcSqxP7mKnGEjxroCOHrDefKaxluf8UpVikoimpoCtqe98XGPmTkzJSJcHrT+AAA==) center/cover"></picture></span><span class="ov" style="--d:2.8s"><picture><source type="image/avif" srcset="/images/f/school-04-240.avif"><img src="/images/f/school-04-240.webp" alt="A student at the school in La Ceiba" width="240" height="375" loading="lazy" decoding="async" style="background:#d8d2c4 url(data:image/webp;base64,UklGRpQAAABXRUJQVlA4IIgAAADwAwCdASoQABkAPu1kqU2ppaOiMAgBMB2JZwDG9BrC5v1+qK5fB/SAAP6vdIoJMZxyf5FQYzGT5CUsm1+H+vwCzLgOXTnVJmDvHZfUEqDQi+191kwvsgm4JLEFeO+Onz56QQQvDTpE3HMC0hbmhsJ36ZuKhy0J+HpH8y3r4G0eDRgRVBa2/IAA) center/cover"></picture></span><span class="ov" style="--d:3.5s"><picture><source type="image/avif" srcset="/images/f/school-05-240.avif"><img src="/images/f/school-05-240.webp" alt="A student at the school in La Ceiba" width="240" height="375" loading="lazy" decoding="async" style="background:#d8d2c4 url(data:image/webp;base64,UklGRpIAAABXRUJQVlA4IIYAAAAwBACdASoQABkAPu1mqk4ppaOiMAgBMB2JZwDKAB9laLuCM6QZN+/vMIAA/q91B/h2KjShM/R0LijSJti+lEYzjAlryOdd1Z399HuVICyU9MBLffhoMc5tMPEQlf3zkCWBlKXhVjzBYNdq7rtJMb9BU/QqRoJCQwFRfs1Fmv7zP5LhsgAAAA==) center/cover"></picture></span><span class="ov" style="--d:4.2s"><picture><source type="image/avif" srcset="/images/f/school-06-240.avif"><img src="/images/f/school-06-240.webp" alt="A student at the school in La Ceiba" width="240" height="375" loading="lazy" decoding="async" style="background:#d8d2c4 url(data:image/webp;base64,UklGRowAAABXRUJQVlA4IIAAAADwAwCdASoQABgAPu1kqU2ppaOiMAgBMB2JYwCw7B099fblABDtONgAAP7eo/5TZPC6QHEY51epNyHUvqxQbqbq3iaq4pkYZMX9tzJjy+TYvMMcP0Veo9Ka1eDyj0mZI1GwVQUlw/jTbCUvxdjMXlpAARbWEz248c6v+rFDxAAAAA==) center/cover"></picture></span><span class="ov" style="--d:4.9s"><picture><source type="image/avif" srcset="/images/f/school-07-240.avif"><img src="/images/f/school-07-240.webp" alt="A student at the school in La Ceiba" width="240" height="375" loading="lazy" decoding="async" style="background:#d8d2c4 url(data:image/webp;base64,UklGRogAAABXRUJQVlA4IHwAAABQBACdASoQABkAPu1iqU2ppaOiMAgBMB2JZQDE6f/gPEiwSN1wKz1+vhgAAP6uoSo25wcNKf7vMsKO+cH7jeX1Vs8ZrscFsaoepkaT4eHekIz+MSI3NAUPB/3lq1kN5/ZqaUI2jI0f7O9OBdOvTRJfBOqnWaLNqFUtpwAA) center/cover"></picture></span><span class="ov" style="--d:5.6s"><picture><source type="image/avif" srcset="/images/f/school-08-240.avif"><img src="/images/f/school-08-240.webp" alt="A student at the school in La Ceiba" width="240" height="375" loading="lazy" decoding="async" style="background:#d8d2c4 url(data:image/webp;base64,UklGRoIAAABXRUJQVlA4IHYAAADwAwCdASoQABkAPu1orU2ppqSiMAgBMB2JZQAAVOVThPIs3AdbtBgAAP7DpjeCdWPRbqDJ5+G1t724YsHr0kIlVr/WtlDR9LoSrqSovqdSCPRY05tVBZi3jUixp4INjo9lehJlt14fiA6iL69buEMAFT2JcAAA) center/cover"></picture></span><span class="ov" style="--d:0.3s"><picture><source type="image/avif" srcset="/images/f/school-09-240.avif"><img src="/images/f/school-09-240.webp" alt="A student at the school in La Ceiba" width="240" height="375" loading="lazy" decoding="async" style="background:#d8d2c4 url(data:image/webp;base64,UklGRoYAAABXRUJQVlA4IHoAAADwAwCdASoQABgAPu1iqk2ppaQiMAgBMB2JZQAAVRXHhm4FsD34wTQYAP6vdIoZDyc5v+w72cq60mLhN3QvSGXlLqy0vQVbfL3NWQLVZJY8X0ZoXSzG+cuRFK2SY4LAZ0YQaYmmD/15tcz/JCMIPu2YJCWu4v5pIWP4AA==) center/cover"></picture></span><span class="ov" style="--d:1.0s"><picture><source type="image/avif" srcset="/images/f/school-10-240.avif"><img src="/images/f/school-10-240.webp" alt="A student at the school in La Ceiba" width="240" height="375" loading="lazy" decoding="async" style="background:#d8d2c4 url(data:image/webp;base64,UklGRoAAAABXRUJQVlA4IHQAAADwAwCdASoQABkAPu1kqk2ppaQiMAgBMB2JZAAAVRW8fczcR2MeM77IAP7DpkW+ckmSxzQCiOnQHcCu8P7x+vq/ODTDF4Byx6pCzqWrK9cMPkCcuQSfhFWDLAg5NEYg/WM6coxBuaeCz0S+tQdxIUQ6uCSAAA==) center/cover"></picture></span></div>
   </div></section>
   <section class="mission lit light" id="mission"><div class="wrap mission-in">
@@ -380,11 +432,11 @@ footer nav a:hover{text-decoration:underline;text-underline-offset:4px}
   </div></section>
   <section class="lead lit light" id="about"><div class="wrap lead-in">
     <figure class="ring"><picture><source type="image/avif" srcset="/images/f/couple-400.avif 400w, /images/f/couple-640.avif 640w" sizes="(max-width:860px) 80vw, 400px"><img src="/images/f/couple-400.webp" srcset="/images/f/couple-400.webp 400w, /images/f/couple-640.webp 640w" sizes="(max-width:860px) 80vw, 400px" alt="Howard and Patricia Finnicum" width="640" height="630" loading="lazy" decoding="async" style="background:#d8d2c4 url(data:image/webp;base64,UklGRnoAAABXRUJQVlA4IG4AAABwAgCdASoQABAAA4BaJYgCdAYuHvNSuJvLtQbAAPjlWNb51f0u4W5zdF8jLaW5LL/kVhwbEM/57UHAnGCYpqj0DLqewj9YNYyKjrJi39P7eDHSU1YNxN+zjQ/xGaSm6t8/6+MJ1mgOkf8AfixwAA==) center/cover"></picture></figure>
-    <div><h2>Bro. and Sis. Finnicum</h2><p class="sub">Howard and Patricia</p><p class="bio">Howard has been training believers for parts of five decades. After laboring faithfully in a local church for most of that time, he now splits his time between Roanoke, Virginia and overseeing the whole of the work in Honduras. In recent years, he has ministered across the nation of Honduras, searching for pastors and fathers who will rise to the challenge of leading the next generation.</p></div>
+    <div><p class="kick">Leading the work</p><h2>Bro. and Sis. Finnicum</h2><p class="sub">Howard and Patricia</p><p class="bio">Howard has been training believers for parts of five decades. After laboring faithfully in a local church for most of that time, he now splits his time between Roanoke, Virginia and overseeing the whole of the work in Honduras. In recent years, he has ministered across the nation of Honduras, searching for pastors and fathers who will rise to the challenge of leading the next generation.</p></div>
   </div></section>
   <section class="ch lit light" id="churches"><div class="wrap ch-in">
     <div>
-      <h2>Five churches, five men who stay.</h2>
+      <p class="kick">The churches</p><h2>Five churches, five men who stay.</h2>
       <p class="sub">Each church has its own pastor, and each one has stayed.</p>
       <p class="verse">"This gospel of the kingdom shall be preached in all the world."<span>Matthew 24:14</span></p>
     </div>
@@ -400,26 +452,26 @@ footer nav a:hover{text-decoration:underline;text-underline-offset:4px}
   <section class="song lit dark"><div class="wrap song-in">
     <figure class="vid settle"><video controls playsinline preload="none" poster="/images/f/poster-400.webp" width="540" height="960"><source src="/images/field/church-service.mp4" type="video/mp4"></video></figure>
     <div>
-      <p class="big">The children leading the singing at a service.</p>
+      <p class="kick">In the services</p><p class="big">The children leading the singing at a service.</p>
       <p>Giving pays for the teaching, and for doctor and dentist visits that families there cannot afford. <a class="more" href="#mission">Read the mission.</a></p>
       <div class="acts"><a class="btn" href="#give1">Give monthly</a></div>
     </div>
   </div></section>
   <section class="tab lit light"><div class="wrap"><figure>
     <div class="frame"><picture><source type="image/avif" srcset="/images/f/tabernacle-720.avif 720w, /images/f/tabernacle-1080.avif 1080w" sizes="(max-width:1160px) 92vw, 1080px"><img class="settle" src="/images/f/tabernacle-720.webp" srcset="/images/f/tabernacle-720.webp 720w, /images/f/tabernacle-1080.webp 1080w" sizes="(max-width:1160px) 92vw, 1080px" alt="The tabernacle under construction: block walls up, no roof yet" width="1080" height="584" loading="lazy" decoding="async" style="background:#d8d2c4 url(data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAADwAQCdASoQAAkAA4BaJZgCdAEUrmuGmgAAzezLHGmia57EGIExfzey9uKHQy1GO4Bu2CoMniNGucN7wlIxxvdRh/dHkC4azGqWQ5gAAAA=) center/cover"></picture></div>
-    <div class="row"><p>The tabernacle walls are up. It still needs a roof. <a href="#give1">Help finish it.</a></p></div>
+    <div class="row"><p><span class="kick">Still building</span>The tabernacle walls are up. It still needs a roof. <a href="#give1">Help finish it.</a></p></div>
   </figure></div></section>
   <section class="shop lit light" id="shop"><div class="wrap"><div class="shop-in">
     <div class="patch"><img src="/images/logo/emblem-light.svg" alt="" width="356" height="369" loading="lazy"></div>
-    <div><h2>Wear the mission.</h2><p>Shirts, hoodies and mugs with the Fathers for the Fatherless logo. Every purchase supports the work in Honduras.</p><a class="btn-n" href="#">Visit the shop</a></div>
+    <div><p class="kick">The shop</p><h2>Wear the mission.</h2><p>Shirts, hoodies and mugs with the Fathers for the Fatherless logo. Every purchase supports the work in Honduras.</p><a class="btn-n" href="#">Visit the shop</a></div>
   </div></div></section>
   <svg class="wave" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true"><path d="M0 90V50C240 6 480 4 720 34s480 56 720 6v50Z"/></svg>
   <section class="give lit dark glow" id="give1"><div class="wrap give-in">
-    <div class="give-txt"><img class="seal" src="/images/logo/emblem-light.svg" alt="" width="356" height="369" loading="lazy"><h2>Give monthly.</h2><p>For the cost of a few coffee shop visits a month, you can make a difference.</p></div>
+    <div class="give-txt"><img class="seal" src="/images/logo/emblem-light.svg" alt="" width="356" height="369" loading="lazy"><p class="kick">Partner with us</p><h2>Give monthly.</h2><p>For the cost of a few coffee shop visits a month, you can make a difference.</p></div>
     <div class="gv" data-give><div class="gv-freq" role="radiogroup" aria-label="How often"><button type="button" role="radio" aria-checked="true" data-f="m">Monthly</button><button type="button" role="radio" aria-checked="false" data-f="o">One time</button></div><div class="gv-amts" role="radiogroup" aria-label="Amount"><button type="button" role="radio" aria-checked="false" data-a="25"><b>$25</b></button><button type="button" role="radio" aria-checked="true" data-a="50"><b>$50</b></button><button type="button" role="radio" aria-checked="false" data-a="100"><b>$100</b></button><button type="button" role="radio" aria-checked="false" data-a="250"><b>$250</b></button><label class="gv-custom" for="gv-c-1"><b>$</b><input id="gv-c-1" inputmode="numeric" autocomplete="off" placeholder="Other amount" aria-label="Other amount"></label></div><p class="gv-what" aria-live="polite">$50 a month goes toward training the pastors who disciple those fathers.</p><a class="btn gv-go" href="#">Give $50 a month</a><p class="gv-note" hidden>Preview only. This button opens checkout once online giving is connected.</p></div>
   </div></section>
   </div>
-  <footer><div class="wrap foot"><img class="flogo" src="/images/logo/lockup-light.svg" alt="Fathers for the Fatherless. This is what hope looks like." width="520" height="572" loading="lazy"><nav aria-label="Footer"><a href="#mission">The mission</a><a href="#about">About</a><a href="#churches">Churches</a><a href="#give1">Give</a><a href="#shop">Shop</a><a href="mailto:fathers4thefatherless@gmail.com">Contact</a></nav><span class="fine">A non-profit organization · Honduras since 2006</span></div></footer>
+  <footer><div class="wrap foot"><img class="flogo" src="/images/logo/lockup-light.svg" alt="Fathers for the Fatherless. This is what hope looks like." width="520" height="572" loading="lazy"><nav aria-label="Footer"><a href="#mission">The mission</a><a href="#about">About</a><a href="#churches">Churches</a><a href="#give1">Give</a><a href="#shop">Shop</a><a href="mailto:fathers4thefatherless@gmail.com">Contact</a></nav><span class="fine"><em>This is what hope looks like.</em>A non-profit organization · Honduras since 2006 · © 2026 Fathers for the Fatherless</span></div></footer>
   <a class="fgive" href="#give1" data-fgive>Give monthly</a>
 </div>
 
