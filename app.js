@@ -61,18 +61,18 @@
     function mark(y,el){marks.push({y:y-rr.top,el:el})}
     var grids=STOPS.map(Q).filter(Boolean);
     if(mob){
-      var w=Q('.kids .wrap'),x=R(w).left+parseFloat(getComputedStyle(w).paddingLeft)-22;A=6;lam=230;
+      var w=Q('.kids .wrap'),x=R(w).left+parseFloat(getComputedStyle(w).paddingLeft)-22;A=2.5;lam=420;/* barely a wave */
       grids.concat([Q('.tab .frame'),Q('.shop-in')]).forEach(function(el){var b=R(el);hold(b.top,b.bottom,x);mark(b.top+14,el)});
       var sb=R(Q('.give .seal'));hold(sb.top,sb.top,x);mark(sb.top+sb.height/2,Q('.give'));endY=sb.top+sb.height/2-rr.top;
     }else{
-      var half=1e9;lam=320;
+      var half=1e9;lam=620;
       grids.forEach(function(g){var k=g.children,a=ext(k[0]),b=ext(k[1]),gb=R(g),top=Math.max(a.t,b.t),bot=Math.min(a.b,b.b);
         half=Math.min(half,(b.l-a.r)/2);hold(gb.top,gb.bottom,(a.r+b.l)/2);mark(bot>top?(top+bot)/2:gb.top+gb.height/2,g)});
       var fr=R(Q('.tab .frame')),ts=R(Q('.tab')),ty=fr.top-(fr.top-ts.top)*.42;hold(ty,ty,rr.left+W/2);mark(ty,Q('.tab'));
       var rp=R(Q('.tab .row p')),ry=rp.top+rp.height/2;hold(ry,ry,Math.min(rr.left+W-40,Math.max(rp.right+70,rr.left+W*.74)));
       var card=Q('.shop-in'),cb=R(card);hold(cb.top+24,cb.bottom-24,(R(card.querySelector('p:not(.kick)')).right+cb.right)/2);mark(cb.top+cb.height/2,card);
       var seal=R(Q('.give .seal')),gy=seal.top-10;hold(gy,gy,seal.left+seal.width/2);mark(gy,Q('.give'));endY=gy-rr.top;
-      A=Math.max(10,Math.min(26,half-14));
+      A=Math.max(3,Math.min(6,half-14));
     }
     function cx(y){if(y<=K[0].y1)return K[0].x;for(var i=0;i<K.length-1;i++){var a=K[i],b=K[i+1];if(y<=b.y0){if(y<=a.y1)return a.x;var t=(y-a.y1)/Math.max(1,b.y0-a.y1),s=t*t*t*(t*(t*6-15)+10);return a.x+(b.x-a.x)*s}}return K[K.length-1].x}
     function xAt(y){var fade=Math.max(0,Math.min(1,(endY-y)/160));return cx(y)+A*fade*Math.sin(2*Math.PI*y/lam)}
