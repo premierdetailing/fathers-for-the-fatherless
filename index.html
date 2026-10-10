@@ -363,7 +363,7 @@ footer nav a:hover{text-decoration:underline;text-underline-offset:4px}
 .t1 .three li{position:relative;overflow:hidden}
 .t1 .three li::after{content:"";position:absolute;left:24px;right:24px;top:0;height:1px;background:linear-gradient(90deg,transparent,rgba(232,163,59,.5),transparent);opacity:.6}
 .t1 footer .fine em{font:italic 500 1rem/1.4 'Fraunces',Georgia,serif;color:var(--goldS);display:block;margin-bottom:4px}
-@media (min-width:481px){.t1 .fgive{display:none}}
+/* floating Give now shows on desktop too */
 @media (prefers-reduced-motion:reduce){.t1 .top.stuck{animation:none}}
 /* ---------- v6: the gold line flows (Joe 9 Oct: "make the gold swoop less sharp and add more detail to it. should flow naturally") ---------- */
 @media (min-width:861px){
@@ -378,6 +378,11 @@ footer nav a:hover{text-decoration:underline;text-underline-offset:4px}
 .t1 .thread .ring{fill:none;stroke:rgba(232,163,59,.4);stroke-width:1.1;transform-box:fill-box;transform-origin:center;transition:transform .8s var(--ease),stroke .5s}
 .t1 .thread .ring.on{transform:scale(1.3);stroke:rgba(232,163,59,.75)}
 .t1 .thread .halo{fill:rgba(232,163,59,.16)}
+/* ---------- v10: more give buttons (Joe 9 Oct: "need more donation cta buttons") ---------- */
+.t1 .cta{margin-top:22px}
+.t1 .kids-in p .cta{margin-top:18px}
+.t1 .tab .row .cta{margin-top:14px}
+.t1 .fgive{box-shadow:inset 0 1px 0 rgba(255,255,255,.4),0 16px 34px -14px rgba(0,0,0,.55)}
 /* ---------- reduced motion: everything rests ---------- */
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important}
@@ -416,7 +421,7 @@ footer nav a:hover{text-decoration:underline;text-underline-offset:4px}
   <div class="run" id="run1">
   <svg class="thread" aria-hidden="true"><path class="base" d=""/><path class="fill" d=""/><g class="nodes"></g></svg>
   <section class="kids lit dark"><div class="wrap kids-in">
-    <p><span class="kick">La Ceiba</span>Students at the school in La Ceiba.<small>Taught alongside the mission workers. La Ceiba is one of Honduras' most beautiful port cities.</small></p>
+    <p><span class="kick">La Ceiba</span>Students at the school in La Ceiba.<small>Taught alongside the mission workers. La Ceiba is one of Honduras' most beautiful port cities.</small><span class="acts cta"><a class="btn" href="#give1">Give to the school</a></span></p>
     <div class="ovals"><span class="ov" style="--d:0.7s"><picture><source type="image/avif" srcset="/images/f/school-01-240.avif"><img src="/images/f/school-01-240.webp" alt="A student at the school in La Ceiba" width="240" height="375" loading="lazy" decoding="async" style="background:#d8d2c4 url(data:image/webp;base64,UklGRnwAAABXRUJQVlA4IHAAAAAQBACdASoQABkAPu1iqk4ppaQiMAgBMB2JZwAAXdPlgi7c8L3RSjC8AAD+rxoWStXvFvLXWZtNXrcKaQkZ/hfU6UcPb/SIFCGhylQgOUq2R08T3TnE/DmG0xfLGYbth2BPFxTYDcrVnt5/ttbKhAAA) center/cover"></picture></span><span class="ov" style="--d:1.4s"><picture><source type="image/avif" srcset="/images/f/school-02-240.avif"><img src="/images/f/school-02-240.webp" alt="A student at the school in La Ceiba" width="240" height="375" loading="lazy" decoding="async" style="background:#d8d2c4 url(data:image/webp;base64,UklGRpgAAABXRUJQVlA4IIwAAAAwBACdASoQABkAPu1Ct1apoqakGAEwHYllAMDcG6UXxxedUA1wXGdFjYAA/q+OK2iscxd69nb8cZQ5IVPfuDk8EOxshDK8gli+HARcasVHnlm9GNnDG6rp5reVHQShqhUEJL4YZgqdsZN2NMnrbMyYqEZdQjKCMEHIPTdlYhWG8B74IdNYQnQcoqAAAA==) center/cover"></picture></span><span class="ov" style="--d:2.1s"><picture><source type="image/avif" srcset="/images/f/school-03-240.avif"><img src="/images/f/school-03-240.webp" alt="A student at the school in La Ceiba" width="240" height="375" loading="lazy" decoding="async" style="background:#d8d2c4 url(data:image/webp;base64,UklGRowAAABXRUJQVlA4IIAAAAAQBACdASoQABkAPu1kqk4ppaQiMAgBMB2JZQAAVRWpiVqUNu5txf0WAAD+5z9pa2+a51JCeOBPzthoxcdezFVlu4aTth15KB17EIKWIARIlTDcSqxP7mKnGEjxroCOHrDefKaxluf8UpVikoimpoCtqe98XGPmTkzJSJcHrT+AAA==) center/cover"></picture></span><span class="ov" style="--d:2.8s"><picture><source type="image/avif" srcset="/images/f/school-04-240.avif"><img src="/images/f/school-04-240.webp" alt="A student at the school in La Ceiba" width="240" height="375" loading="lazy" decoding="async" style="background:#d8d2c4 url(data:image/webp;base64,UklGRpQAAABXRUJQVlA4IIgAAADwAwCdASoQABkAPu1kqU2ppaOiMAgBMB2JZwDG9BrC5v1+qK5fB/SAAP6vdIoJMZxyf5FQYzGT5CUsm1+H+vwCzLgOXTnVJmDvHZfUEqDQi+191kwvsgm4JLEFeO+Onz56QQQvDTpE3HMC0hbmhsJ36ZuKhy0J+HpH8y3r4G0eDRgRVBa2/IAA) center/cover"></picture></span><span class="ov" style="--d:3.5s"><picture><source type="image/avif" srcset="/images/f/school-05-240.avif"><img src="/images/f/school-05-240.webp" alt="A student at the school in La Ceiba" width="240" height="375" loading="lazy" decoding="async" style="background:#d8d2c4 url(data:image/webp;base64,UklGRpIAAABXRUJQVlA4IIYAAAAwBACdASoQABkAPu1mqk4ppaOiMAgBMB2JZwDKAB9laLuCM6QZN+/vMIAA/q91B/h2KjShM/R0LijSJti+lEYzjAlryOdd1Z399HuVICyU9MBLffhoMc5tMPEQlf3zkCWBlKXhVjzBYNdq7rtJMb9BU/QqRoJCQwFRfs1Fmv7zP5LhsgAAAA==) center/cover"></picture></span><span class="ov" style="--d:4.2s"><picture><source type="image/avif" srcset="/images/f/school-06-240.avif"><img src="/images/f/school-06-240.webp" alt="A student at the school in La Ceiba" width="240" height="375" loading="lazy" decoding="async" style="background:#d8d2c4 url(data:image/webp;base64,UklGRowAAABXRUJQVlA4IIAAAADwAwCdASoQABgAPu1kqU2ppaOiMAgBMB2JYwCw7B099fblABDtONgAAP7eo/5TZPC6QHEY51epNyHUvqxQbqbq3iaq4pkYZMX9tzJjy+TYvMMcP0Veo9Ka1eDyj0mZI1GwVQUlw/jTbCUvxdjMXlpAARbWEz248c6v+rFDxAAAAA==) center/cover"></picture></span><span class="ov" style="--d:4.9s"><picture><source type="image/avif" srcset="/images/f/school-07-240.avif"><img src="/images/f/school-07-240.webp" alt="A student at the school in La Ceiba" width="240" height="375" loading="lazy" decoding="async" style="background:#d8d2c4 url(data:image/webp;base64,UklGRogAAABXRUJQVlA4IHwAAABQBACdASoQABkAPu1iqU2ppaOiMAgBMB2JZQDE6f/gPEiwSN1wKz1+vhgAAP6uoSo25wcNKf7vMsKO+cH7jeX1Vs8ZrscFsaoepkaT4eHekIz+MSI3NAUPB/3lq1kN5/ZqaUI2jI0f7O9OBdOvTRJfBOqnWaLNqFUtpwAA) center/cover"></picture></span><span class="ov" style="--d:5.6s"><picture><source type="image/avif" srcset="/images/f/school-08-240.avif"><img src="/images/f/school-08-240.webp" alt="A student at the school in La Ceiba" width="240" height="375" loading="lazy" decoding="async" style="background:#d8d2c4 url(data:image/webp;base64,UklGRoIAAABXRUJQVlA4IHYAAADwAwCdASoQABkAPu1orU2ppqSiMAgBMB2JZQAAVOVThPIs3AdbtBgAAP7DpjeCdWPRbqDJ5+G1t724YsHr0kIlVr/WtlDR9LoSrqSovqdSCPRY05tVBZi3jUixp4INjo9lehJlt14fiA6iL69buEMAFT2JcAAA) center/cover"></picture></span><span class="ov" style="--d:0.3s"><picture><source type="image/avif" srcset="/images/f/school-09-240.avif"><img src="/images/f/school-09-240.webp" alt="A student at the school in La Ceiba" width="240" height="375" loading="lazy" decoding="async" style="background:#d8d2c4 url(data:image/webp;base64,UklGRoYAAABXRUJQVlA4IHoAAADwAwCdASoQABgAPu1iqk2ppaQiMAgBMB2JZQAAVRXHhm4FsD34wTQYAP6vdIoZDyc5v+w72cq60mLhN3QvSGXlLqy0vQVbfL3NWQLVZJY8X0ZoXSzG+cuRFK2SY4LAZ0YQaYmmD/15tcz/JCMIPu2YJCWu4v5pIWP4AA==) center/cover"></picture></span><span class="ov" style="--d:1.0s"><picture><source type="image/avif" srcset="/images/f/school-10-240.avif"><img src="/images/f/school-10-240.webp" alt="A student at the school in La Ceiba" width="240" height="375" loading="lazy" decoding="async" style="background:#d8d2c4 url(data:image/webp;base64,UklGRoAAAABXRUJQVlA4IHQAAADwAwCdASoQABkAPu1kqk2ppaQiMAgBMB2JZAAAVRW8fczcR2MeM77IAP7DpkW+ckmSxzQCiOnQHcCu8P7x+vq/ODTDF4Byx6pCzqWrK9cMPkCcuQSfhFWDLAg5NEYg/WM6coxBuaeCz0S+tQdxIUQ6uCSAAA==) center/cover"></picture></span></div>
   </div></section>
   <section class="mission lit light" id="mission"><div class="wrap mission-in">
@@ -424,6 +429,7 @@ footer nav a:hover{text-decoration:underline;text-underline-offset:4px}
       <p class="kick">Our mission</p>
       <h2>To equip, engage, and edify the Body of Christ, even unto the ends of the world.</h2>
       <p class="why">Since 2006, we have been privileged to serve the Lord by ministering to the people of Honduras. When we arrived, we were grieved to find that centuries of religious influence had failed to produce faithful men with the training necessary to lead godly homes. God was searching for men who would stand in the gap for Him.</p>
+      <span class="acts cta"><a class="btn" href="#give1">Give monthly</a></span>
     </div>
     <ol class="three">
       <li><b>Engage</b><p>Our commitment goes beyond financial support or long-distance help. Trips to Honduras happen every year, and our boots-on-the-ground approach takes us right into the heart of the challenges these dear people face. Many of them are now among our dearest friends.</p></li>
@@ -441,17 +447,20 @@ footer nav a:hover{text-decoration:underline;text-underline-offset:4px}
       <p>Wherever we labor, we start with a strong foundation. That means training fathers how to restore their marriages, love their wives and children, and lead their families in righteousness.</p>
       <p>It also means training pastors how to be examples to the flock, disciple the fathers in the church, and preach the truths of the Word of God. It can be a slow process.</p>
       <p class="joy">By God's grace, marriages are being saved through the principles of Scripture. God is turning the hearts of the fathers and their families toward a deeper relationship with Him and one another.</p>
+      <span class="acts cta"><a class="btn" href="#give1">Help train a father</a></span>
     </div>
   </div></section>
   <section class="lead lit light" id="about"><div class="wrap lead-in">
     <figure class="ring"><picture><source type="image/avif" srcset="/images/f/couple-400.avif 400w, /images/f/couple-640.avif 640w" sizes="(max-width:860px) 80vw, 400px"><img src="/images/f/couple-400.webp" srcset="/images/f/couple-400.webp 400w, /images/f/couple-640.webp 640w" sizes="(max-width:860px) 80vw, 400px" alt="Howard and Patricia Finnicum" width="640" height="630" loading="lazy" decoding="async" style="background:#d8d2c4 url(data:image/webp;base64,UklGRnoAAABXRUJQVlA4IG4AAABwAgCdASoQABAAA4BaJYgCdAYuHvNSuJvLtQbAAPjlWNb51f0u4W5zdF8jLaW5LL/kVhwbEM/57UHAnGCYpqj0DLqewj9YNYyKjrJi39P7eDHSU1YNxN+zjQ/xGaSm6t8/6+MJ1mgOkf8AfixwAA==) center/cover"></picture></figure>
-    <div><p class="kick">Leading the work</p><h2>Bro. and Sis. Finnicum</h2><p class="sub">Howard and Patricia</p><p class="bio">Howard has been training believers for parts of five decades. After laboring faithfully in a local church for most of that time, he now splits his time between Roanoke, Virginia and overseeing the whole of the work in Honduras. In recent years, he has ministered across the nation of Honduras, searching for pastors and fathers who will rise to the challenge of leading the next generation.</p></div>
+    <div><p class="kick">Leading the work</p><h2>Bro. and Sis. Finnicum</h2><p class="sub">Howard and Patricia</p><p class="bio">Howard has been training believers for parts of five decades. After laboring faithfully in a local church for most of that time, he now splits his time between Roanoke, Virginia and overseeing the whole of the work in Honduras. In recent years, he has ministered across the nation of Honduras, searching for pastors and fathers who will rise to the challenge of leading the next generation.</p>
+      <span class="acts cta"><a class="btn" href="#give1">Support their work</a></span></div>
   </div></section>
   <section class="ch lit light" id="churches"><div class="wrap ch-in">
     <div>
       <p class="kick">The churches</p><h2>Five churches, each with its own pastor.</h2>
       <p class="sub">The first began in 2006. The newest in 2018.</p>
       <p class="verse">"This gospel of the kingdom shall be preached in all the world."<span>Matthew 24:14</span></p>
+      <span class="acts cta"><a class="btn" href="#give1">Support a pastor</a></span>
     </div>
     <ol class="cl" data-sync="m1">
         <li data-k="laceiba"><span class="y">2006</span><div><b>La Ceiba</b><span>Bro. Edwin Rodriguez</span></div></li>
@@ -472,7 +481,7 @@ footer nav a:hover{text-decoration:underline;text-underline-offset:4px}
   </div></section>
   <section class="tab lit light"><div class="wrap"><figure>
     <div class="frame"><picture><source type="image/avif" srcset="/images/f/tabernacle-720.avif 720w, /images/f/tabernacle-1080.avif 1080w" sizes="(max-width:1160px) 92vw, 1080px"><img class="settle" src="/images/f/tabernacle-720.webp" srcset="/images/f/tabernacle-720.webp 720w, /images/f/tabernacle-1080.webp 1080w" sizes="(max-width:1160px) 92vw, 1080px" alt="The tabernacle under construction: block walls up, no roof yet" width="1080" height="584" loading="lazy" decoding="async" style="background:#d8d2c4 url(data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAADwAQCdASoQAAkAA4BaJZgCdAEUrmuGmgAAzezLHGmia57EGIExfzey9uKHQy1GO4Bu2CoMniNGucN7wlIxxvdRh/dHkC4azGqWQ5gAAAA=) center/cover"></picture></div>
-    <div class="row"><p><span class="kick">Still building</span>The tabernacle walls are up. It still needs a roof. <a href="#give1">Help finish it.</a></p></div>
+    <div class="row"><p><span class="kick">Still building</span>The tabernacle walls are up. It still needs a roof. <a href="#give1">Help finish it.</a><span class="acts cta"><a class="btn" href="#give1">Help build the roof</a></span></p></div>
   </figure></div></section>
   <section class="shop lit light" id="shop"><div class="wrap"><div class="shop-in">
     <div class="patch"><img src="/images/logo/emblem-light.svg" alt="" width="356" height="369" loading="lazy"></div>
