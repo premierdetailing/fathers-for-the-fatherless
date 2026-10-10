@@ -61,6 +61,7 @@
     function Ln(p){d+=' L'+f(p.x)+','+f(p.y)}
     function S(a,b,k){var h=(b.y-a.y)*(k||.5);d+=' C'+f(a.x)+','+f(a.y+h)+' '+f(b.x)+','+f(b.y-h)+' '+f(b.x)+','+f(b.y)}
     function Arc(r,sw,p){d+=' A'+f(r)+','+f(r)+' 0 0 '+sw+' '+f(p.x)+','+f(p.y)}
+    function Wave(a,b,amp){var m={x:(a.x+b.x)/2+amp,y:(a.y+b.y)/2},h=(b.y-a.y)/2*.55;d+=' C'+f(a.x)+','+f(a.y+h)+' '+f(m.x)+','+f(m.y-h)+' '+f(m.x)+','+f(m.y)+' C'+f(m.x)+','+f(m.y+h)+' '+f(b.x)+','+f(b.y-h)+' '+f(b.x)+','+f(b.y)}
     function Run(a,b){var k=Math.abs(b.x-a.x)*.42,s=b.x>a.x?1:-1;d+=' C'+f(a.x+s*k)+','+f(a.y)+' '+f(b.x-s*k)+','+f(b.y)+' '+f(b.x)+','+f(b.y)}
     /* one band crossing: down out of the column gap, a rounded corner, a gentle drift out, a round turn, a gentle drift back, a rounded corner, down into the next gap */
     function Loop(a,b,far){var H=b.y-a.y,dir=far>a.x?1:-1,rc=Math.min(64,H*.2),dd=H*.08,Rt=Math.max(18,(H-2*rc-2*dd)/2);
@@ -80,10 +81,11 @@
     var rp=R(Q('.tab .row p'));var Tw=pt(Math.min(rr.left+W-40,Math.max(rp.right+70,rr.left+W*.74)),rp.top+rp.height/2,null,false);
     var card=Q('.shop-in'),cb=R(card);var Sh=pt((R(card.querySelector('p')).right+cb.right)/2,cb.top+cb.height/2,card);
     var seal=R(Q('.give .seal'));var G=pt(seal.left+seal.width/2,seal.top-10,Q('.give'));
-    M({x:N[0].x,y:0});Ln(N[0]);
+    /* a subtle wave: a gentle sway down each column gap, a soft S between sections */
+    var amp=Math.min(70,W*.055);M({x:N[0].x,y:0});Wave({x:N[0].x,y:0},N[0],9);
     for(var i=0;i<N.length;i++){
-      var last=i===N.length-1,a={x:N[i].x,y:B[i].bot+12},end=last?T:N[i+1],b={x:end.x,y:last?T.y-24:B[i+1].top-12};
-      Ln(a);Loop(a,b,i%2?W*.13:W*.87);Ln(end);
+      var last=i===N.length-1,s=i%2?-1:1,a={x:N[i].x,y:B[i].bot+12},end=last?T:N[i+1],b={x:end.x,y:last?T.y-24:B[i+1].top-12};
+      Wave(N[i],a,-s*9);Wave(a,b,s*amp);Wave(b,end,s*6);
     }
     S(T,Tw,.55);S(Tw,Sh,.55);S(Sh,G,.5);
     return {d:d,nodes:nodes};
