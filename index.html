@@ -365,6 +365,19 @@ footer nav a:hover{text-decoration:underline;text-underline-offset:4px}
 .t1 footer .fine em{font:italic 500 1rem/1.4 'Fraunces',Georgia,serif;color:var(--goldS);display:block;margin-bottom:4px}
 @media (min-width:481px){.t1 .fgive{display:none}}
 @media (prefers-reduced-motion:reduce){.t1 .top.stuck{animation:none}}
+/* ---------- v6: the gold line flows (Joe 9 Oct: "make the gold swoop less sharp and add more detail to it. should flow naturally") ---------- */
+@media (min-width:861px){
+  .t1 .run>section:is(.kids,.mission,.found,.ch,.song){padding-top:calc(clamp(64px,9vw,120px) + 36px);padding-bottom:calc(clamp(64px,9vw,120px) + 36px)}
+  .t1 .run>section.lead{padding-top:calc(clamp(64px,9vw,120px) + 36px);padding-bottom:calc(clamp(32px,5vw,64px) + 36px)}
+  .t1 .run>section.tab{padding-top:calc(clamp(64px,9vw,120px) + 36px)}
+}
+.t1 .thread .base{stroke:rgba(232,163,59,.55);stroke-width:1.6;stroke-dasharray:.5 9;stroke-linecap:round}
+.t1 .thread .fill{stroke:url(#fftf-tg);stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+.t1 .thread .glow{fill:none;stroke:#E8A33B;stroke-width:9;stroke-linecap:round;opacity:.2;filter:url(#fftf-tb)}
+.t1 .thread .nd{stroke:rgba(232,163,59,.75);stroke-width:1.6}
+.t1 .thread .ring{fill:none;stroke:rgba(232,163,59,.4);stroke-width:1.1;transform-box:fill-box;transform-origin:center;transition:transform .8s var(--ease),stroke .5s}
+.t1 .thread .ring.on{transform:scale(1.3);stroke:rgba(232,163,59,.75)}
+.t1 .thread .halo{fill:rgba(232,163,59,.16)}
 /* ---------- reduced motion: everything rests ---------- */
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important}

@@ -41,14 +41,16 @@
   })}
 
 
-  /* the gold thread: finds every two-column section, runs down the gap between the columns, swoops wide across the empty space between sections, ends on the logo */
+  /* the gold thread: finds every two-column section, runs down the gap between the columns, then flows out in a wide rounded loop through the empty space between sections and back in; ends on the logo */
   var run=document.getElementById('run1'),svg=run.querySelector('.thread'),base=svg.querySelector('.base'),fill=svg.querySelector('.fill'),ng=svg.querySelector('.nodes'),L=0,dots=[],tick=false,NS='http://www.w3.org/2000/svg';
   var STOPS=['.kids-in','.mission-in','.found-in','.lead-in','.ch-in','.song-in'],BOX='img,video,.three li';
+  (function(){var d=document.createElementNS(NS,'defs');d.innerHTML='<linearGradient id="fftf-tg" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="760" spreadMethod="reflect"><stop offset="0" stop-color="#D38D2C"/><stop offset=".4" stop-color="#F2C266"/><stop offset=".7" stop-color="#E8A33B"/><stop offset="1" stop-color="#C98428"/></linearGradient><filter id="fftf-tb" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="3.2"/></filter>';svg.insertBefore(d,svg.firstChild);
+    var g=document.createElementNS(NS,'path');g.setAttribute('class','glow');svg.insertBefore(g,fill)})();
+  var glow=svg.querySelector('.glow');
   function R(el){return el.getBoundingClientRect()}
   function Q(s){return run.querySelector(s)}
   function bgOf(el){while(el&&el!==document.documentElement){var c=getComputedStyle(el).backgroundColor;if(c&&c!=='transparent'&&!/,\s*0\)$/.test(c))return c;el=el.parentElement}return '#F6F1E6'}
   function f(n){return n.toFixed(1)}
-  /* where the visible stuff in a column actually is: text lines, photos, cards (not the empty width of a block) */
   function ext(el){var b={l:1e9,r:-1e9,t:1e9,b:-1e9};function add(q){if(q.width<1||q.height<1)return;b.l=Math.min(b.l,q.left);b.r=Math.max(b.r,q.right);b.t=Math.min(b.t,q.top);b.b=Math.max(b.b,q.bottom)}
     var w=document.createTreeWalker(el,NodeFilter.SHOW_TEXT),n,rg=document.createRange();while(n=w.nextNode()){if(!n.nodeValue.trim())continue;rg.selectNodeContents(n);[].forEach.call(rg.getClientRects(),add)}
     [].forEach.call(el.querySelectorAll(BOX),function(e){add(R(e))});if(el.matches(BOX))add(R(el));return b}
@@ -57,7 +59,13 @@
     function pt(x,y,el,dot){var p={x:x-rr.left,y:y-rr.top,bg:el?bgOf(el):'',dot:dot!==false};if(p.dot)nodes.push(p);return p}
     function M(p){d+='M'+f(p.x)+','+f(p.y)}
     function Ln(p){d+=' L'+f(p.x)+','+f(p.y)}
-    function S(a,b,k){var h=(b.y-a.y)*(k||.62);d+=' C'+f(a.x)+','+f(a.y+h)+' '+f(b.x)+','+f(b.y-h)+' '+f(b.x)+','+f(b.y)}
+    function S(a,b,k){var h=(b.y-a.y)*(k||.5);d+=' C'+f(a.x)+','+f(a.y+h)+' '+f(b.x)+','+f(b.y-h)+' '+f(b.x)+','+f(b.y)}
+    function Arc(r,sw,p){d+=' A'+f(r)+','+f(r)+' 0 0 '+sw+' '+f(p.x)+','+f(p.y)}
+    function Run(a,b){var k=Math.abs(b.x-a.x)*.42,s=b.x>a.x?1:-1;d+=' C'+f(a.x+s*k)+','+f(a.y)+' '+f(b.x-s*k)+','+f(b.y)+' '+f(b.x)+','+f(b.y)}
+    /* one band crossing: down out of the column gap, a rounded corner, a gentle drift out, a round turn, a gentle drift back, a rounded corner, down into the next gap */
+    function Loop(a,b,far){var H=b.y-a.y,dir=far>a.x?1:-1,rc=Math.min(64,H*.2),dd=H*.08,Rt=Math.max(18,(H-2*rc-2*dd)/2);
+      var p1={x:a.x+dir*rc,y:a.y+rc},p2={x:far-dir*Rt,y:a.y+rc+dd},pm={x:far,y:p2.y+Rt},p3={x:far-dir*Rt,y:p2.y+2*Rt},p4={x:b.x+dir*rc,y:b.y-rc};
+      Arc(rc,dir>0?0:1,p1);Run(p1,p2);Arc(Rt,dir>0?1:0,pm);Arc(Rt,dir>0?1:0,p3);Run(p3,p4);Arc(rc,dir>0?0:1,b)}
     var grids=STOPS.map(Q).filter(Boolean);
     if(innerWidth<=860){
       var w=Q('.kids .wrap'),x=R(w).left+parseFloat(getComputedStyle(w).paddingLeft)-22;
@@ -68,43 +76,39 @@
     var N=[],B=[];
     grids.forEach(function(g){var k=g.children,a=ext(k[0]),b=ext(k[1]),gb=R(g),top=Math.max(a.t,b.t),bot=Math.min(a.b,b.b);
       N.push(pt((a.r+b.l)/2,bot>top?(top+bot)/2:gb.top+gb.height/2,g));B.push({top:gb.top-rr.top,bot:gb.bottom-rr.top})});
-    var fr=R(Q('.tab .frame')),ts=R(Q('.tab'));var T=pt(rr.left+W/2,fr.top-(fr.top-ts.top)*.5,Q('.tab'));
+    var fr=R(Q('.tab .frame')),ts=R(Q('.tab'));var T=pt(rr.left+W/2,fr.top-(fr.top-ts.top)*.42,Q('.tab'));
     var rp=R(Q('.tab .row p'));var Tw=pt(Math.min(rr.left+W-40,Math.max(rp.right+70,rr.left+W*.74)),rp.top+rp.height/2,null,false);
     var card=Q('.shop-in'),cb=R(card);var Sh=pt((R(card.querySelector('p')).right+cb.right)/2,cb.top+cb.height/2,card);
     var seal=R(Q('.give .seal'));var G=pt(seal.left+seal.width/2,seal.top-10,Q('.give'));
     M({x:N[0].x,y:0});Ln(N[0]);
     for(var i=0;i<N.length;i++){
-      var last=i===N.length-1,a={x:N[i].x,y:B[i].bot+14},end=last?T:N[i+1],b={x:end.x,y:last?T.y:B[i+1].top-14},mid={x:i%2?W*.08:W*.92,y:(a.y+b.y)/2};
-      Ln(a);S(a,mid);S(mid,b);if(!last)Ln(N[i+1]);
+      var last=i===N.length-1,a={x:N[i].x,y:B[i].bot+12},end=last?T:N[i+1],b={x:end.x,y:last?T.y-24:B[i+1].top-12};
+      Ln(a);Loop(a,b,i%2?W*.13:W*.87);Ln(end);
     }
-    S(T,Tw,.6);S(Tw,Sh,.6);S(Sh,G,.55);
+    S(T,Tw,.55);S(Tw,Sh,.55);S(Sh,G,.5);
     return {d:d,nodes:nodes};
   }
   function build(){
     var rr=R(run),W=rr.width,H=run.scrollHeight;svg.setAttribute('width',W);svg.setAttribute('height',H);svg.setAttribute('viewBox','0 0 '+W+' '+H);
-    var g=geo(rr);base.setAttribute('d',g.d);fill.setAttribute('d',g.d);L=fill.getTotalLength();fill.style.strokeDasharray=L;LUT=[];
+    var g=geo(rr);base.setAttribute('d',g.d);fill.setAttribute('d',g.d);glow.setAttribute('d',g.d);L=fill.getTotalLength();fill.style.strokeDasharray=L;glow.style.strokeDasharray=L;LUT=[];
     while(ng.firstChild)ng.removeChild(ng.firstChild);dots=[];
-    g.nodes.forEach(function(p){var h=document.createElementNS(NS,'circle'),c=document.createElementNS(NS,'circle');
-      h.setAttribute('class','halo');h.setAttribute('cx',p.x);h.setAttribute('cy',p.y);h.setAttribute('r',16);
-      c.setAttribute('class','nd');c.setAttribute('cx',p.x);c.setAttribute('cy',p.y);c.setAttribute('r',8);c.style.fill=p.bg;
-      ng.appendChild(h);ng.appendChild(c);dots.push({y:p.y,h:h,c:c})});
+    g.nodes.forEach(function(p){function C(cls,r){var c=document.createElementNS(NS,'circle');c.setAttribute('class',cls);c.setAttribute('cx',p.x);c.setAttribute('cy',p.y);c.setAttribute('r',r);ng.appendChild(c);return c}
+      var h=C('halo',18),ri=C('ring',12),c=C('nd',6);c.style.fill=p.bg;dots.push({y:p.y,h:h,c:c,r:ri})});
     thread();
   }
-  /* the line follows your scroll along its own length, so it travels sideways through each swoop */
   var LUT=[];
-  function lut(){LUT=[];var n=400;for(var i=0;i<=n;i++){var q=fill.getPointAtLength(L*i/n);LUT.push(q.y)}}
+  function lut(){LUT=[];var n=600;for(var i=0;i<=n;i++){var q=fill.getPointAtLength(L*i/n);LUT.push(q.y)}}
   function thread(){
     if(!L)return;
-    if(LUT.length!==401)lut();
+    if(LUT.length!==601)lut();
     var r=R(run),line=innerHeight*.6,y=line-r.top,p;
-    if(reduce)p=1;else{var lo=0;for(var i=0;i<=400;i++){if(LUT[i]<=y)lo=i;else break}p=lo/400}
+    if(reduce)p=1;else{var lo=0;for(var i=0;i<=600;i++){if(LUT[i]<=y)lo=i;else break}p=lo/600}
     if(scrollY+innerHeight>=document.documentElement.scrollHeight-4)p=1;
-    tgt=p;if(reduce){cur=p;fill.style.strokeDashoffset=0}else if(!anim){anim=requestAnimationFrame(glide)}
-    dots.forEach(function(d){var on=reduce||(r.top+d.y)<line+1;d.c.classList.toggle('on',on);d.h.classList.toggle('on',on)});
+    tgt=p;if(reduce){cur=p;fill.style.strokeDashoffset=0;glow.style.strokeDashoffset=0}else if(!anim){anim=requestAnimationFrame(glide)}
+    dots.forEach(function(d){var on=reduce||(r.top+d.y)<line+1;d.c.classList.toggle('on',on);d.h.classList.toggle('on',on);d.r.classList.toggle('on',on)});
   }
-  /* the drawn line glides toward where the scroll says it should be, so it sweeps through each swoop instead of jumping */
   var cur=0,tgt=0,anim=0;
-  function glide(){var dlt=tgt-cur;cur=Math.abs(dlt)<.0004?tgt:cur+dlt*.09;fill.style.strokeDashoffset=L*(1-cur);anim=cur===tgt?0:requestAnimationFrame(glide)}
+  function glide(){var dlt=tgt-cur;cur=Math.abs(dlt)<.0004?tgt:cur+dlt*.08;var o=L*(1-cur);fill.style.strokeDashoffset=o;glow.style.strokeDashoffset=o;anim=cur===tgt?0:requestAnimationFrame(glide)}
   addEventListener('scroll',function(){if(tick)return;tick=true;requestAnimationFrame(function(){tick=false;thread()})},{passive:true});
   var rz;function rebuild(){clearTimeout(rz);rz=setTimeout(function(){LUT=[];build()},120)}
   addEventListener('resize',rebuild);
