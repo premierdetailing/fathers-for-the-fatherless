@@ -55,39 +55,29 @@
     var w=document.createTreeWalker(el,NodeFilter.SHOW_TEXT),n,rg=document.createRange();while(n=w.nextNode()){if(!n.nodeValue.trim())continue;rg.selectNodeContents(n);[].forEach.call(rg.getClientRects(),add)}
     [].forEach.call(el.querySelectorAll(BOX),function(e){add(R(e))});if(el.matches(BOX))add(R(el));return b}
   function geo(rr){
-    var W=rr.width,nodes=[],d='';
-    function pt(x,y,el,dot){var p={x:x-rr.left,y:y-rr.top,bg:el?bgOf(el):'',dot:dot!==false};if(p.dot)nodes.push(p);return p}
-    function M(p){d+='M'+f(p.x)+','+f(p.y)}
-    function Ln(p){d+=' L'+f(p.x)+','+f(p.y)}
-    function S(a,b,k){var h=(b.y-a.y)*(k||.5);d+=' C'+f(a.x)+','+f(a.y+h)+' '+f(b.x)+','+f(b.y-h)+' '+f(b.x)+','+f(b.y)}
-    function Arc(r,sw,p){d+=' A'+f(r)+','+f(r)+' 0 0 '+sw+' '+f(p.x)+','+f(p.y)}
-    function Wave(a,b,amp){var m={x:(a.x+b.x)/2+amp,y:(a.y+b.y)/2},h=(b.y-a.y)/2*.55;d+=' C'+f(a.x)+','+f(a.y+h)+' '+f(m.x)+','+f(m.y-h)+' '+f(m.x)+','+f(m.y)+' C'+f(m.x)+','+f(m.y+h)+' '+f(b.x)+','+f(b.y-h)+' '+f(b.x)+','+f(b.y)}
-    function Run(a,b){var k=Math.abs(b.x-a.x)*.42,s=b.x>a.x?1:-1;d+=' C'+f(a.x+s*k)+','+f(a.y)+' '+f(b.x-s*k)+','+f(b.y)+' '+f(b.x)+','+f(b.y)}
-    /* one band crossing: down out of the column gap, a rounded corner, a gentle drift out, a round turn, a gentle drift back, a rounded corner, down into the next gap */
-    function Loop(a,b,far){var H=b.y-a.y,dir=far>a.x?1:-1,rc=Math.min(64,H*.2),dd=H*.08,Rt=Math.max(18,(H-2*rc-2*dd)/2);
-      var p1={x:a.x+dir*rc,y:a.y+rc},p2={x:far-dir*Rt,y:a.y+rc+dd},pm={x:far,y:p2.y+Rt},p3={x:far-dir*Rt,y:p2.y+2*Rt},p4={x:b.x+dir*rc,y:b.y-rc};
-      Arc(rc,dir>0?0:1,p1);Run(p1,p2);Arc(Rt,dir>0?1:0,pm);Arc(Rt,dir>0?1:0,p3);Run(p3,p4);Arc(rc,dir>0?0:1,b)}
+    /* one steady wave: x = centre(y) + A*sin(2*pi*y/wavelength). The centre holds in each column gap and eases (smootherstep) to the next gap between sections, so the wave never crosses text. */
+    var W=rr.width,mob=innerWidth<=860,K=[],marks=[],A,lam,endY;
+    function hold(y0,y1,x){K.push({y0:y0-rr.top,y1:y1-rr.top,x:x-rr.left})}
+    function mark(y,el){marks.push({y:y-rr.top,el:el})}
     var grids=STOPS.map(Q).filter(Boolean);
-    if(innerWidth<=860){
-      var w=Q('.kids .wrap'),x=R(w).left+parseFloat(getComputedStyle(w).paddingLeft)-22;
-      grids.concat([Q('.tab .frame'),Q('.shop-in')]).forEach(function(el){pt(x,R(el).top+14,el)});
-      var sb=R(Q('.give .seal'));pt(x,sb.top+sb.height/2,Q('.give'));
-      M({x:nodes[0].x,y:0});nodes.forEach(Ln);return {d:d,nodes:nodes};
+    if(mob){
+      var w=Q('.kids .wrap'),x=R(w).left+parseFloat(getComputedStyle(w).paddingLeft)-22;A=6;lam=230;
+      grids.concat([Q('.tab .frame'),Q('.shop-in')]).forEach(function(el){var b=R(el);hold(b.top,b.bottom,x);mark(b.top+14,el)});
+      var sb=R(Q('.give .seal'));hold(sb.top,sb.top,x);mark(sb.top+sb.height/2,Q('.give'));endY=sb.top+sb.height/2-rr.top;
+    }else{
+      var half=1e9;lam=320;
+      grids.forEach(function(g){var k=g.children,a=ext(k[0]),b=ext(k[1]),gb=R(g),top=Math.max(a.t,b.t),bot=Math.min(a.b,b.b);
+        half=Math.min(half,(b.l-a.r)/2);hold(gb.top,gb.bottom,(a.r+b.l)/2);mark(bot>top?(top+bot)/2:gb.top+gb.height/2,g)});
+      var fr=R(Q('.tab .frame')),ts=R(Q('.tab')),ty=fr.top-(fr.top-ts.top)*.42;hold(ty,ty,rr.left+W/2);mark(ty,Q('.tab'));
+      var rp=R(Q('.tab .row p')),ry=rp.top+rp.height/2;hold(ry,ry,Math.min(rr.left+W-40,Math.max(rp.right+70,rr.left+W*.74)));
+      var card=Q('.shop-in'),cb=R(card);hold(cb.top+24,cb.bottom-24,(R(card.querySelector('p:not(.kick)')).right+cb.right)/2);mark(cb.top+cb.height/2,card);
+      var seal=R(Q('.give .seal')),gy=seal.top-10;hold(gy,gy,seal.left+seal.width/2);mark(gy,Q('.give'));endY=gy-rr.top;
+      A=Math.max(10,Math.min(26,half-14));
     }
-    var N=[],B=[];
-    grids.forEach(function(g){var k=g.children,a=ext(k[0]),b=ext(k[1]),gb=R(g),top=Math.max(a.t,b.t),bot=Math.min(a.b,b.b);
-      N.push(pt((a.r+b.l)/2,bot>top?(top+bot)/2:gb.top+gb.height/2,g));B.push({top:gb.top-rr.top,bot:gb.bottom-rr.top})});
-    var fr=R(Q('.tab .frame')),ts=R(Q('.tab'));var T=pt(rr.left+W/2,fr.top-(fr.top-ts.top)*.42,Q('.tab'));
-    var rp=R(Q('.tab .row p'));var Tw=pt(Math.min(rr.left+W-40,Math.max(rp.right+70,rr.left+W*.74)),rp.top+rp.height/2,null,false);
-    var card=Q('.shop-in'),cb=R(card);var Sh=pt((R(card.querySelector('p')).right+cb.right)/2,cb.top+cb.height/2,card);
-    var seal=R(Q('.give .seal'));var G=pt(seal.left+seal.width/2,seal.top-10,Q('.give'));
-    /* a subtle wave: a gentle sway down each column gap, a soft S between sections */
-    var amp=Math.min(70,W*.055);M({x:N[0].x,y:0});Wave({x:N[0].x,y:0},N[0],9);
-    for(var i=0;i<N.length;i++){
-      var last=i===N.length-1,s=i%2?-1:1,a={x:N[i].x,y:B[i].bot+12},end=last?T:N[i+1],b={x:end.x,y:last?T.y-24:B[i+1].top-12};
-      Wave(N[i],a,-s*9);Wave(a,b,s*amp);Wave(b,end,s*6);
-    }
-    S(T,Tw,.55);S(Tw,Sh,.55);S(Sh,G,.5);
+    function cx(y){if(y<=K[0].y1)return K[0].x;for(var i=0;i<K.length-1;i++){var a=K[i],b=K[i+1];if(y<=b.y0){if(y<=a.y1)return a.x;var t=(y-a.y1)/Math.max(1,b.y0-a.y1),s=t*t*t*(t*(t*6-15)+10);return a.x+(b.x-a.x)*s}}return K[K.length-1].x}
+    function xAt(y){var fade=Math.max(0,Math.min(1,(endY-y)/160));return cx(y)+A*fade*Math.sin(2*Math.PI*y/lam)}
+    var d='',step=4;for(var y=0;y<endY;y+=step){d+=(y?' L':'M')+f(xAt(y))+','+f(y)}d+=' L'+f(xAt(endY))+','+f(endY);
+    var nodes=marks.map(function(m){return {x:xAt(m.y),y:m.y,bg:bgOf(m.el),dot:true}});
     return {d:d,nodes:nodes};
   }
   function build(){
