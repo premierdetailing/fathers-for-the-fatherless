@@ -10,7 +10,7 @@
     var tilt=document.querySelector('.t1 .tilt');if(tilt){var hero=document.getElementById('hero1');hero.addEventListener('pointermove',function(e){var r=tilt.getBoundingClientRect(),dx=(e.clientX-(r.left+r.width/2))/r.width,dy=(e.clientY-(r.top+r.height/2))/r.height;tilt.style.setProperty('--ry',(dx*6).toFixed(2)+'deg');tilt.style.setProperty('--rx',(-dy*6).toFixed(2)+'deg')});hero.addEventListener('pointerleave',function(){tilt.style.removeProperty('--rx');tilt.style.removeProperty('--ry')})}}
 
   /* giving: one config, every widget routes through it. Empty url = preview. */
-  var GIVE={url:'https://givebutter.com/fathersforthefatherless',amount_param:'amount',freq_param:'frequency',freq_monthly:'monthly',freq_once:''};
+  var GIVE={url:'https://givebutter.com/fathersforthefatherless',amount_param:'amount',freq_param:'frequency',freq_monthly:'monthly',freq_once:'once'};
   var WHAT={25:'goes toward the books and materials fathers are trained from.',50:'goes toward training the pastors who disciple those fathers.',100:'goes toward planting a church and keeping it going.',250:'goes toward the cost of getting a team to the field.'};
   document.querySelectorAll('[data-give]').forEach(function(g){
     var f='m',a=50,custom=false,fb=[].slice.call(g.querySelectorAll('[data-f]')),ab=[].slice.call(g.querySelectorAll('[data-a]')),inp=g.querySelector('input'),lab=g.querySelector('.gv-custom'),what=g.querySelector('.gv-what'),go=g.querySelector('.gv-go'),note=g.querySelector('.gv-note');
