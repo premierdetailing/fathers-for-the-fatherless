@@ -1,0 +1,5 @@
+CLAUDE.md
+.claude
+*.py
+*.md
+!README.md
